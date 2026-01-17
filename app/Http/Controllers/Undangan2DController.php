@@ -8,11 +8,8 @@ use Illuminate\Http\Request;
 class Undangan2DController extends Controller
 {
     public function undangan1(){
-        
-        $galeri = [];
-        $ucapan = [];
 
-        return view('Undangan2D.undangan1', compact( 'galeri', 'ucapan'));
+        return view('Undangan2D.undangan1');
     }
 
     // LIST DATA

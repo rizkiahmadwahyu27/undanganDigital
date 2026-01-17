@@ -50,7 +50,7 @@
                 <i data-lucide="folder" class="w-5"></i>
                 Data Order
             </a>
-            <a href="{{route('admin.index')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
+            <a href="{{route('undangan1')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
                 <i data-lucide="folder" class="w-5"></i>
                 Data Undangan
             </a>

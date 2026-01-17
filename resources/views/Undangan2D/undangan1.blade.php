@@ -1,156 +1,393 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Tailwind -->
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <title>{{ config('app.name', 'Undangan Nikah') }}</title>
 
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        body {
-            background-image: url('/bg/flower-bg.jpg');
+        .bg-cover1 {
+            background-image: url('/images/bgcover1.png');
+            background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed;
         }
+
+        .bunga {
+            background-image: url('/images/daun1.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation-duration: 6s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        @keyframes scale-lembut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.07);
+            }
+        }
+
+        .scale-anim {
+            animation: scale-lembut 4s ease-in-out infinite;
+        }
+
+        @keyframes angin-top {
+            0%, 100% {
+                transform: rotate(-180deg) translateX(0);
+            }
+            50% {
+                transform: rotate(-175deg) translateX(12px);
+            }
+        }
+
+        @keyframes angin-bottom {
+            0%, 100% {
+                transform: rotate(5deg) translateX(0);
+            }
+            50% {
+                transform: rotate(-5deg) translateX(12px);
+            }
+        }
+        @keyframes fadeCover {
+            from {
+                transform: translateY(10px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-fadeCover {
+            animation: fadeCover 1.6s ease-out forwards;
+        }
+
     </style>
+
 </head>
+<body class="overflow-x-hidden">
+    <section id="cover">
+        <div class="w-full flex justify-center">
+            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
 
-<body class="font-serif text-gray-900">
+                <!-- DAUN TOP -->
+                <div
+                    class="
+                        absolute top-0 left-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        -translate-y-1/3 md:-translate-y-1/2
+                    "
+                    style="animation-name: angin-top;"
+                ></div>
 
-    <!-- BACKGROUND MUSIC -->
-    <audio id="bg-music" loop autoplay hidden>
-        <source src="/music/wedding-song.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- OPENING -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4 bg-black/40 text-white">
-        <p class="text-xl mb-4">Undangan Pernikahan</p>
-        <h1 class="text-4xl font-bold drop-shadow-lg" data-aos="fade-up">
-            {{-- {{ $undangan->nama_pria }} & {{ $undangan->nama_wanita }} --}}
-            Agus & Siti
-        </h1>
-        <p class="mt-4 text-lg" data-aos="fade-up" data-aos-delay="200">
-            {{ \Carbon\Carbon::parse(date('Y-m-d'))->format('d F Y') }}
-        </p>
-
-        <button onclick="document.getElementById('bg-music').play()" 
-                class="mt-6 px-6 py-3 bg-white text-gray-800 rounded-full shadow-lg" id="buka_undangan">Buka Undangan</button>
-    </section>
-
-    <!-- MEMPELAI -->
-    <section id="buka_undangan" class="py-20 bg-white/90 backdrop-blur">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Mempelai</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
-                <div data-aos="fade-right">
-                    <img src="/foto/pria.jpg" class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg">
-                    <h3 class="text-2xl mt-4">Agus</h3>
+                <!-- DAUN BOTTOM -->
+                <div
+                    class="
+                        absolute bottom-0 right-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        translate-y-1/3 md:translate-y-1/2
+                    "
+                    style="animation-name: angin-bottom;"
+                ></div>
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-gray-600">HAPPY WEDDING</h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                                Wedding Of
+                            </h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center">
+                            <img src="{{ asset('/images/foto_cover.gif') }}" alt="foto cover" class="w-72 h-72 opacity-0 animate-fadeCover">
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                                Sururul & Rizki
+                            </h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-gray-600 text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-blue-800 text-xl font-bold">Nama Tamu</p>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-gray-600 text-sm">
+                                        *Mohon maaf apabila ada kesalahan pada
+                                        penulisan nama dan gelar
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10 w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <a href="#isi_undangan" class="bg-blue-400 hover:bg-blue-300 p-3 rounded-lg flex justify-center items-center">
+                                <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
+                                <span class="text-gray-600">Buka Undangan</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </sej4t1muly4_13154j4t1muly4_13154ction>
+    <section id="isi_undangan">
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
+                <!-- DAUN TOP -->
+                <div
+                    class="
+                        absolute top-0 left-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        -translate-y-1/3 md:-translate-y-1/2
+                    "
+                    style="animation-name: angin-top;"
+                ></div>
 
-                <div data-aos="fade-left">
-                    <img src="/foto/wanita.jpg" class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg">
-                    <h3 class="text-2xl mt-4">Siti</h3>
+                <!-- DAUN BOTTOM -->
+                <div
+                    class="
+                        absolute bottom-0 right-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        translate-y-1/3 md:translate-y-1/2
+                    "
+                    style="animation-name: angin-bottom;"
+                ></div>
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center items-center">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 24px;">
+                                The Wedding Of
+                            </h1>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                                Sururul & Rizki
+                            </h1>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <h1 class="text-gray-600 text-xl">
+                                Senin, 20 Agutus 2026
+                            </h1>
+                        </div>
+                        <div class="flex justify-center items-center mt-20">
+                            <div class="grid grid-cols-4 gap-4">
+                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="flex justify-center items-center">
+                                        <div>
+                                            <p id="days">0</p>
+                                            <p>Days</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="flex justify-center items-center">
+                                        <div>
+                                            <p id="hours">0</p>
+                                            <p>Jam</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="flex justify-center items-center">
+                                        <div>
+                                            <p id="minutes">0</p>
+                                            <p>Menit</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="flex justify-center items-center">
+                                        <div>
+                                            <p id="seconds">0</p>
+                                            <p>Detik</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center mt-10">
+                            <div class="bg-blue-600 rounded-xl p-3 text-white font-bold">
+                                <a class="flex justify-center items-center" href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Fulan+%26+Fulanah&details=The+Wedding+of+Fulan+%26+Fulanah%3Cbr%3EFriday%2C+20+October+2023+Pukul+17%3A51%3Cbr%3EKediaman+Mempelai+Wanita%0D%0AJl.+Jend.+Sudirman+No.+116%0D%0ABandung+-+Jabar&dates=20231020T175100/20231020T175100&location=https://maps.app.goo.gl/EBR6nMWSjvmpzqVKA&ctz=Asia%2FJakarta" target="_blank" rel="noopener noreferrer">
+                                    <i data-lucide="calendar-fold" class="mr-2"></i>
+                                    Save to Calendar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <section>
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
+                <!-- DAUN TOP -->
+                <div
+                    class="
+                        absolute top-0 left-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        -translate-y-1/3 md:-translate-y-1/2
+                    "
+                    style="animation-name: angin-top;"
+                ></div>
 
-    <!-- ACARA -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Detail Acara</h2>
-
-            <div class="bg-white p-6 rounded-xl shadow" data-aos="zoom-in">
-                <p class="font-semibold text-xl">Akad Nikah</p>
-                <p class="mt-2">Jangga</p>
-                <p>20</p>
-
-                <hr class="my-6">
-
-                <p class="font-semibold text-xl">Resepsi</p>
-                <p class="mt-2">20</p>
-                <p>20</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERI -->
-    <section class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Galeri</h2>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                @foreach($galeri as $foto)
-                <img src="{{ $foto->path }}" class="rounded-lg shadow" data-aos="fade-up">
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Konfirmasi Kehadiran</h2>
-
-            <form method="POST" action="/rsvp" class="bg-white p-6 rounded-xl shadow" data-aos="zoom-in">
-                @csrf
-                <input type="hidden" name="undangan_id" value="1">
-
-                <label class="block mb-2">Nama Anda</label>
-                <input type="text" name="nama" class="w-full p-3 border rounded mb-4">
-
-                <label class="block mb-2">Konfirmasi</label>
-                <select name="status" class="w-full p-3 border rounded mb-4">
-                    <option value="Hadir">Hadir</option>
-                    <option value="Tidak Hadir">Tidak Hadir</option>
-                </select>
-
-                <button class="w-full bg-blue-600 text-white py-3 rounded shadow">Kirim</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- UCAPAN -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Ucapan & Doa</h2>
-
-            <form method="POST" action="/ucapan" class="mb-10 bg-gray-100 p-6 rounded-lg shadow" data-aos="fade-up">
-                @csrf
-                <input type="hidden" name="undangan_id" value="1">
-                
-                <input name="nama" placeholder="Nama Anda" class="w-full p-3 border rounded mb-4">
-                <textarea name="pesan" placeholder="Tulis ucapan..." class="w-full p-3 border rounded mb-4"></textarea>
-
-                <button class="w-full bg-green-600 text-white py-3 rounded shadow">Kirim Ucapan</button>
-            </form>
-
-            <div class="space-y-4">
-                @foreach($ucapan as $u)
-                <div class="bg-gray-50 p-4 rounded shadow" data-aos="fade-up">
-                    <p class="font-bold">{{ $u->nama }}</p>
-                    <p>{{ $u->pesan }}</p>
+                <!-- DAUN BOTTOM -->
+                <div
+                    class="
+                        absolute bottom-0 right-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        translate-y-1/3 md:translate-y-1/2
+                    "
+                    style="animation-name: angin-bottom;"
+                ></div>
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center items-center">
+                            <div class="w-8/12">
+                                <div class="flex justify-center">
+                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 24px;">Assalamualaikum Wr. Wb</h1>
+                                </div>
+                                <div class="flex justify-center items-center text-center mt-3 mb-5">
+                                    <p>Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
+                                <img src="{{ asset('/images/cewe korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="w-4/12 mt-6">
+                                <div class="flex justify-center">
+                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Sururul Hafizhah</h1>
+                                </div>
+                                <div class="flex justify-center items-center text-center mt-1 mb-5">
+                                    <p>Putri Pertama dari Bapak Yusuf Ali dan Ibu Nurbaya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                @endforeach
             </div>
-        </div>
+        </div>  
     </section>
+     <section>
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
+                <!-- DAUN TOP -->
+                <div
+                    class="
+                        absolute top-0 left-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        -translate-y-1/3 md:-translate-y-1/2
+                    "
+                    style="animation-name: angin-top;"
+                ></div>
 
-    <!-- FOOTER -->
-    <footer class="py-6 text-center text-white bg-black/60">
-        <p>Terima kasih atas doa dan kehadiran Anda</p>
-    </footer>
+                <!-- DAUN BOTTOM -->
+                <div
+                    class="
+                        absolute bottom-0 right-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        translate-y-1/3 md:translate-y-1/2
+                    "
+                    style="animation-name: angin-bottom;"
+                ></div>
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center items-center">
+                            <div class="md:w-10/12 w-full p-4">
+                                <div class="flex justify-center">
+                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 74px;">&</h1>
+                                </div>
+                                <div class="flex justify-center">
+                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Rizki Ahmad Wahyu</h1>
+                                </div>
+                                <div class="flex justify-center items-center text-center mt-1 mb-5">
+                                    <p>Putra Pertama dari Bapak Amin Ali dan Ibu Fatimah</p>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
+                                <img src="{{ asset('/images/cowo korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+     <script src="hj4t1muly4_13154j4t1muly4_13154ttps://unpkg.com/lucide@latest"></script>
+     <script>
+        // Tanggal acara (YYYY-MM-DD HH:MM:SS)
+        const targetDate = new Date("2026-12-31 08:00:00").getTime();
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
+            if (distance < 0) {j4t1muly4_13154
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "Acara telah dimulai 🎉";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }, 1000);
+    </script>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
