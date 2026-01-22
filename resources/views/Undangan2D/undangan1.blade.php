@@ -11,9 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
+        .lock-scroll {
+        overflow: hidden;
+        height: 100vh;
+        }
         .bg-cover1 {
             background-image: url('/images/bgcover1.png');
             background-repeat: no-repeat;
@@ -28,6 +34,7 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: infinite;
         }
+        
         @keyframes scale-lembut {
             0%, 100% {
                 transform: scale(1);
@@ -40,7 +47,10 @@
         .scale-anim {
             animation: scale-lembut 4s ease-in-out infinite;
         }
-
+        .show-undangan {
+        opacity: 1;
+        pointer-events: auto;
+        }
         @keyframes angin-top {
             0%, 100% {
                 transform: rotate(-180deg) translateX(0);
@@ -75,7 +85,7 @@
     </style>
 
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden lock-scroll">
     <section id="cover">
         <div class="w-full flex justify-center">
             <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
@@ -140,7 +150,7 @@
                             </div>
                         </div>
                         <div class="mt-10 w-full flex justify-center items-center opacity-0 animate-fadeCover">
-                            <a href="#isi_undangan" class="bg-blue-400 hover:bg-blue-300 p-3 rounded-lg flex justify-center items-center">
+                            <a href="#isi_undangan" id="btnBuka" class="bg-blue-400 hover:bg-blue-300 p-3 rounded-lg flex justify-center items-center">
                                 <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                                 <span class="text-gray-600">Buka Undangan</span>
                             </a>
@@ -150,7 +160,7 @@
             </div>
         </div>
     </sej4t1muly4_13154j4t1muly4_13154ction>
-    <section id="isi_undangan">
+    <section id="isi_undangan" class="opacity-0 pointer-events-none">
         <div class="w-full flex justify-center items-center">
             <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
                 <!-- DAUN TOP -->
@@ -180,24 +190,24 @@
                 ></div>
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
-                        <div class="flex justify-center items-center">
+                        <div data-aos="fade-up" class="flex justify-center items-center">
                             <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 24px;">
                                 The Wedding Of
                             </h1>
                         </div>
-                        <div class="flex justify-center items-center">
+                        <div data-aos="fade-up" class="flex justify-center items-center">
                             <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
                                 Sururul & Rizki
                             </h1>
                         </div>
-                        <div class="flex justify-center items-center">
+                        <div data-aos="fade-up" class="flex justify-center items-center">
                             <h1 class="text-gray-600 text-xl">
                                 Senin, 20 Agutus 2026
                             </h1>
                         </div>
                         <div class="flex justify-center items-center mt-20">
                             <div class="grid grid-cols-4 gap-4">
-                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                <div data-aos="fade-up" class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                     <div class="flex justify-center items-center">
                                         <div>
                                             <p id="days">0</p>
@@ -205,7 +215,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                <div data-aos="fade-up" class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                     <div class="flex justify-center items-center">
                                         <div>
                                             <p id="hours">0</p>
@@ -213,7 +223,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                <div data-aos="fade-up" class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                     <div class="flex justify-center items-center">
                                         <div>
                                             <p id="minutes">0</p>
@@ -221,7 +231,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                <div data-aos="fade-up" class="bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                     <div class="flex justify-center items-center">
                                         <div>
                                             <p id="seconds">0</p>
@@ -232,7 +242,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-10">
-                            <div class="bg-blue-600 rounded-xl p-3 text-white font-bold">
+                            <div data-aos="fade-up" class="bg-blue-600 rounded-xl p-3 text-white font-bold">
                                 <a class="flex justify-center items-center" href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Fulan+%26+Fulanah&details=The+Wedding+of+Fulan+%26+Fulanah%3Cbr%3EFriday%2C+20+October+2023+Pukul+17%3A51%3Cbr%3EKediaman+Mempelai+Wanita%0D%0AJl.+Jend.+Sudirman+No.+116%0D%0ABandung+-+Jabar&dates=20231020T175100/20231020T175100&location=https://maps.app.goo.gl/EBR6nMWSjvmpzqVKA&ctz=Asia%2FJakarta" target="_blank" rel="noopener noreferrer">
                                     <i data-lucide="calendar-fold" class="mr-2"></i>
                                     Save to Calendar
@@ -243,8 +253,6 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section>
         <div class="w-full flex justify-center items-center">
             <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
                 <!-- DAUN TOP -->
@@ -272,93 +280,120 @@
                     "
                     style="animation-name: angin-bottom;"
                 ></div>
-                <div class="w-full h-screen flex justify-center items-center">
-                    <div>
-                        <div class="flex justify-center items-center">
-                            <div class="w-8/12">
-                                <div class="flex justify-center">
-                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 24px;">Assalamualaikum Wr. Wb</h1>
-                                </div>
-                                <div class="flex justify-center items-center text-center mt-3 mb-5">
-                                    <p>Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <div class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
-                                <img src="{{ asset('/images/cewe korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <div class="w-4/12 mt-6">
-                                <div class="flex justify-center">
-                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Sururul Hafizhah</h1>
-                                </div>
-                                <div class="flex justify-center items-center text-center mt-1 mb-5">
-                                    <p>Putri Pertama dari Bapak Yusuf Ali dan Ibu Nurbaya</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div data-aos="fade-up" class="flex justify-center mt-10">
+                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 30px;">Assalamualaikum Wr. Wb</h1>
                 </div>
-            </div>
-        </div>  
-    </section>
-     <section>
-        <div class="w-full flex justify-center items-center">
-            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
-                <!-- DAUN TOP -->
-                <div
-                    class="
-                        absolute top-0 left-0
-                        bunga
-                        w-[220px] h-[220px]
-                        sm:w-[280px] sm:h-[280px]
-                        md:w-[380px] md:h-[380px]
-                        -translate-y-1/3 md:-translate-y-1/2
-                    "
-                    style="animation-name: angin-top;"
-                ></div>
-
-                <!-- DAUN BOTTOM -->
-                <div
-                    class="
-                        absolute bottom-0 right-0
-                        bunga
-                        w-[220px] h-[220px]
-                        sm:w-[280px] sm:h-[280px]
-                        md:w-[380px] md:h-[380px]
-                        translate-y-1/3 md:translate-y-1/2
-                    "
-                    style="animation-name: angin-bottom;"
-                ></div>
-                <div class="w-full h-screen flex justify-center items-center">
-                    <div>
-                        <div class="flex justify-center items-center">
-                            <div class="md:w-10/12 w-full p-4">
-                                <div class="flex justify-center">
-                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 74px;">&</h1>
+                 <div data-aos="fade-up" class="flex justify-center items-center text-center mt-5 mb-3">
+                    <p class="w-10/12">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5">
+                    <div class="col-span-2">
+                        <div class="flex justify-center">
+                            <div>
+                                <div class="flex justify-center items-center">
+                                    <div data-aos="fade-up" class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
+                                        <img src="{{ asset('/images/cewe korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
+                                    </div>
                                 </div>
-                                <div class="flex justify-center">
-                                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Rizki Ahmad Wahyu</h1>
+                                <div class="flex justify-center items-center">
+                                    <div class="mt-6">
+                                        <div data-aos="fade-up" class="flex justify-center">
+                                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Sururul Hafizhah</h1>
+                                        </div>
+                                        <div data-aos="fade-up" class="flex justify-center items-center text-center mt-1">
+                                            <p>Putri Pertama dari Bapak Yusuf Ali dan Ibu Nurbaya</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="flex justify-center items-center text-center mt-1 mb-5">
-                                    <p>Putra Pertama dari Bapak Amin Ali dan Ibu Fatimah</p>
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <div class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
-                                <img src="{{ asset('/images/cowo korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
                             </div>
                         </div>
                         
                     </div>
+                    <div class="flex justify-center items-center">
+                        <div data-aos="fade-up" class="flex justify-center items-center">
+                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 74px;">&</h1>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="flex justify-center">
+                            <div>
+                                <div class="flex justify-center items-center">
+                                    <div class="p-2">
+                                        <div data-aos="fade-up" class="flex justify-center">
+                                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Rizki Ahmad Wahyu</h1>
+                                        </div>
+                                        <div data-aos="fade-up" class="flex justify-center items-center text-center mt-1 mb-5">
+                                            <p>Putra Pertama dari Bapak Amin Ali dan Ibu Fatimah</p>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <div data-aos="fade-up" class="w-64 h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
+                                        <img src="{{ asset('/images/cowo korea.jpeg') }}" class="w-64 h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>  
+        </div> 
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden">
+                <!-- DAUN TOP -->
+                <div
+                    class="
+                        absolute top-0 left-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        -translate-y-1/3 md:-translate-y-1/2
+                    "
+                    style="animation-name: angin-top;"
+                ></div>
+
+                <!-- DAUN BOTTOM -->
+                <div
+                    class="
+                        absolute bottom-0 right-0
+                        bunga
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        md:w-[380px] md:h-[380px]
+                        translate-y-1/3 md:translate-y-1/2
+                    "
+                    style="animation-name: angin-bottom;"
+                ></div>
+                
+            </div>
+        </div> 
     </section>
+  
      <script src="hj4t1muly4_13154j4t1muly4_13154ttps://unpkg.com/lucide@latest"></script>
+     <script>
+        const btnBuka = document.getElementById('btnBuka');
+        const isi_undangan = document.getElementById('isi_undangan');
+
+        btnBuka.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // buka scroll
+            document.body.classList.remove('lock-scroll');
+
+            // tampilkan isi undangan
+            isi_undangan.classList.remove('opacity-0', 'pointer-events-none');
+
+            // refresh AOS agar animasi jalan
+            setTimeout(() => {
+                AOS.refreshHard();
+                isi_undangan.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        });
+
+    </script>
+
      <script>
         // Tanggal acara (YYYY-MM-DD HH:MM:SS)
         const targetDate = new Date("2026-12-31 08:00:00").getTime();
@@ -388,6 +423,12 @@
     <script>
         lucide.createIcons();
     </script>
+    <script>
+        AOS.init({
+        disable: 'mobile'
+        });
+    </script>
+
 </body>
 
 </html>
