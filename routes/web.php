@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\OrderUndanganController;
 use App\Http\Controllers\Undangan2DController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,15 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/undangan/2D/undangan1', [Undangan2DController::class, 'undangan1'])->name('undangan1');
+Route::get('/undangan/2D/undangan2', [Undangan2DController::class, 'undangan2'])->name('undangan2');
+Route::get('/undangan/2D/undangan3', [Undangan2DController::class, 'undangan3'])->name('undangan3');
+
+Route::post('/kirim-pesan/undangan', 
+    [Undangan2DController::class, 'kirim_pesan']
+)->name('kirim_pesan');
+
+Route::post('/konfirmasi_kehadiran/undangan', [Undangan2DController::class, 'konfirmasi_kehadiran'])->name('konfirmasi_kehadiran');
+
 Route::get('/undangan/3D/undangan1', function () {
     return view('Undangan3D.undangan1', [
         'judul' => 'The Wedding of',
@@ -26,8 +36,10 @@ Route::get('/undangan/3D/undangan1', function () {
     ]);
 });
 
-Route::get('/undangan/digital/2d/{slug}', [Undangan2DController::class, 'template_floral'])->name('template_floral');
+Route::get('/contoh-undangan', [Undangan2DController::class, 'contoh_undangan'])->name('contoh_undangan');
 
+Route::get('/undangan/digital/2d/{slug}', [Undangan2DController::class, 'template_floral'])->name('template_floral');
+route::get('/undangan/digital/{slug}/{tamu?}', [OrderUndanganController::class, 'undangan_digital'])->name('admin.undangan_digital');
 
 Route::middleware('admin')->group(function () {
     route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -36,6 +48,12 @@ Route::middleware('admin')->group(function () {
     route::post('/admin/create/order', [AdminController::class, 'create_order'])->name('admin.create_order');
     route::get('/admin/create/data/undangan', [Undangan2DController::class, 'index'])->name('admin.index');
     route::post('/admin/created/undangan', [Undangan2DController::class, 'store'])->name('admin.store');
+
+    // ROUTE BARU
+    route::get('/admin/data/order/undangan', [OrderUndanganController::class, 'order_undangan'])->name('admin.order_undangan');
+    
+    
+
     Route::resource('undangan', Undangan2DController::class);
     Route::get('/u/{slug}', function ($slug) {
         $data = \App\Models\Undangan::where('slug', $slug)->firstOrFail();

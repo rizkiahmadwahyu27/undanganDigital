@@ -18,10 +18,14 @@
                 <thead class="bg-gray-100 sticky top-0 z-10">
                     <tr>
                         <th class="px-4 py-3 font-semibold text-gray-700 border-b">No</th>
-                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Nama</th>
-                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Kode Templete</th>
-                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Jenis Bayar</th>
-                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Bayar</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Kode Pesanan</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Nama Mempelai</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Tanggal Akad</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Tanggal Resepsi</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Nama Orang Tua Pria</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Nama Orang Tua Wanita</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Alamat Akad</th>
+                        <th class="px-4 py-3 font-semibold text-gray-700 border-b">Alamat Resepsi</th>
                         <th class="px-4 py-3 font-semibold text-gray-700 border-b">Aksi</th>
                     </tr>
                 </thead>
@@ -29,17 +33,21 @@
                     $no = 1;
                 @endphp
                 <tbody>
-                    @foreach ($data_undangan as $undangan)
+                    @foreach ($data_undangans as $undangan)
                         <tr class="hover:bg-gray-50">
                             <td class="px-4 py-3 border-b">{{$no++}}</td>
-                            <td class="px-4 py-3 border-b">{{$undangan->slug}}</td>
-                            <td class="px-4 py-3 border-b">{{$undangan->kode_template}}</td>
-                            <td class="px-4 py-3 border-b">{{$undangan->jenis_bayar}}</td>
-                            <td class="px-4 py-3 border-b">{{$undangan->bayar}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->kode_pesan}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->nama_mempelai_pria}} & {{$undangan->nama_mempelai_wanita}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->tgl_akad}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->tgl_resepsi}}</td>
+                            <td class="px-4 py-3 border-b">Bapak. {{$undangan->nama_ayah_pria}} - Ibu {{$undangan->nama_ibu_pria}}</td>
+                            <td class="px-4 py-3 border-b">Bapak. {{$undangan->nama_ayah_wanita}} - Ibu {{$undangan->nama_ibu_wanita}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->alamat_akad}}</td>
+                            <td class="px-4 py-3 border-b">{{$undangan->alamat_resepsi}}</td>
                             <td class="px-4 py-3 border-b">
                                 <div class="flex justify-center items-center">
-                                    <button class="px-3 py-1 bg-blue-500 text-white rounded">Edit</button>
-                                    <a href="{{route('template_floral', $undangan->slug)}}" target="_blank">
+                                    <button class="px-3 py-1 bg-blue-500 text-white rounded mr-2">Edit</button>
+                                    <a href="{{route('admin.undangan_digital', $undangan->slug)}}" target="_blank">
                                         <i data-lucide="send"></i>
                                     </a>
                                 </div>
@@ -71,88 +79,190 @@
                 <!-- CONTENT -->
                 <div class="text-gray-600">
                     {{-- SLUG --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Slug</label>
                     <input type="text" name="slug" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- NAMA PRIA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Nama Mempelai Pria</label>
-                    <input type="text" name="nama_pria" class="w-full border rounded p-2" required>
+                    <input type="text" name="nama_mempelai_pria" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- NAMA WANITA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Nama Mempelai Wanita</label>
-                    <input type="text" name="nama_wanita" class="w-full border rounded p-2" required>
+                    <input type="text" name="nama_mempelai_wanita" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- TANGGAL ACARA --}}
-                <div class="mb-4">
-                    <label class="font-semibold">Tanggal Acara</label>
-                    <input type="datetime-local" name="tanggal_acara" class="w-full border rounded p-2" required>
+                <div class="mb-2">
+                    <label class="font-semibold">Tanggal Akad</label>
+                    <input type="datetime-local" name="tanggal_akad" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tanggal Resepsi</label>
+                    <input type="datetime-local" name="tanggal_resepsi" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- LOKASI --}}
-                <div class="mb-4">
-                    <label class="font-semibold">Lokasi Acara</label>
-                    <input type="text" name="lokasi" class="w-full border rounded p-2" required>
+                <div class="mb-2">
+                    <label class="font-semibold">Lokasi Akad</label>
+                    <input type="text" name="lokasi_akad" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Lokasi Resepsi</label>
+                    <input type="text" name="lokasi_resepsi" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Lokasi Kirim Hadiah</label>
+                    <input type="text" name="alamat_kirim_hadiah" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- MAPS URL --}}
-                <div class="mb-4">
-                    <label class="font-semibold">Google Maps URL</label>
-                    <input type="text" name="maps_url" class="w-full border rounded p-2">
+                <div class="mb-2">
+                    <label class="font-semibold">Google Maps URL Akad</label>
+                    <input type="text" name="maps_akad" class="w-full border rounded p-2">
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Google Maps URL Resepsi</label>
+                    <input type="text" name="maps_resepsi" class="w-full border rounded p-2">
                 </div>
 
                 {{-- FOTO COVER --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Foto Cover (JPG/PNG)</label>
                     <input type="file" name="foto_cover" class="w-full border rounded p-2">
                 </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Foto Pria (JPG/PNG)</label>
+                    <input type="file" name="foto_mempelai_pria" class="w-full border rounded p-2">
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Foto Wanita (JPG/PNG)</label>
+                    <input type="file" name="foto_mempelai_wanita" class="w-full border rounded p-2">
+                </div>
 
                 {{-- GALLERY UPLOAD --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Gallery Foto (Bisa pilih banyak)</label>
                     <input type="file" name="gallery[]" class="w-full border rounded p-2" multiple>
                     <p class="text-sm text-gray-500 mt-1">Tahan tombol Ctrl / Shift untuk memilih banyak foto sekaligus.</p>
                 </div>
-
+                {{-- Sountrack --}}
+                <div class="mb-2">
+                    <label class="font-semibold">SoundTrack</label>
+                    <input type="file" name="soundtrack" accept=".mp3,audio/*" class="w-full border rounded p-2" required>
+                </div>
                 {{-- VIDEO URL --}}
-                <div class="mb-4">
+                {{-- <div class="mb-2">
                     <label class="font-semibold">Video URL</label>
                     <input type="text" name="video_url" class="w-full border rounded p-2">
-                </div>
+                </div> --}}
 
                 {{-- REKENING JSON --}}
-                <div class="mb-4">
-                    <label class="font-semibold">Rekening (JSON)</label>
-                    <textarea name="rekening" rows="4" class="w-full border rounded p-2"
-                    placeholder='[{"bank":"BCA","nama":"John","nomor":"123"},{"bank":"BRI","nama":"Doe","nomor":"456"}]'></textarea>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  1</label>
+                    <input type="date" name="tgl_stori_1" class="w-full border rounded p-2" required>
+                </div>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 1</label>
+                    <textarea name="story_1" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  2</label>
+                    <input type="date" name="tgl_stori_2" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 2</label>
+                    <textarea name="story_2" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  3</label>
+                    <input type="date" name="tgl_stori_3" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 3</label>
+                    <textarea name="story_3" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  4</label>
+                    <input type="date" name="tgl_stori_4" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 4</label>
+                    <textarea name="story_4" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  5</label>
+                    <input type="date" name="tgl_stori_5" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 5</label>
+                    <textarea name="story_5" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Tahun  6</label>
+                    <input type="date" name="tgl_stori_6" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Stori 6</label>
+                    <textarea name="story_6" rows="4" class="w-full border rounded p-2"
+                    placeholder='isi stori'></textarea>
                 </div>
 
                 {{-- RSVP --}}
-                <div class="mb-4">
+                {{-- <div class="mb-2">
                     <label class="font-semibold">Aktifkan RSVP?</label>
                     <select name="rsvp_enabled" class="w-full border rounded p-2">
                         <option value="1">Aktif</option>
                         <option value="0">Tidak</option>
                     </select>
-                </div>
+                </div> --}}
 
                 {{-- TEMPLATE --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="font-semibold">Template</label>
-                    <input type="text" name="template" class="w-full border rounded p-2" placeholder="classic, elegant, floral" required>
+                    <input type="text" name="template" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Nama Bank</label>
+                    <input type="text" name="nama_bank" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Atas Nama Pemilik Bank</label>
+                    <input type="text" name="an_bank" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">No. Rek Bank</label>
+                    <input type="text" name="no_rek_bank" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Nama E-wallet</label>
+                    <input type="text" name="nama_ewalet" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Atas Nama Pemilik E-wallet</label>
+                    <input type="text" name="an_ewalet" class="w-full border rounded p-2" required>
+                </div>
+                <div class="mb-2">
+                    <label class="font-semibold">Nomor E-Wallet</label>
+                    <input type="text" name="no_ewalet" class="w-full border rounded p-2" required>
                 </div>
 
                 {{-- SECTIONS JSON --}}
-                <div class="mb-4">
+                {{-- <div class="mb-2">
                     <label class="font-semibold">Sections (JSON)</label>
                     <textarea name="sections" rows="4" class="w-full border rounded p-2"
                     placeholder='["header","event","footer","gallery","gift","maps","wishes", "couple"]'></textarea>
-                </div>
+                </div> --}}
 
 
                 {{-- ============================= --}}
@@ -162,43 +272,43 @@
                 <h2 class="font-bold text-lg mt-6 mb-2">Data Keluarga Mempelai</h2>
 
                 {{-- AYAH MEMPELAI PRIA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Nama Ayah Mempelai Pria</label>
-                    <input type="text" name="nama_ayah_mempelai_pria" class="w-full border rounded p-2">
+                    <input type="text" name="nama_ayah_pria" class="w-full border rounded p-2">
                 </div>
 
                 {{-- IBU MEMPELAI PRIA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Nama Ibu Mempelai Pria</label>
-                    <input type="text" name="nama_ibu_mempelai_pria" class="w-full border rounded p-2">
+                    <input type="text" name="nama_ibu_pria" class="w-full border rounded p-2">
                 </div>
 
                 {{-- ANAK KE PRIA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Mempelai Pria Anak Ke</label>
-                    <input type="number" name="mempelai_pria_anak_ke" class="w-full border rounded p-2">
+                    <input type="number" name="pria_anak_ke" class="w-full border rounded p-2">
                 </div>
 
                 {{-- AYAH MEMPELAI WANITA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Nama Ayah Mempelai Wanita</label>
-                    <input type="text" name="nama_ayah_mempelai_wanita" class="w-full border rounded p-2">
+                    <input type="text" name="nama_ayah_wanita" class="w-full border rounded p-2">
                 </div>
 
                 {{-- IBU MEMPELAI WANITA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Nama Ibu Mempelai Wanita</label>
-                    <input type="text" name="nama_ibu_mempelai_wanita" class="w-full border rounded p-2">
+                    <input type="text" name="nama_ibu_wanita" class="w-full border rounded p-2">
                 </div>
 
                 {{-- ANAK KE WANITA --}}
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="block font-semibold mb-1">Mempelai Wanita Anak Ke</label>
-                    <input type="number" name="mempelai_wanita_anak_ke" class="w-full border rounded p-2">
+                    <input type="number" name="wanita_anak_ke" class="w-full border rounded p-2">
                 </div>
 
 
-                </div>
+            
 
                 <!-- FOOTER -->
                 <div class="flex justify-end gap-3 mt-4">

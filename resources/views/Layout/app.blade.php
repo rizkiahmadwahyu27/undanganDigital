@@ -41,18 +41,18 @@
                 Dashboard
             </a>
 
-            <a href="{{route('admin.template_undangan')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
+            <a href="{{route('undangan3')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
                 <i data-lucide="users" class="w-5"></i>
                 Data User
             </a>
 
-            <a href="{{route('admin.data_order')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
+            <a href="{{route('admin.order_undangan')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
                 <i data-lucide="folder" class="w-5"></i>
                 Data Order
             </a>
-            <a href="{{route('undangan1')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
+            <a href="{{route('contoh_undangan')}}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
                 <i data-lucide="folder" class="w-5"></i>
-                Data Undangan
+                contoh undangan
             </a>
 
             <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-200">
