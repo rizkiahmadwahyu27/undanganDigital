@@ -191,72 +191,62 @@
 <body class="overflow-x-hidden lock-scroll">
     <section id="cover">
         <div class="w-full flex justify-center">
-
-            <!-- SECTION -->
-            <div class="relative bg-cover1 w-full md:w-6/12 min-h-[100dvh] md:h-[100dvh] overflow-hidden flex flex-col">
-
-                <!-- BUBBLE -->
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                 <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
                     @for ($i = 0; $i < 25; $i++)
                         <span style="--i:{{ rand(5,35) }};"></span>
                     @endfor
                 </div>
 
-                <!-- DAUN -->
-                <div class="absolute -bottom-10 -left-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
+                {{-- Daun Bottom --}}
+                <div class="absolute -bottom-15 -left-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-
-                <div class="absolute -bottom-10 -right-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-100"
+                <div class="absolute -bottom-15 -right-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-[1]"
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-
-
-                <!-- CONTENT -->
-                <div class="relative z-10 flex flex-col justify-center items-center flex-1 px-4 py-10 text-center">
-
-                    <h1 class="text-yellow-600 mt-4 opacity-0 animate-fadeCover">
-                        HAPPY WEDDING
-                    </h1>
-
-                    <h1 class="text-yellow-600 opacity-0 animate-fadeCover"
-                        style="font-family: 'Sacramento', cursive; font-size: clamp(36px, 8vw, 64px);">
-                        Wedding Of
-                    </h1>
-
-                    <img src="{{ asset('/images/foto_cover.gif') }}"
-                        class="w-56 h-56 md:w-72 md:h-72 my-3 opacity-0 animate-fadeCover">
-
-                    <h1 class="text-yellow-600 opacity-0 animate-fadeCover"
-                        style="font-family: 'Sacramento', cursive; font-size: clamp(36px, 8vw, 64px);">
-                        Sururul & Rizki
-                    </h1>
-
-                    <div class="mt-3 opacity-0 animate-fadeCover">
-                        <p class="text-yellow-600 text-sm md:text-lg">
-                            Kepada Yth. Bapak/Ibu/Saudara/i
-                        </p>
-
-                        <p class="text-yellow-800 text-lg md:text-xl font-bold">
-                            Nama Tamu
-                        </p>
-
-                        <p class="text-yellow-600 text-xs md:text-sm mt-1">
-                            *Mohon maaf apabila ada kesalahan pada
-                            penulisan nama dan gelar
-                        </p>
+               
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-yellow-600 mt-3">HAPPY WEDDING</h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-yellow-600" style="font-family: 'Sacramento', cursive; font-size: 44px;">
+                                Wedding Of
+                            </h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center">
+                            <img src="{{ asset('/images/foto_cover.gif') }}" alt="foto cover" class="w-56 h-56 opacity-0 animate-fadeCover">
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <h1 class="text-yellow-600" style="font-family: 'Sacramento', cursive; font-size: 44px;">
+                                Sururul & Rizki
+                            </h1>
+                        </div>
+                        <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-yellow-600 text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-yellow-800 text-xl font-bold">Nama Tamu</p>
+                                </div>
+                                <div class="flex justify-center items-center text-center">
+                                    <p class="text-yellow-600 text-sm">
+                                        *Mohon maaf apabila ada kesalahan pada
+                                        penulisan nama dan gelar
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 mb-5 w-full flex justify-center items-center opacity-0 animate-fadeCover">
+                            <a href="#isi_undangan" id="btnBuka" class="bg-yellow-400 hover:bg-yellow-300 p-3 rounded-lg flex justify-center items-center">
+                                <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
+                                <span class="text-yellow-600">Buka Undangan</span>
+                            </a>
+                        </div>
                     </div>
-
-                    <div class="mt-5 opacity-0 animate-fadeCover">
-                        <a href="#isi_undangan" id="btnBuka"
-                        class="bg-yellow-400 hover:bg-yellow-300 p-3 rounded-lg flex items-center">
-                            <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
-                            <span class="text-yellow-600">Buka Undangan</span>
-                        </a>
-                    </div>
-
                 </div>
-
             </div>
-
         </div>
     </section>
     <section id="isi_undangan" class="hidden">
@@ -283,7 +273,7 @@
                             </h1>
                         </div>
                         <div class="opacity-0 fade-scroll flex justify-center items-center">
-                            <h1 class="text-yellow-600" style="font-family: 'Sacramento', cursive; font-size: 64px;">
+                            <h1 class="text-yellow-600" style="font-family: 'Sacramento', cursive; font-size: 44px;">
                                 Sururul & Rizki
                             </h1>
                         </div>
@@ -305,45 +295,44 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center mt-20">
+                        <div class="flex justify-center items-center">
                              <!-- countdown container -->
-                            
-                            <div class="block w-full p-3">
-                                <div id="countdown" class="mt-2 mb-5 flex justify-center text-2xl md:text-4xl font-bold"></div>
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="days">0</p>
-                                                <p>Days</p>
+                            <div>
+                                <div id="countdown" class="mt-2 flex justify-center items-center text-xl md:text-3xl font-bold"></div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="days">0</p>
+                                                    <p>Days</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="hours">0</p>
+                                                    <p>Jam</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="minutes">0</p>
+                                                    <p>Menit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="seconds">0</p>
+                                                    <p>Detik</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="hours">0</p>
-                                                <p>Jam</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="minutes">0</p>
-                                                <p>Menit</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="seconds">0</p>
-                                                <p>Detik</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-10">
@@ -357,99 +346,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="w-full flex justify-center">
-
-            <!-- SECTION -->
-            <div class="relative bg-cover1 w-full md:w-6/12 min-h-[100dvh] md:h-[100dvh] overflow-hidden flex flex-col">
-
-                <!-- BUBBLE -->
-                <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
-                    @for ($i = 0; $i < 25; $i++)
-                        <span style="--i:{{ rand(5,35) }};"></span>
-                    @endfor
-                </div>
-
-                <!-- DAUN -->
-                <div class="absolute -bottom-10 -left-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
-                    style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-
-                <div class="absolute -bottom-10 -right-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-100"
-                    style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-
-
-                <!-- CONTENT -->
-                <div class="relative z-10 flex flex-col justify-center flex-1 px-4 py-10">
-
-                    <!-- SAPAAN -->
-                    <div class="fade-scroll text-center mb-2">
-                        <h1 style="font-family: 'Sacramento', cursive; font-size: 28px;">
-                            Assalamualaikum Wr. Wb
-                        </h1>
-                    </div>
-
-                    <div class="fade-scroll text-center mb-6 text-xs md:text-sm px-4">
-                        <p>
-                            Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang
-                            Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami
-                        </p>
-                    </div>
-
-                    <!-- GRID MEMPELAI -->
-                    <div class="grid grid-cols-1 md:grid-cols-7 gap-6 items-center">
-
-                        <!-- PEREMPUAN -->
-                        <div class="md:col-span-3 flex flex-col items-center text-center">
-
-                            <div class="fade-scroll w-44 h-44 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
-                                <img src="{{ asset('/images/cewe korea.jpeg') }}"
-                                    class="w-full h-full object-cover object-center">
-                            </div>
-
-                            <div class="mt-5 fade-scroll">
-                                <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">
-                                    Sururul Hafizhah
-                                </h1>
-                                <p class="text-xs mt-1">
-                                    Putri Pertama dari Bapak Yusuf Ali dan Ibu Nurbaya
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <!-- & -->
-                        <div class="flex justify-center items-center">
-                            <h1 style="font-family: 'Sacramento', cursive;"
-                                class="text-4xl md:text-8xl fade-scroll">
-                                &
-                            </h1>
-                        </div>
-
-                        <!-- LAKI -->
-                        <div class="md:col-span-3 flex flex-col items-center text-center">
-
-                            <div class="fade-scroll">
-                                <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">
-                                    Rizki Ahmad Wahyu
-                                </h1>
-                                <p class="text-xs mt-1 mb-4">
-                                    Putra Pertama dari Bapak Amin Ali dan Ibu Fatimah
-                                </p>
-                            </div>
-
-                            <div class="fade-scroll w-44 h-44 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
-                                <img src="{{ asset('/images/cowo korea.jpeg') }}"
-                                    class="w-full h-full object-cover object-center">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
         <div class="w-full flex justify-center items-center">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
@@ -466,17 +362,96 @@
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
                 <div class="absolute -bottom-15 -right-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-[1]"
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-                <div class="flex justify-center items-center mt-24 text-center">
+
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="opacity-0 fade-scroll flex justify-center">
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 20px;">Assalamualaikum Wr. Wb</h1>
+                        </div>
+                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-1 mb-1">
+                            <p class="w-10/12 text-[9px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-7 md:mt-16 mt-0.5">
+                            <div class="col-span-3">
+                                <div class="flex justify-center">
+                                    <div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <img src="{{ asset('/images/cewe korea.jpeg') }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="mt-6">
+                                                <div class="opacity-0 fade-scroll flex justify-center">
+                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 24px;">Sururul Hafizhah</h1>
+                                                </div>
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-xs text-center">
+                                                    <p>Putri Pertama dari Bapak Yusuf Ali dan Ibu Nurbaya</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="flex justify-center items-center mb-5">
+                                <div class="opacity-0 fade-scroll flex justify-center items-center -mb-10 text-4xl md:text-8xl">
+                                    <h1 style="font-family: 'Sacramento', cursive;">&</h1>
+                                </div>
+                            </div>
+                            <div class="col-span-3">
+                                <div class="flex justify-center">
+                                    <div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="p-2">
+                                                <div class="opacity-0 fade-scroll flex justify-center">
+                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 24px;">Rizki Ahmad Wahyu</h1>
+                                                </div>
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-xs text-center mb-5">
+                                                    <p>Putra Pertama dari Bapak Amin Ali dan Ibu Fatimah</p>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <img src="{{ asset('/images/cowo korea.jpeg') }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
+                <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
+                    @for ($i = 0; $i < 25; $i++)
+                        <span style="--i:{{ rand(5,35) }};"></span>
+                    @endfor
+                </div>
+               
+
+                {{-- Daun Bottom --}}
+                {{-- Daun Bottom --}}
+                <div class="absolute -bottom-15 -left-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
+                    style="animation-name: angin-top; animation-delay: 0.5s;"></div>
+                <div class="absolute -bottom-15 -right-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-[1]"
+                    style="animation-name: angin-top; animation-delay: 0.5s;"></div>
+
+                <div class="flex justify-center items-center w-full h-screen text-center">
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
                         <div class="rounded-xl p-2 shadow-2xl fade-scroll">
-                            <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Akad Nikah</h1>
-                            <p class="text-md md:text-lg">Sabtu, 27 Mei 2026</p>
-                            <p class="text-md md:text-lg">Pukul 08.00 WIB - Selesai</p>
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 24px;">Akad Nikah</h1>
+                            <p class="text-xs md:text-lg">Sabtu, 27 Mei 2026</p>
+                            <p class="text-xs md:text-lg">Pukul 08.00 WIB - Selesai</p>
                             <p class="text-lg md:text-xl text-yellow-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-md md:text-lg">Kediaman Mempelai Wanita Cangkuang RT. 2 RW. 2 Desa Cangkuang Kec. Cangkuang, Kab. Bandung</p>
+                            <p class="text-xs md:text-lg">Kediaman Mempelai Wanita Cangkuang RT. 2 RW. 2 Desa Cangkuang Kec. Cangkuang, Kab. Bandung</p>
                             
                             <div class="flex justify-center items-center">
-                                <a href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Serbaguna+-6.479224,108.30153" class="mt-5 px-2 py-4 w-8/12 rounded-xl bg-yellow-400 flex justify-center items-center">
+                                <a href="" class="mt-1 px-1.5 py-2 w-8/12 rounded-xl bg-yellow-400 flex justify-center items-center">
                                     <i data-lucide="map-minus" class="w-5 h-5 mr-2"></i>
                                     <span class="text-yellow-600">Buka Google Lokasi</span>
                                 </a>
@@ -484,14 +459,14 @@
 
                         </div>
                         <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll">
-                            <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Resepsi</h1>
-                            <p class="text-md md:text-lg">Sabtu, 27 Mei 2026</p>
-                            <p class="text-md md:text-lg">Pukul 10.00 WIB - Selesai</p>
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 24px;">Resepsi</h1>
+                            <p class="text-xs md:text-lg">Sabtu, 27 Mei 2026</p>
+                            <p class="text-xs md:text-lg">Pukul 10.00 WIB - Selesai</p>
                             <p class="text-lg md:text-xl text-yellow-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-md md:text-lg">Kediaman Mempelai Wanita Cangkuang RT. 2 RW. 2 Desa Cangkuang Kec. Cangkuang, Kab. Bandung</p>
+                            <p class="text-xs md:text-lg">Kediaman Mempelai Wanita Cangkuang RT. 2 RW. 2 Desa Cangkuang Kec. Cangkuang, Kab. Bandung</p>
                             
                             <div class="flex justify-center items-center">
-                                <a href="" class="mt-5 px-2 py-4 w-8/12 rounded-xl bg-yellow-400 flex justify-center items-center">
+                                <a href="" class="mt-1 px-1.5 py-2 w-8/12 rounded-xl bg-yellow-400 flex justify-center items-center">
                                     <i data-lucide="map-minus" class="w-5 h-5 mr-2"></i>
                                     <span class="text-yellow-600">Buka Google Lokasi</span>
                                 </a>
@@ -503,103 +478,76 @@
             </div>
         </div> 
         <div class="w-full flex justify-center items-center">
-
-            <!-- SECTION -->
-            <div class="relative bg-cover1 w-full md:w-6/12 h-[100dvh] overflow-hidden flex flex-col">
-
-                <!-- BUBBLE -->
+            <div class="relative bg-cover1 w-full md:w-6/12 min-h-screen flex flex-col overflow-hidden z-10">
                 <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
                     @for ($i = 0; $i < 25; $i++)
                         <span style="--i:{{ rand(5,35) }};"></span>
                     @endfor
                 </div>
+               
 
-                <!-- DAUN BAWAH -->
-                <div class="absolute -bottom-10 -left-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
+                {{-- Daun Bottom --}}
+                {{-- Daun Bottom --}}
+                <div class="absolute -bottom-15 -left-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 rotate-180"
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
-
-                <div class="absolute -bottom-10 -right-10 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-100"
+                <div class="absolute -bottom-15 -right-15 bunga w-72 h-72 md:w-96 md:h-96 opacity-70 -scale-y-[1]"
                     style="animation-name: angin-top; animation-delay: 0.5s;"></div>
+                <div class="w-full min-h-screen flex justify-center pt-10 pb-10">
+                    <div class="overflow-y-auto max-h-screen px-4 min-h-0">
+                        <h1 style="font-family: 'Sacramento', cursive; font-size: 24px;" class="text-center">Our Story</h1>
 
+                        <div class="relative border-l-4 border-yellow-500 pl-6 space-y-4 ml-2">
 
-                <!-- CONTENT WRAPPER -->
-                <div class="relative z-10 flex flex-col h-full px-6 py-10">
-
-                    <!-- JUDUL (TIDAK IKUT SCROLL) -->
-                    <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;"
-                        class="text-center mb-6 shrink-0">
-                        Our Story
-                    </h1>
-
-                    <!-- AREA SCROLL -->
-                    <div class="flex-1 overflow-y-auto pr-2">
-
-                        <div class="relative border-l-4 border-yellow-500 pl-8 space-y-8">
-
-                            <!-- ITEM -->
-                            <div class="flex">
-                                <div class="w-12 h-12 rounded-full bg-yellow-400 flex justify-center items-center text-white mr-3 shrink-0">
-                                    <i data-lucide="heart"></i>
-                                </div>
-                                <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 shadow-xl text-sm">
-                                    <p class="font-semibold">2021</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ad.</p>
+                            <!-- Item -->
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex text-yellow-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>2021</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam mollitia corrupti alias quos. Ullam, officiis voluptatum aut accusamus explicabo velit! At doloremque delectus ducimus. Possimus ipsa molestias doloribus repudiandae enim quaerat facilis illo quae quia unde voluptas distinctio et tempore delectus, consequuntur fuga, nostrum debitis eligendi ad praesentium odit. Incidunt fugiat pariatur ullam ipsam facilis quod adipisci? Numquam enim dignissimos magnam incidunt, modi reprehenderit minima beatae sunt consectetur voluptate! Maiores eius delectus aliquid nostrum amet a voluptates est sit reiciendis mollitia consectetur odio reprehenderit rerum cupiditate sed temporibus, repellendus tempore! Amet ullam fugit tempore eius nisi harum obcaecati, culpa ad!</p>
+                                    </div>
+                                    
                                 </div>
                             </div>
 
-                            <!-- ITEM -->
-                            <div class="flex">
-                                <div class="w-12 h-12 rounded-full bg-yellow-400 flex justify-center items-center text-white mr-3 shrink-0">
-                                    <i data-lucide="heart"></i>
-                                </div>
-                                <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 shadow-xl text-sm">
-                                    <p class="font-semibold">2022</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aspernatur dignissimos.</p>
-                                </div>
-                            </div>
-
-                            <!-- ITEM PANJANG (TEST SCROLL) -->
-                            <div class="flex">
-                                <div class="w-12 h-12 rounded-full bg-yellow-400 flex justify-center items-center text-white mr-3 shrink-0">
-                                    <i data-lucide="heart"></i>
-                                </div>
-                                <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 shadow-xl text-sm">
-                                    <p class="font-semibold">2024</p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    </p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex text-yellow-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>2022</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos corporis sit labore odit? Maiores cum sed quisquam quo at necessitatibus! Impedit quas optio consectetur reprehenderit et, culpa odit in aspernatur dolorum enim ut iure esse assumenda porro ducimus vel, unde quis. Illum natus eos fuga minus, cum odit nesciunt adipisci ratione fugiat laudantium? Fugiat accusamus dolores alias ipsam nisi numquam illo eos temporibus facilis, illum, eaque sed suscipit aliquid possimus maiores in placeat! Rerum odio quisquam laudantium porro tempora esse assumenda voluptatem ex et quibusdam adipisci alias asperiores nesciunt, sed corporis impedit provident minus distinctio officiis. Rerum eligendi eos iure.</p>
+                                    </div>
+                                    
                                 </div>
                             </div>
 
-                            <!-- ITEM -->
-                            <div class="flex">
-                                <div class="w-12 h-12 rounded-full bg-yellow-400 flex justify-center items-center text-white mr-3 shrink-0">
-                                    <i data-lucide="heart"></i>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex text-yellow-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>2024</p>
+                                        <p>kita berdua memutuskan untuk tunangan dan memantapkan hati</p>
+                                    </div>
+                                    
                                 </div>
-                                <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 shadow-xl text-sm">
-                                    <p class="font-semibold">2025</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sequi, libero nemo at facilis quibusdam laborum voluptatibus suscipit blanditiis, tempore dicta esse. Cumque in delectus molestias nam laborum animi incidunt nobis velit sit rem vitae, recusandae natus aliquam voluptate nisi alias suscipit laudantium maiores quasi! Eos corrupti molestias deleniti sit quaerat est qui sunt saepe, corporis tempore dolore voluptates ipsa quas aliquid, alias ut sint illo dolor nostrum. Laboriosam reiciendis sunt molestiae necessitatibus, natus est omnis recusandae voluptatem! Ipsam a optio ut architecto eos impedit iste mollitia nobis, ab repellat voluptate numquam enim ex hic laudantium necessitatibus culpa praesentium consectetur, debitis voluptates explicabo dolores, incidunt voluptatem ullam! Voluptates voluptatum similique suscipit recusandae culpa, ipsa harum fuga cupiditate nesciunt dolorem natus voluptas modi, molestias aliquid consectetur soluta assumenda dignissimos nostrum voluptatem ipsam sint provident at? Saepe dignissimos, odit corrupti culpa quibusdam odio debitis fuga, sequi cupiditate, rem aperiam. Est ex corporis similique aliquid placeat, quo earum in eveniet nemo eligendi! Est dignissimos iure molestias iusto, in veritatis architecto ullam! Rem natus voluptate labore dolorum adipisci culpa obcaecati dolorem! Quam, consectetur earum? Asperiores consectetur obcaecati quia, enim, quo rerum est fugiat sed repellat nam nostrum magni totam ut. Mollitia, in. Iure, minima eos eveniet dicta placeat molestiae odit, cupiditate error reiciendis perferendis obcaecati eum. Temporibus itaque nulla architecto, nemo porro illum dicta delectus sed at quisquam eligendi corrupti nisi quasi labore commodi repellat optio quia incidunt iure facere neque deserunt impedit dolores natus. Quasi quidem, magnam corrupti aperiam voluptates reprehenderit neque ipsa quae mollitia, voluptatum temporibus voluptate ducimus delectus odit maiores quisquam voluptatibus! Animi maiores dolores accusamus odio nostrum porro libero impedit culpa neque repellat. Ipsum consequatur ducimus, quae temporibus doloribus mollitia exercitationem odit deserunt sunt repellat tempore? Dolore molestiae quidem modi ratione fugiat iure impedit omnis, optio enim voluptates dicta nobis error temporibus. Labore eos distinctio similique odit explicabo possimus magni impedit nisi culpa inventore fugiat itaque modi ducimus natus dolorum autem voluptatem doloremque quis vero, alias excepturi incidunt error nulla! Asperiores natus qui sed. Esse eveniet vero, sit tenetur optio numquam soluta quaerat repudiandae libero iste? Quia beatae, sequi soluta iusto eum vitae neque, nisi praesentium at eligendi consectetur deleniti. Distinctio id quasi qui voluptate alias ex? Adipisci nihil autem voluptate perspiciatis delectus tempora enim magni fugit. Quas illum laudantium praesentium totam facere quaerat expedita, possimus culpa optio, ducimus eum nesciunt neque molestias blanditiis ab porro voluptatem ea fugit assumenda?</p>
+                            </div>
+
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex text-yellow-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>2025</p>
+                                        <p>kita disatukan dan seluruh alam menjadi saksinya</p>
+                                    </div>
+                                    
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
-        </div>
+        </div> 
         <div class="flex justify-center items-center mt-5 mb-5 ">
             <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Our Gallery</h1>
         </div>
