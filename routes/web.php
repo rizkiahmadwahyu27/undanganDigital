@@ -36,6 +36,37 @@ Route::get('/undangan/3D/undangan1', function () {
     ]);
 });
 
+
+Route::get('/manifest/{slug}', function ($slug) {
+
+    $undangan = \App\Models\OrderUndangan::where('slug', $slug)->firstOrFail();
+
+    return response()->json([
+        "name" => "Undangan Digital " . $undangan->nama_mempelai_pria . " & " . $undangan->nama_mempelai_wanita,
+        "short_name" => $undangan->nama_mempelai_pria,
+        "start_url" => "/undangan/" . $slug,
+        "display" => "standalone",
+        "background_color" => "#ffffff",
+        "theme_color" => "#ffffff",
+        "orientation" => "portrait",
+        "icons" => [
+            [
+                "src" => "/icon-192.png",
+                "sizes" => "192x192",
+                "type" => "image/png"
+            ],
+            [
+                "src" => "/icon-512.png",
+                "sizes" => "512x512",
+                "type" => "image/png"
+            ]
+        ]
+    ], 200, [
+        'Content-Type' => 'application/manifest+json'
+    ]);
+
+});
+
 Route::get('/contoh-undangan', [Undangan2DController::class, 'contoh_undangan'])->name('contoh_undangan');
 
 Route::get('/undangan/digital/2d/{slug}', [Undangan2DController::class, 'template_floral'])->name('template_floral');

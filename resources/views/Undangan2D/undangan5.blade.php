@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Undangan">
 
     <title>{{ config('app.name', 'Undangan Nikah') }}</title>
-
+    <link rel="manifest" href="/manifest/{{ $undangan->slug }}">
+    <link rel="apple-touch-icon" href="/icon-192.png">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -19,6 +25,15 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .fullscreen {
+            height: 100vh;
+            height: 100dvh;
+        }
         .lock-scroll {
         overflow: hidden;
         height: 100vh;
@@ -229,7 +244,7 @@
     @endphp
 <body class="overflow-x-hidden lock-scroll">
     <section id="cover">
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center fullscreen">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                 <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
                     @for ($i = 0; $i < 25; $i++)
@@ -860,7 +875,13 @@
         </div>
     </div>
     
-<script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+
+    <script>
         const btnBuka = document.getElementById('btnBuka');
         const isiUndangan = document.getElementById('isi_undangan');
 
@@ -1040,7 +1061,7 @@
 @else
 <body class="overflow-x-hidden lock-scroll">
     <section id="cover">
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center fullscreen">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                 <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
                     @for ($i = 0; $i < 25; $i++)
@@ -1628,7 +1649,11 @@
         </div>
     </div>
     
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
     
     <script>
         const btnBuka = document.getElementById('btnBuka');
