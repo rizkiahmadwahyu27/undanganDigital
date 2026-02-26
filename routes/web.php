@@ -36,15 +36,14 @@ Route::get('/undangan/3D/undangan1', function () {
     ]);
 });
 
-
 Route::get('/manifest/{slug}', function ($slug) {
 
     $undangan = \App\Models\OrderUndangan::where('slug', $slug)->firstOrFail();
 
     return response()->json([
-        "name" => "Undangan Digital " . $undangan->nama_mempelai_pria . " & " . $undangan->nama_mempelai_wanita,
+       "name" => "Undangan Digital " . $undangan->nama_mempelai_pria . " & " . $undangan->nama_mempelai_wanita,
         "short_name" => $undangan->nama_mempelai_pria,
-        "start_url" => "/undangan/" . $slug,
+        "start_url" => "/undangan/" . $slug . "?pwa=true",
         "display" => "standalone",
         "background_color" => "#ffffff",
         "theme_color" => "#ffffff",
@@ -62,7 +61,8 @@ Route::get('/manifest/{slug}', function ($slug) {
             ]
         ]
     ], 200, [
-        'Content-Type' => 'application/manifest+json'
+        'Content-Type' => 'application/manifest+json',
+        'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0'
     ]);
 
 });
