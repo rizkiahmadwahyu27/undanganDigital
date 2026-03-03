@@ -278,13 +278,13 @@
                             <h1 class="text-gray-600 mt-4">HAPPY WEDDING</h1>
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
-                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 Wedding Of
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center">
                             <div class="w-full flex justify-center items-center">
-                                <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
+                                <div class="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden 
                                     ring-8 ring-white/40 shadow-2xl">
                                     <img src="{{ asset('storage/'.$images->foto_cover) }}"
                                         class="w-full h-full object-cover object-center">
@@ -292,7 +292,7 @@
                             </div>    
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
-                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 {{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}
                             </h1>
                         </div>
@@ -364,7 +364,7 @@
                             </h1>
                         </div>
                         <div class="opacity-0 fade-scroll flex justify-center items-center">
-                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 {{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}  
                             </h1>
                         </div>
@@ -373,42 +373,44 @@
                                 {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
                             </h1>
                         </div>
-                        <div class="flex justify-center items-center mt-20">
+                        <div class="flex justify-center items-center">
                              <!-- countdown container -->
-                            <div id="countdown" class="mt-6"></div>
-                            <div class="grid grid-cols-4 gap-4">
-                                <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                    <div class="flex justify-center items-center">
-                                        <div>
-                                            <p id="days">0</p>
-                                            <p>Days</p>
+                            <div>
+                                <div id="countdown" class="mt-2 fade-scroll flex justify-center items-center text-xl md:text-3xl font-bold"></div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="days">0</p>
+                                                    <p>Days</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="hours">0</p>
+                                                    <p>Jam</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="minutes">0</p>
+                                                    <p>Menit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                            <div class="flex justify-center items-center">
+                                                <div>
+                                                    <p id="seconds">0</p>
+                                                    <p>Detik</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                    <div class="flex justify-center items-center">
-                                        <div>
-                                            <p id="hours">0</p>
-                                            <p>Jam</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                    <div class="flex justify-center items-center">
-                                        <div>
-                                            <p id="minutes">0</p>
-                                            <p>Menit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="opacity-0 fade-scroll bg-blue-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                    <div class="flex justify-center items-center">
-                                        <div>
-                                            <p id="seconds">0</p>
-                                            <p>Detik</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-10">
@@ -464,59 +466,65 @@
                     "
                     style="animation-name: angin-bottom;"
                 ></div>
-                <div class="opacity-0 fade-scroll flex justify-center mt-5">
-                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 28px;">Assalamualaikum Wr. Wb</h1>
-                </div>
-                 <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-2 mb-2">
-                    <p class="w-10/12 text-xs md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-5">
-                    <div class="col-span-2">
-                        <div class="flex justify-center">
-                            <div>
-                                <div class="flex justify-center items-center">
-                                    <div class="fade-scroll w-36 md:w-64 h-46 md:h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
-                                        <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-36 md:w-64 h-46 md:h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
-                                    </div>
-                                </div>
-                                <div class="flex justify-center items-center">
-                                    <div class="mt-6">
-                                        <div class="opacity-0 fade-scroll flex justify-center">
-                                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">{{$undangan->nama_mempelai_wanita}}</h1>
-                                        </div>
-                                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-1">
-                                            <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="flex justify-center items-center w-full h-screen">
+                    <div>
+                         <div class="opacity-0 fade-scroll flex justify-center">
+                            <img src="{{asset('/images/asset_undangan3.png')}}" alt="" class="w-24">
                         </div>
-                        
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="opacity-0 fade-scroll flex justify-center items-center -mb-10">
-                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 74px;">&</h1>
+                        <div class="opacity-0 fade-scroll flex justify-center -mt-5">
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 18px;">Assalamualaikum Wr. Wb</h1>
                         </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex justify-center">
-                            <div>
-                                <div class="flex justify-center items-center">
-                                    <div class="p-2">
-                                        <div class="opacity-0 fade-scroll flex justify-center">
-                                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">{{$undangan->nama_mempelai_pria}}</h1>
+                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-2 mb-4">
+                            <p class="w-10/12 text-[8px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-7">
+                            <div class="col-span-3">
+                                <div class="flex justify-center">
+                                    <div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-b-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
+                                            </div>
                                         </div>
-                                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-1 mb-5">
-                                            <p>Putra {{$undangan->anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
-                                        </div>  
-                                    </div>
-                                </div>
-                                <div class="flex justify-center items-center">
-                                    <div class="fade-scroll w-36 md:w-64 h-46 md:h-80 rounded-b-full rounded-t-full bg-green-500 opacity-65 p-0.5">
-                                        <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-36 md:w-64 h-46 md:h-80 rounded-b-full rounded-t-full" alt="mempelai perempuan">
+                                        <div class="flex justify-center items-center">
+                                            <div class="mt-6">
+                                                <div class="opacity-0 fade-scroll flex justify-center">
+                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 20px;">{{$undangan->nama_mempelai_wanita}}</h1>
+                                                </div>
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] text-center">
+                                                    <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 
+                            </div>
+                            <div class="flex justify-center items-center mb-5">
+                                <div class="opacity-0 fade-scroll flex justify-center items-center -mb-10 text-4xl md:text-8xl">
+                                    <h1 style="font-family: 'Sacramento', cursive;">&</h1>
+                                </div>
+                            </div>
+                            <div class="col-span-3">
+                                <div class="flex justify-center">
+                                    <div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="p-2">
+                                                <div class="opacity-0 fade-scroll flex justify-center">
+                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 20px;">{{$undangan->nama_mempelai_pria}}</h1>
+                                                </div>
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] text-center mb-5">
+                                                    <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -555,34 +563,34 @@
                     "
                     style="animation-name: angin-bottom;"
                 ></div>
-                <div class="flex justify-center items-center mt-24 text-center">
+                <div class="flex justify-center items-center w-full h-screen text-center">
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
                         <div class="rounded-xl p-2 shadow-2xl fade-scroll">
-                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Akad Nikah</h1>
-                            <p class="text-md md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
-                            <p class="text-md md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
+                            <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
                             <p class="text-lg md:text-xl text-blue-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-md md:text-lg">{{$undangan->alamat_akad}}</p>
+                            <p class="text-[9px] md:text-lg">{{$undangan->alamat_akad}}</p>
                             
                             <div class="flex justify-center items-center">
-                                <a href="{{$undangan->maps_akad}}" class="mt-5 px-2 py-4 w-8/12 rounded-xl bg-blue-400 flex justify-center items-center">
+                                <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-blue-400 flex justify-center items-center">
                                     <i data-lucide="map-minus" class="w-5 h-5 mr-2"></i>
-                                    <span class="text-gray-600">Buka Google Lokasi</span>
+                                    <span class="text-blue-600">Buka Google Lokasi</span>
                                 </a>
                             </div>
 
                         </div>
                         <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll">
-                            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Resepsi</h1>
-                            <p class="text-md md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
-                            <p class="text-md md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
+                            <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Resepsi</h1>
+                            <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
                             <p class="text-lg md:text-xl text-blue-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-md md:text-lg">{{$undangan->alamat_resepsi}}</p>
+                            <p class="text-[9px] md:text-lg">{{$undangan->alamat_resepsi}}</p>
                             
                             <div class="flex justify-center items-center">
-                                <a href="{{$undangan->maps_resepsi}}" class="mt-5 px-2 py-4 w-8/12 rounded-xl bg-blue-400 flex justify-center items-center">
+                                <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-blue-400 flex justify-center items-center">
                                     <i data-lucide="map-minus" class="w-5 h-5 mr-2"></i>
-                                    <span class="text-gray-600">Buka Google Lokasi</span>
+                                    <span class="text-blue-600">Buka Google Lokasi</span>
                                 </a>
                             </div>
 
@@ -623,82 +631,84 @@
                     "
                     style="animation-name: angin-bottom;"
                 ></div>
-                <div class="max-w-4xl mx-auto py-20">
-                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;" class="text-center">Our Story</h1>
+                <div class="flex justify-center items-center w-full h-screen pt-10 pb-10">
+                    <div class="overflow-y-auto max-h-screen px-4 min-h-0">
+                        <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;" class="text-center">Our Story</h1>
 
-                    <div class="relative border-l-4 border-blue-500 pl-8 space-y-16 ml-2">
+                        <div class="relative border-l-4 border-blue-500 pl-6 space-y-4 ml-2">
 
-                        <!-- Item -->
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_1}}</p>
+                            <!-- Item -->
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_1}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
 
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_2}}</p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_2}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
 
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_3}}</p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_3}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
 
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_4}}</p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_4}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_5)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_5}}</p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_5)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_5}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
-                        <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                            <div class="flex justify-start mr-2">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex text-gray-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
-                                    <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_6)->locale('id')->translatedFormat('Y') }}</p>
-                                    <p>{{$stories->story_6}}</p>
+                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
+                                <div class="flex justify-start mr-2">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex text-blue-100 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_6)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p>{{$stories->story_6}}</p>
+                                    </div>
+                                    
                                 </div>
-                                
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div> 
         <div class="flex justify-center items-center mt-5 mb-5 ">
-            <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Our Gallery</h1>
+            <h1 style="font-family: 'Great Vibes', cursive; font-size: 44px;">Our Gallery</h1>
         </div>
         <div class="w-full flex justify-center items-center bg-white text-center mt-3">  
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-8/12 gap-3">
@@ -714,7 +724,7 @@
         <div class="flex justify-center items-center ">
             <div class="bg-white w-full md:w-8/12">
                 <div class="flex justify-center items-center"><i data-lucide="gift" class="w-10 h-10 mb-2 mt-10"></i></div>
-                <div class="flex justify-center items-center"><h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Wedding Gift</h1></div>
+                <div class="flex justify-center items-center"><h1 style="font-family: 'Great Vibes', cursive; font-size: 44px;">Wedding Gift</h1></div>
             </div>
         </div>
         <div class="w-full flex justify-center items-center">  
@@ -779,7 +789,7 @@
         <div class="flex justify-center items-center">
             <div class="w-full md:w-8/12 bg-white">
                 <div class="flex justify-center items-center mt-5 fade-scroll">
-                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 34px;">Kirim Pesan</h1>
+                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 44px;">Kirim Pesan</h1>
                 </div>
                 <div class="w-full flex justify-center items-center fade-scroll">
                     <form action="{{route('kirim_pesan')}}" method="post">
@@ -866,7 +876,7 @@
                         </span>
                         <p class="mt-2" style="font-family: 'Great Vibes', cursive; font-size: 28px;">Wassalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold" style="font-family: 'Great Vibes', cursive; font-size: 34px;">{{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}</p>
+                        <p class="font-semibold" style="font-family: 'Great Vibes', cursive; font-size: 44px;">{{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}</p>
                     </div>
 
                 </div>
@@ -1123,7 +1133,7 @@
 <body class="overflow-x-hidden lock-scroll">
     <section id="cover">
         <div class="w-full flex justify-center">
-            <div class="relative bg-cover1 w-full md:w-8/12 h-screen overflow-hidden z-10">
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                 <div class="bubble-wrapper absolute inset-0 z-0 pointer-events-none">
                     @for ($i = 0; $i < 25; $i++)
                         <span style="--i:{{ rand(5,35) }};"></span>
@@ -1161,15 +1171,15 @@
                             <h1 class="text-gray-600 mt-4">HAPPY WEDDING</h1>
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
-                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 Wedding Of
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center">
-                            <img src="{{ asset('/images/foto_cover.gif') }}" alt="foto cover" class="w-72 h-72 opacity-0 animate-fadeCover">
+                            <img src="{{ asset('/images/foto_cover.gif') }}" alt="foto cover" class="w-44 h-44 opacity-0 animate-fadeCover">
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
-                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 64px;">
+                            <h1 class="text-gray-600" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 Sururul & Rizki
                             </h1>
                         </div>

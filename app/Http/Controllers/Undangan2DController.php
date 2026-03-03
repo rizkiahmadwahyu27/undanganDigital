@@ -10,6 +10,7 @@ use App\Models\Story;
 use App\Models\Undangan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class Undangan2DController extends Controller
 {
@@ -68,11 +69,11 @@ class Undangan2DController extends Controller
 
         // 2. LOGIKA KODE PESAN (Disederhanakan)
         $kode_pesan = OrderUndangan::count() + 1;
-
+        $slug = Str::slug($request->nama_mempelai_pria . ' ' . $request->nama_mempelai_wanita);
         // 3. SIMPAN DATA UNDANGAN
         OrderUndangan::create([
             'kode_pesan'          => $kode_pesan,
-            'slug'                => $request->slug,
+            'slug'                => $slug,
             'template'            => $request->template,
             'nama_mempelai_wanita'=> $request->nama_mempelai_wanita,
             'nama_mempelai_pria'  => $request->nama_mempelai_pria,
@@ -100,7 +101,7 @@ class Undangan2DController extends Controller
         // 4. SIMPAN DATA IMAGE
         Image::create([
             'kode_pesan'           => $kode_pesan,
-            'slug'                 => $request->slug,
+            'slug'                 => $slug,
             'foto_cover'           => $fotoCoverPath,
             // Gunakan json_encode agar array gallery bisa masuk ke database string/text
             'gallery'              => $galleryPaths, 
@@ -112,7 +113,7 @@ class Undangan2DController extends Controller
         //stroi
         Story::create([
             'kode_pesan'        => $kode_pesan,
-            'slug'              => $request->slug,
+            'slug'              => $slug,
             'tgl_stori_1'              => $request->tgl_stori_1,
             'tgl_stori_2'              => $request->tgl_stori_2,
             'tgl_stori_3'              => $request->tgl_stori_3,

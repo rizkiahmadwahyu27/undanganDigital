@@ -18,6 +18,8 @@ Route::get('/register', [RegisterController::class, 'showForm'])->name('register
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// route akses undangan 
 Route::get('/undangan/2D/undangan1', [Undangan2DController::class, 'undangan1'])->name('undangan1');
 Route::get('/undangan/2D/undangan2', [Undangan2DController::class, 'undangan2'])->name('undangan2');
 Route::get('/undangan/2D/undangan3', [Undangan2DController::class, 'undangan3'])->name('undangan3');

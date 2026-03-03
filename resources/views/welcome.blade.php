@@ -178,9 +178,9 @@
                     <h3 class="text-xl font-semibold">Rp. 45.000</h3>
                     <div class="grid grid-cols-2 gap-2 mt-2">
                         <div class="flex justify-center items-center">
-                            <button class="flex justify-between items-center bg-sky-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition">
+                            <a href="{{route('undangan1')}}" class="flex justify-between items-center bg-sky-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition">
                                 <i data-lucide="eye" class="w-5 h-5 mr-2"></i>Preview
-                            </button>
+                            </a>
                         </div>
                         <div class="flex justify-center items-center">
                             <button class="flex justify-between items-center bg-sky-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition">

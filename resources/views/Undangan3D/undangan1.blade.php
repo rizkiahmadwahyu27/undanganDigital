@@ -189,6 +189,7 @@
 
 </head>
 <body class="overflow-x-hidden lock-scroll">
+    
     <section id="cover">
         <div class="w-full flex justify-center">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">

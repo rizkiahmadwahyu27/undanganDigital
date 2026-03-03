@@ -356,7 +356,7 @@
                         <div class="flex justify-center items-center">
                              <!-- countdown container -->
                             <div>
-                                <div id="countdown" class="mt-2 flex justify-center items-center text-xl md:text-3xl font-bold"></div>
+                                <div id="countdown" class="mt-2 fade-scroll flex justify-center items-center text-xl md:text-3xl font-bold"></div>
                                     <div class="grid grid-cols-4 gap-4">
                                         <div class="opacity-0 fade-scroll bg-yellow-700 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                             <div class="flex justify-center items-center">
