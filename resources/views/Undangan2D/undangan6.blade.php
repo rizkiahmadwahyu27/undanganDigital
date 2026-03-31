@@ -251,7 +251,10 @@
         $anak_ke = $urutan[$undangan->pria_anak_ke] ?? '-';
 
     @endphp
-
+    @php
+        $nama_depan_pria = explode(' ', $undangan->nama_mempelai_pria)[0];
+       $nama_depan_wanita = explode(' ', $undangan->nama_mempelai_wanita)[0];
+    @endphp
     <section id="cover">
         <div class="w-full flex justify-center">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
@@ -293,7 +296,7 @@
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover">
                             <h1 class="text-amber-300" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
-                                {{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}
+                                 {{$nama_depan_wanita}} & {{$nama_depan_pria}}
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center opacity-0 animate-fadeCover -mt-1">
@@ -350,7 +353,7 @@
                         </div>
                         <div class="opacity-0 fade-scroll flex justify-center items-center">
                             <h1 class="text-amber-300" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
-                                {{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}  
+                                 {{$nama_depan_wanita}} & {{$nama_depan_pria}}
                             </h1>
                         </div>
                         <div class="opacity-0 fade-scroll flex justify-center items-center">
@@ -808,16 +811,16 @@
             <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Our Gallery</h1>
         </div>
         <div class="w-full flex justify-center items-center bg-white text-center mt-3">  
-            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 w-full md:w-8/12 gap-3">
                 @foreach ($images->gallery as $image)
                     <div class="w-full fade-scroll flex justify-center items-center h-64 rounded-lg overflow-hidden">
-                        <img src="{{ asset('storage/'.$image) }}"
-                            class="max-w-full max-h-full object-contain object-center"
+                        <img 
+                            src="{{ asset('storage/'.$image) }}"
+                            class="max-w-full max-h-full object-contain object-center cursor-pointer hover:scale-105 transition"
+                            onclick="bukaModal(this.src)"
                             alt="foto-gallery">
-                    </div>
-                    
+                    </div>    
                 @endforeach
-                
             </div>
         </div>
         <div class="flex justify-center items-center text-amber-400">
@@ -975,7 +978,7 @@
                         </span>
                         <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;">{{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}</p>
+                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$nama_depan_wanita}} & {{$nama_depan_pria}}</p>
                     </div>
 
                 </div>
@@ -1012,7 +1015,7 @@
 
                 <!-- Button WhatsApp -->
                 <div class="mt-6">
-                    <a href="https://wa.me/628XXXXXXXXXX" target="_blank"
+                    <a href="https://wa.me/62895610143232" target="_blank"
                     class="inline-block bg-green-500 hover:bg-green-600 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
                         Order via WhatsApp
                     </a>
@@ -1025,7 +1028,11 @@
     <audio id="bgMusic" loop>
         <source src="{{ asset('storage/soundtrack/'.$images->soundtrack) }}" type="audio/mpeg">
     </audio>
-
+    <div id="imageModal" class="fixed inset-0 bg-black/90 hidden justify-center items-center z-50">
+        <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" onclick="tutupModal()">&times;</span>
+        
+        <img id="modalImage" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg">
+    </div>
     <!-- Control Music -->
     <div class="fixed bottom-2 opacity-40 left-1/2 -translate-x-1/2 z-50">
         <button id="musicBtn"
@@ -1128,7 +1135,20 @@
             }
 
         });
-        </script>
+    </script>
+
+    <script>
+        function bukaModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+
+        function tutupModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('imageModal').classList.remove('flex');
+        }
+    </script>
 
     <script>
         function copy_no_rek1(){
