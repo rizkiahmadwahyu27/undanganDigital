@@ -17,7 +17,11 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('template');
             $table->string('nama_mempelai_wanita');
+            $table->string('fb_mempelai_wanita');
+            $table->string('ig_mempelai_wanita');
             $table->string('nama_mempelai_pria');
+            $table->string('fb_mempelai_pria');
+            $table->string('ig_mempelai_pria');
             $table->string('nama_ayah_pria');
             $table->string('nama_ibu_pria');
             $table->string('nama_ayah_wanita');

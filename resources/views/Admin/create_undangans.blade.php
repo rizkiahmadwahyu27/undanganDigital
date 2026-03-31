@@ -45,11 +45,28 @@
                             <td class="px-4 py-3 border-b">{{$undangan->alamat_akad}}</td>
                             <td class="px-4 py-3 border-b">{{$undangan->alamat_resepsi}}</td>
                             <td class="px-4 py-3 border-b">
-                                <div class="flex justify-center items-center">
-                                    <button class="px-3 py-1 bg-blue-500 text-white rounded mr-2">Edit</button>
-                                    <a href="{{route('admin.undangan_digital', $undangan->slug)}}" target="_blank">
-                                        <i data-lucide="send"></i>
-                                    </a>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div>
+                                        <a href="{{route('admin.edit_undangan', $undangan->id)}}" target="_blank">
+                                            <i data-lucide="edit"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <form action="{{ route('admin.delete_undangan', $undangan->id) }}" method="POST" onsubmit="return confirm('Yakin mau hapus?')">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit">
+                                                <i data-lucide="delete"></i>
+                                            </button>
+                                        </form>
+                                       
+                                    </div>
+                                    <div>
+                                        <a href="{{route('admin.undangan_digital', $undangan->slug)}}" target="_blank">
+                                            <i data-lucide="send"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -58,6 +75,7 @@
             </table>
         </div>
     </div>
+    
     <!-- BACKDROP -->
     <div id="modalCreateUndangan" 
         class="fixed inset-0 bg-black/70 hidden z-50 items-center justify-center p-4">
@@ -84,11 +102,27 @@
                         <label class="font-semibold">Nama Mempelai Pria</label>
                         <input type="text" name="nama_mempelai_pria" class="w-full border rounded p-2" required>
                     </div>
+                    <div class="mb-2">
+                        <label class="font-semibold">FB Mempelai Pria</label>
+                        <input type="text" name="fb_mempelai_pria" class="w-full border rounded p-2" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="font-semibold">IG Mempelai Pria</label>
+                        <input type="text" name="ig_mempelai_pria" class="w-full border rounded p-2" required>
+                    </div>
 
                     {{-- NAMA WANITA --}}
                     <div class="mb-2">
                         <label class="font-semibold">Nama Mempelai Wanita</label>
                         <input type="text" name="nama_mempelai_wanita" class="w-full border rounded p-2" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="font-semibold">FB Mempelai Wanita</label>
+                        <input type="text" name="fb_mempelai_wanita" class="w-full border rounded p-2" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="font-semibold">IG Mempelai Wanita</label>
+                        <input type="text" name="ig_mempelai_wanita" class="w-full border rounded p-2" required>
                     </div>
 
                     {{-- TANGGAL ACARA --}}

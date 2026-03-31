@@ -474,7 +474,7 @@
                         <div class="opacity-0 fade-scroll flex justify-center -mt-5">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 18px;">Assalamualaikum Wr. Wb</h1>
                         </div>
-                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-2 mb-4">
+                        <div class="opacity-0 fade-scroll flex justify-center items-center text-center mt-2 mb-2">
                             <p class="w-10/12 text-[8px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-7">
@@ -482,17 +482,31 @@
                                 <div class="flex justify-center">
                                     <div>
                                         <div class="flex justify-center items-center">
-                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-b-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                            <div class="fade-scroll w-32 h-32 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                 <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                             </div>
                                         </div>
                                         <div class="flex justify-center items-center">
                                             <div class="mt-6">
                                                 <div class="opacity-0 fade-scroll flex justify-center">
-                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 20px;">{{$undangan->nama_mempelai_wanita}}</h1>
+                                                    <h1 style="font-family: 'Sacramento', cursive;" class="text-lg md:text-4xl">{{$undangan->nama_mempelai_wanita}}</h1>
                                                 </div>
-                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] text-center">
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] md:text-[12px] text-center">
                                                     <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
+                                                </div>
+                                                <div>
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="fade-scroll w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl">
+                                                            <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
+                                                                <img src="{{asset('/images/facebook.png')}}" alt="facebook" class="w-full h-full object-cover object-center">
+                                                            </a>
+                                                        </div>
+                                                        <div class="fade-scroll w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2">
+                                                            <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
+                                                                <img src="{{asset('/images/instagram.png')}}" alt="facebook" class="w-full h-full object-cover object-center">
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -511,15 +525,29 @@
                                         <div class="flex justify-center items-center">
                                             <div class="p-2">
                                                 <div class="opacity-0 fade-scroll flex justify-center">
-                                                    <h1 style="font-family: 'Sacramento', cursive; font-size: 20px;">{{$undangan->nama_mempelai_pria}}</h1>
+                                                    <h1 style="font-family: 'Sacramento', cursive;" class="text-lg md:text-4xl">{{$undangan->nama_mempelai_pria}}</h1>
                                                 </div>
-                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] text-center mb-5">
+                                                <div class="opacity-0 fade-scroll flex justify-center items-center text-[8px] md:text-[12px] text-center">
                                                     <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
-                                                </div>  
+                                                </div>
+                                                <div class="mb-3">
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="fade-scroll w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl">
+                                                            <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
+                                                                <img src="{{asset('/images/facebook.png')}}" alt="facebook" class="w-full h-full object-cover object-center">
+                                                            </a>
+                                                        </div>
+                                                        <div class="fade-scroll w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2">
+                                                            <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
+                                                                <img src="{{asset('/images/instagram.png')}}" alt="facebook" class="w-full h-full object-cover object-center">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div> 
                                             </div>
                                         </div>
                                         <div class="flex justify-center items-center">
-                                            <div class="fade-scroll w-36 h-36 md:w-64 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                            <div class="fade-scroll w-32 h-32 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                 <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                             </div>
                                         </div>
@@ -874,7 +902,7 @@
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2" style="font-family: 'Great Vibes', cursive; font-size: 28px;">Wassalamualaikum Wr. Wb.</p>
+                        <p class="mt-2" style="font-family: 'Great Vibes', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
                         <p class="font-semibold" style="font-family: 'Great Vibes', cursive; font-size: 44px;">{{$undangan->nama_mempelai_wanita}} & {{$undangan->nama_mempelai_pria}}</p>
                     </div>
@@ -882,7 +910,45 @@
                 </div>
             </div>
         </div>
+        <div class="flex justify-center items-center">
+            <footer class="bg-white text-center py-10 px-5 shadow-inner w-full md:w-8/12">
+    
+                <!-- Made With Love -->
+                <div class="text-gray-600 text-sm md:text-base flex justify-center items-center gap-2">
+                    <span>Made With</span>
+                    <span class="text-red-500 text-lg animate-pulse">❤</span>
+                    <span>By</span>
+                </div>
 
+                <!-- Logo -->
+                <div class="w-full flex justify-center items-center">
+                    <div class="w-10 h-10 rounded-full overflow-hidden 
+                                ring-8 ring-white/40 shadow-2xl">
+                        <img src="{{ asset('/images/icon.png') }}"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Nama Brand -->
+                <h2 class="mt-2 text-lg md:text-xl font-semibold text-gray-800">
+                    Invitin-Aja
+                </h2>
+
+                <!-- Tagline -->
+                <p class="text-gray-500 text-sm md:text-base mt-2">
+                    Percayakan undangan anda kepada kami
+                </p>
+
+                <!-- Button WhatsApp -->
+                <div class="mt-6">
+                    <a href="https://wa.me/628XXXXXXXXXX" target="_blank"
+                    class="inline-block bg-green-500 hover:bg-green-600 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
+                        Order via WhatsApp
+                    </a>
+                </div>
+
+            </footer>
+        </div>
     {{-- music --}}
     <!-- Audio -->
     <audio id="bgMusic" loop>
@@ -890,7 +956,7 @@
     </audio>
 
     <!-- Control Music -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+    <div class="fixed bottom-2 opacity-40 left-1/2 -translate-x-1/2 z-50">
         <button id="musicBtn"
             class="flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg hover:scale-105 transition">
 

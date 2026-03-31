@@ -84,6 +84,9 @@ Route::middleware('admin')->group(function () {
 
     // ROUTE BARU
     route::get('/admin/data/order/undangan', [OrderUndanganController::class, 'order_undangan'])->name('admin.order_undangan');
+    route::get('/admin/data/edit/data/undangan/{id}', [OrderUndanganController::class, 'edit_undangan'])->name('admin.edit_undangan');
+    route::post('/admin/data/update/data/undangan/', [OrderUndanganController::class, 'update_undangan'])->name('admin.update_undangan');
+    Route::delete('/admin/delete/data/undangan/{id}', [OrderUndanganController::class, 'delete_undangan'])->name('admin.delete_undangan');
     
     
 
