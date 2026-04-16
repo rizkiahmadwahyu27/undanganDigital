@@ -1310,7 +1310,7 @@
 
             </div>
         </div>
-        <div class="flex justify-center items-center text-red-900">
+        <div class="flex justify-center fade-scroll items-center text-red-900">
             <div class="bg-white w-full md:w-6/12">
                 <div class="flex justify-center items-center"><i data-lucide="gift" class="w-10 h-10 mb-2 mt-10"></i></div>
                 <div class="flex justify-center items-center"><h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Wedding Gift</h1></div>
@@ -1318,7 +1318,7 @@
         </div>
         <div class="w-full flex justify-center items-center">  
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-2 bg-white p-4">
-                <div class="w-full h-56 muncul md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
+                <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
                     <div class="absolute top-8 md:top-[70px] right-0 mr-4">
                         <h1 class="text-white text-xl font-bold md:-mt-5">{{$undangan->nama_bank}}</h1>
                     </div>
@@ -1330,7 +1330,7 @@
                             <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy</button>
                     </div>
                 </div>
-                <div class="w-full h-56 muncul md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
+                <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
                     <div class="absolute top-8 md:top-[70px] right-0 mr-4">
                         <h1 class="text-white text-xl font-bold md:-mt-5">{{$undangan->nama_ewalet}}</h1>
                     </div>
@@ -1342,48 +1342,57 @@
                             <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy</button>
                     </div>
                 </div>
-                <div class="w-full h-56 muncul md:h-80 bg-white shadow-2xl p-2 max-h-56 md:max-h-80 rounded-lg">
+                <div class="w-full fade-scroll md:h-auto bg-white shadow-2xl p-4 rounded-lg">
+
+                    <!-- ICON -->
                     <div class="flex justify-center items-center text-center mt-2">
                         <i data-lucide="gift" class="w-10 h-10 mb-2 mt-5"></i>
                     </div>
+
+                    <!-- TITLE -->
                     <div class="flex justify-center items-center text-center mt-2 mb-2">
                         <h1 class="text-xl font-bold">Kirim Hadiah</h1>
                     </div>
-                    <div id="data-alamat">
-                        <div class="flex leading-tight text-xs md:text-sm">
-                            <table>
-                                 <thead >
-                                    <th class="w-16 text-left">Nama</th>
-                                    <th class="w-5">:</th>
-                                    <th class="text-left leading-tight">{{$undangan->nama_mempelai_wanita}}</th>
 
-                                </thead>
-                            </table>
-                        </div>
-                         <div class="flex leading-tight text-xs md:text-sm">
-                            <table>
-                                <thead>
-                                    <th class="w-16 text-left">Alamat</th>
-                                    <th class="w-5">:</th>
-                                    <th class="text-left leading-tight ">{{$undangan->alamat_kirim_hadiah}}</th>
+                    <!-- DATA -->
+                    <div id="data-alamat" class="space-y-2 text-xs md:text-sm">
 
-                                </thead>
-                            </table>
+                        <div class="flex leading-tight">
+                            <span class="w-16">Nama</span>
+                            <span class="w-5">:</span>
+                            <span class="flex-1 break-words">
+                                {{$undangan->nama_mempelai_wanita}}
+                            </span>
                         </div>
+
+                        <div class="flex leading-tight">
+                            <span class="w-16">Alamat</span>
+                            <span class="w-5">:</span>
+                            <span class="flex-1 break-words">
+                                {{$undangan->alamat_kirim_hadiah}}
+                            </span>
+                        </div>
+
                     </div>
-                    <div>
-                        <button onclick="copy_alamat()" class="bg-gray-300 mt-2 flex opacity-50 p-[3px] rounded-lg text-red-900">
-                            <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy</button>
+
+                    <!-- BUTTON -->
+                    <div class="mt-4">
+                        <button onclick="copy_alamat()"
+                            class="bg-gray-300 flex items-center p-2 rounded-lg text-red-900">
+                            <i data-lucide="copy" class="w-5 h-5 mr-2"></i>
+                            Copy
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
         <div class="flex justify-center items-center">
             <div class="w-full md:w-6/12 bg-white">
-                <div class="flex justify-center items-center mt-5 muncul">
+                <div class="flex justify-center items-center mt-5 fade-scroll">
                     <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Kirim Pesan</h1>
                 </div>
-                <div class="w-full flex justify-center items-center muncul">
+                <div class="w-full flex justify-center items-center fade-scroll">
                     <form action="{{route('kirim_pesan')}}" method="post">
                         @csrf
                         <div class="w-full p-2">
@@ -1402,7 +1411,7 @@
                     </form>
                 </div>
                 @foreach ($pesan as $message)
-                    <div class="flex justify-center items-center muncul">
+                    <div class="flex justify-center items-center fade-scroll">
                         <div class="mt-3 grid grid-cols-4 md:w-4/12 w-full ml-10 mr-10 md:ml-3 md:mr-3">
                             <div class="flex justify-center items-center p-1 bg-white rounded-full w-14 h-14">
                                 <i data-lucide="circle-user-round" class="w-13 h-13"></i>
@@ -1415,7 +1424,7 @@
                     </div>
                 @endforeach
                 <div class="p-3">{{ $pesan->links() }}</div>
-                <div class="flex justify-center items-center muncul">
+                <div class="flex justify-center items-center fade-scroll">
                     <div class="mt-4 bg-white rounded-xl shadow-2xl p-3 w-full md:w-6/12">
                         <div class="flex justify-center items-center text-center">
                             Mari bantu kami mempersiapkan acara menjadi lebih baik dengan mengisi formulir RSVP dibawah ini
@@ -1425,7 +1434,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center text-center muncul">
+                <div class="flex justify-center items-center text-center fade-scroll">
                     <div class="md:w-6/12 w-full p-3">
                         <p>
                             Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
@@ -1442,7 +1451,7 @@
 
                 <!-- Background Normal -->
                 <img src="{{ asset('storage/'.$images->foto_cover) }}"
-                    class="absolute inset-0 w-full h-full object-cover muncul">
+                    class="absolute inset-0 w-full h-full object-cover fade-scroll">
 
                 <!-- Background Blur 50% Bawah -->
                 <img src="{{ asset('storage/'.$images->foto_cover) }}"
@@ -1458,7 +1467,7 @@
                     <img src="{{ asset('storage/'.$images->foto_cover) }}"
                             class="w-full h-full object-cover object-center">
 
-                    <div class="mt-8 max-w-md muncul text-white">
+                    <div class="mt-8 max-w-md fade-scroll text-white">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
