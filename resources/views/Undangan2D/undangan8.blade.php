@@ -924,7 +924,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center p-10 fade-scroll text-white">
-                            <div class="opacity-0  flex justify-center items-center -mb-10 text-6xl md:text-9xl">
+                            <div class="flex justify-center items-center -mb-10 text-6xl md:text-9xl">
                                 <h1 style="font-family: 'Sacramento', cursive;">&</h1>
                             </div>
                         </div>
