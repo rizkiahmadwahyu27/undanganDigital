@@ -50,13 +50,33 @@ class OrderUndanganController extends Controller
             }
         }
 
+        $gallery = collect($images->gallery)->map(function ($path) {
+
+            $fullPath = storage_path('app/public/' . $path);
+
+            if (file_exists($fullPath)) {
+                [$width, $height] = getimagesize($fullPath);
+
+                return [
+                    'path' => $path,
+                    'orientation' => $width > $height ? 'landscape' : 'portrait'
+                ];
+            }
+
+            return [
+                'path' => $path,
+                'orientation' => 'portrait'
+            ];
+        });
+
         return view('Undangan2D.' . $undangan->template, compact(
             'undangan',
             'tamu',
             'images',
             'timezone',
             'stories',
-            'pesan'
+            'pesan',
+            'gallery'
         ));
     }
 
