@@ -846,7 +846,7 @@
                         <div class="opacity-0 flex justify-center mt-4 mb-4 text-white fade-scroll">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 25px;">Assalamualaikum Wr. Wb</h1>
                         </div>
-                        <div class="opacity-0 muncul flex justify-center items-center text-center mb-5 fade-scroll text-white">
+                        <div class="opacity-0  flex justify-center items-center text-center mb-5 fade-scroll text-white">
                             <p class="w-10/12 text-[12px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
                         </div>
                         <div class="flex justify-center mt-4">
@@ -861,13 +861,13 @@
                                             <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                         </div>
                                         <div class="flex justify-center items-center mt-5 mb-5 fade-scroll">
-                                            <div class="muncul w-48 h-72 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                            <div class=" w-48 h-72 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                 <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                             </div>
                                         </div>
                                         <div class="mt-2">
                                             <div class="flex justify-center items-center fade-scroll">
-                                                <div class="muncul w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
                                                     <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                         <?xml version="1.0" encoding="UTF-8"?>
                                                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -890,7 +890,7 @@
                                                         </svg>
                                                     </a>
                                                 </div>
-                                                <div class="muncul w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-white">
+                                                <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-white">
                                                     <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                         <?xml version="1.0" encoding="UTF-8"?>
                                                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -924,7 +924,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center p-10 fade-scroll text-white">
-                            <div class="opacity-0 muncul flex justify-center items-center -mb-10 text-6xl md:text-9xl">
+                            <div class="opacity-0  flex justify-center items-center -mb-10 text-6xl md:text-9xl">
                                 <h1 style="font-family: 'Sacramento', cursive;">&</h1>
                             </div>
                         </div>
@@ -933,13 +933,13 @@
                                 <div class="flex justify-center items-center">
                                     <div class="p-2">
                                         <div class="flex justify-center items-center mt-5 mb-5 fade-scroll">
-                                            <div class="muncul w-48 h-72 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                            <div class=" w-48 h-72 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                 <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                             </div>
                                         </div>
                                         <div class="mb-3 mt-2">
                                             <div class="flex justify-center items-center fade-scroll">
-                                                <div class="muncul w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
                                                     <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                         <?xml version="1.0" encoding="UTF-8"?>
                                                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -962,7 +962,7 @@
                                                         </svg>
                                                     </a>
                                                 </div>
-                                                <div class="muncul w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-white shadow-2xl ml-2">
+                                                <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-white shadow-2xl ml-2">
                                                     <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                         <?xml version="1.0" encoding="UTF-8"?>
                                                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1278,7 +1278,7 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <div class="relative w-full md:w-6/12 min-h-screen z-10" style="background-color: brown">
+            <div class="relative w-full md:w-6/12 min-h-screen z-10 rounded-bl-full rounded-br-full" style="background-color: brown">
 
                 <!-- TITLE -->
                 <div class="flex justify-center items-center mt-5 mb-5 text-white fade-scroll">
@@ -1288,7 +1288,7 @@
                 </div>
 
                 <!-- GRID -->
-                <div class="grid grid-cols-2 gap-4 px-4 mt-8">
+                <div class="grid grid-cols-2 gap-4 px-4 mt-8 mb-32">
 
                     @foreach ($gallery as $img)
 
@@ -1820,20 +1820,19 @@
                         const el = entry.target;
 
                         if (entry.isIntersecting) {
-                            // 🔥 kasih delay berdasarkan urutan
                             const index = [...elements].indexOf(el);
-                            el.style.animationDelay = (index * 0.3) + "s";
 
+                            el.style.animationDelay = ((index % 5) * 0.15) + "s";
                             el.classList.add("animate");
                         } else {
-                            // 🔥 reset saat keluar viewport
                             el.classList.remove("animate");
                             el.style.animationDelay = "0s";
                         }
                     });
                 },
                 {
-                    threshold: 0.2
+                    threshold: 0.05,
+                    rootMargin: "0px 0px -50px 0px"
                 }
             );
 
