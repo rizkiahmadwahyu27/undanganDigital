@@ -584,7 +584,7 @@
     </section>
     <section id="isi_undangan" class="hidden">
         <div class="w-full flex justify-center items-center">
-            <div class="relative bg-cover1 w-full md:w-6/12 h-[600px] z-0 overflow-hidden">
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden">
                 <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
                     @for ($i = 0; $i < 25; $i++)
                         <span class="daun-jatuh" style="
