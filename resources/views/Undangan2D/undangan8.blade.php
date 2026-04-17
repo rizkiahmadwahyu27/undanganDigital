@@ -35,7 +35,7 @@
         height: 100vh;
         }
         .bg-cover1 {
-            background-image: url('/images/bg-bargundy.jpg');
+            background-image: url('/images/bg-jawa.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -277,6 +277,22 @@
             opacity: 0;
             animation: munculPohon 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
+
+        @keyframes munculPohon1 {
+            0% {
+                transform: translateY(120px) translateX(40px) scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 1.65;
+            }
+        }
+
+        .muncul2 {
+            opacity: 0;
+            animation: munculPohon1 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
         
         /* =========================
         ANGIN (lebih natural)
@@ -400,7 +416,7 @@
     </style>
 
 </head>
-<body class="overflow-x-hidden lock-scroll">
+<body class="overflow-x-hidden lock-scroll bg-red-300">
     @php
         
         $start = \Carbon\Carbon::parse($undangan->tgl_akad)->format('Ymd\THis');
@@ -522,24 +538,24 @@
                
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
-                        <div class="w-full flex justify-center items-center opacity-0 muncul" style="animation-delay: 7.1s;">
+                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.1s;">
                             <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 52px;">
                                 Wedding Of
                             </h1>
                         </div>
-                        <div class="w-full flex justify-center items-center muncul" style="animation-delay: 7.4s;">
+                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.4s;">
                             <!-- FOTO (DEPAN) -->
                             <div class="z-10 w-64 h-64 md:w-96 md:h-96 overflow-hidden">
                                 <img src="{{ asset('storage/'.$images->foto_cover) }}"
                                     class="w-full h-full object-cover object-center">
                             </div>
                         </div>
-                        <div class="w-full flex justify-center items-center opacity-0 muncul" style="animation-delay: 7.7s;">
+                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.7s;">
                             <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
                                 {{$nama_depan_wanita}} & {{$nama_depan_pria}}
                             </h1>
                         </div>
-                        <div class="w-full flex justify-center items-center opacity-0 muncul -mt-1" style="animation-delay: 8s;">
+                        <div class="w-full flex justify-center items-center muncul2 -mt-1" style="animation-delay: 8s;">
                             <div>
                                 <div class="flex justify-center items-center">
                                     <p class="text-white text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
@@ -555,8 +571,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-2 w-full flex justify-center items-center opacity-0 muncul text-red-900" style="animation-delay: 8.3s;">
-                            <a href="#isi_undangan" id="btnBuka" class="bg-white hover:bg-gray-300 p-3 rounded-lg flex justify-center items-center">
+                        <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold" style="animation-delay: 8.3s;">
+                            <a href="#isi_undangan" id="btnBuka" class="bg-red-300 hover:bg-red-400 p-3 rounded-lg flex justify-center items-center">
                                 <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                                 <span>Buka Undangan</span>
                             </a>
@@ -656,7 +672,7 @@
                                     
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
-                                    <div class="bg-white scale-anim w-18 h-18 p-1 font-bold text-red-900 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-red-300 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="days">0</p>
@@ -664,7 +680,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-white scale-anim w-18 h-18 p-1 font-bold text-red-900 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-red-300 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="hours">0</p>
@@ -672,7 +688,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-white scale-anim w-18 h-18 p-1 font-bold text-red-900 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-red-300 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="minutes">0</p>
@@ -680,7 +696,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-white scale-anim w-18 h-18 p-1 font-bold text-red-900 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-red-300 scale-anim w-18 h-18 p-1 font-bold text-white rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="seconds">0</p>
@@ -692,7 +708,7 @@
                             </div>
                         </div> 
                         <div class="fade-scroll w-full flex justify-center items-center mt-10">
-                            <div class="bg-white rounded-xl p-3 text-red-900 font-bold">
+                            <div class="bg-red-300 rounded-xl p-3 text-white font-bold">
                                 <a class="flex justify-center items-center"
                                 href="https://www.google.com/calendar/render?action=TEMPLATE
                                 &text={{ $title }}
@@ -779,8 +795,8 @@
                 
                 <div class="flex justify-center w-full h-[1400px] items-center p-2">
                     <div>
-                        <div class="flex justify-center text-white mb-2">
-                            <svg class="w-48 muncul md:72 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="40mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        <div class="flex justify-center fade-scroll text-white mb-2">
+                            <svg class="w-48 md:72 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="40mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                                 viewBox="0 0 10000 4000"
                                 xmlns:xlink="http://www.w3.org/1999/xlink"
                                 xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
@@ -789,17 +805,7 @@
                                 <![CDATA[
                                     .fil0 {
                                         fill: currentColor;
-                                        opacity: 0;
-                                        animation: fadeIn 1s ease forwards;
-                                        animation-delay: 3.4s;
                                     }
-
-                                    @keyframes fadeIn {
-                                        to {
-                                            opacity: 1;
-                                        }
-                                    }
-                                    
                                 ]]>
                                 </style>
                                 </defs>
@@ -855,7 +861,7 @@
                                 <div class="flex justify-center items-center">
                                     <div class="mt-3">
                                         <div class="opacity-0 fade-scroll text-white flex justify-center mt-5">
-                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-2xl md:text-6xl">{{$undangan->nama_mempelai_wanita}}</h1>
+                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_wanita}}</h1>
                                         </div>
                                         <div class="opacity-0 fade-scroll text-white mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                             <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
@@ -923,8 +929,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center p-10 fade-scroll text-white">
-                            <div class="flex justify-center items-center -mb-10 text-6xl md:text-9xl">
+                        <div class="flex justify-center items-center mb-2 mt-2 fade-scroll text-white">
+                            <div class="flex justify-center items-center text-[90px] md:text-[110px]">
                                 <h1 style="font-family: 'Sacramento', cursive;">&</h1>
                             </div>
                         </div>
@@ -992,7 +998,7 @@
                                             </div>
                                         </div> 
                                         <div class="opacity-0 fade-scroll flex justify-center mt-4 text-white">
-                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-2xl md:text-6xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                         </div>
                                         <div class="opacity-0 mt-4 fade-scroll text-white flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                             <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
@@ -1072,13 +1078,13 @@
                     <div class="pohon3 w-full h-full scale-x-[-1] rotate-130 angin2"></div>
                 </div>
                 
-                <div class="flex justify-center items-center w-full h-screen text-center text-white">
+                <div class="flex justify-center items-center w-full h-screen text-center text-red-900">
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
-                        <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-red-600 opacity-15">
+                        <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-red-300 opacity-15">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
                             <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
                             <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
-                            <p class="text-lg md:text-xl text-white mt-2 mb-2">BERTEMPAT DI</p>
+                            <p class="text-lg md:text-xl text-red-900 mt-2 mb-2">BERTEMPAT DI</p>
                             <p class="text-[9px] md:text-lg">{{$undangan->alamat_akad}}</p>
                             
                             <div class="flex justify-center items-center">
@@ -1089,16 +1095,16 @@
                             </div>
 
                         </div>
-                        <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll bg-red-600 opacity-15">
+                        <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll bg-red-300 opacity-15">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Resepsi</h1>
                             <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
                             <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
-                            <p class="text-lg md:text-xl text-white mt-2 mb-2">BERTEMPAT DI</p>
+                            <p class="text-lg md:text-xl text-red-900 mt-2 mb-2">BERTEMPAT DI</p>
                             <p class="text-[9px] md:text-lg">{{$undangan->alamat_resepsi}}</p>
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
-                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-white"></i>
+                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-900"></i>
                                     <span class="text-red-900">Buka Google Lokasi</span>
                                 </a>
                             </div>
@@ -1177,13 +1183,13 @@
                     <div class="overflow-y-auto max-h-screen px-4 min-h-0">
                         <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;" class="text-center text-white fade-scroll">Our Story</h1>
 
-                        <div class="relative border-l-4 border-white pl-6 space-y-4 ml-2 fade-scroll">
+                        <div class="relative border-l-4 border-red-300 pl-6 space-y-4 ml-2 fade-scroll">
 
                             <!-- Item -->
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_1}}</p>
                                     </div>
@@ -1193,8 +1199,8 @@
 
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_2}}</p>
                                     </div>
@@ -1204,8 +1210,8 @@
 
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_3}}</p>
                                     </div>
@@ -1215,8 +1221,8 @@
 
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_4}}</p>
                                     </div>
@@ -1225,8 +1231,8 @@
                             </div>
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_5)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_5}}</p>
                                     </div>
@@ -1235,8 +1241,8 @@
                             </div>
                             <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
                                 <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-white flex text-red-900 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-white opacity-40 text-xs">
+                                    <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
+                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
                                         <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_6)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_6}}</p>
                                     </div>
@@ -1249,7 +1255,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full h-screen flex justify-center mt-6">
+        <div class="w-full h-screen flex justify-center bg-red-600">
             <div class="relative w-full h-screen md:w-6/12">
 
                 <!-- SWIPER -->
@@ -1278,10 +1284,10 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <div class="relative w-full md:w-6/12 min-h-screen z-10 rounded-bl-full rounded-br-full" style="background-color: brown">
+            <div class="relative w-full md:w-6/12 min-h-screen z-10 rounded-bl-full rounded-br-full rounded-tl-full rounded-tr-full" style="background-color: rgb(134, 22, 22)">
 
                 <!-- TITLE -->
-                <div class="flex justify-center items-center mt-5 mb-5 text-white fade-scroll">
+                <div class="flex justify-center items-center mt-24 mb-5 text-white fade-scroll">
                     <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">
                         Our Gallery
                     </h1>
@@ -1311,13 +1317,13 @@
             </div>
         </div>
         <div class="flex justify-center fade-scroll items-center text-red-900">
-            <div class="bg-white w-full md:w-6/12">
+            <div class="bg-red-300 w-full md:w-6/12">
                 <div class="flex justify-center items-center"><i data-lucide="gift" class="w-10 h-10 mb-2 mt-10"></i></div>
                 <div class="flex justify-center items-center"><h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Wedding Gift</h1></div>
             </div>
         </div>
         <div class="w-full flex justify-center items-center">  
-            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-2 bg-white p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-2 bg-red-300 p-4">
                 <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
                     <div class="absolute top-8 md:top-[70px] right-0 mr-4">
                         <h1 class="text-white text-xl font-bold md:-mt-5">{{$undangan->nama_bank}}</h1>
@@ -1388,7 +1394,7 @@
             </div>
         </div>
         <div class="flex justify-center items-center">
-            <div class="w-full md:w-6/12 bg-white">
+            <div class="w-full md:w-6/12 bg-red-300">
                 <div class="flex justify-center items-center mt-5 fade-scroll">
                     <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Kirim Pesan</h1>
                 </div>
@@ -1406,7 +1412,7 @@
                             <textarea  class="w-full bg-white border-red-500 outline-1 decoration-0 hover:border-2 hover:border-red-500 py-1.5 px-3 rounded-lg" name="pesan"></textarea>
                         </div>
                         <div class="w-full p-2">
-                            <button type="submit" class="py-1.5 px-4 rounded-xl bg-red-300 hover:bg-red-500 text-red-100">Kirim</button>
+                            <button type="submit" class="py-1.5 px-4 rounded-xl bg-white text-red-900">Kirim</button>
                         </div>
                     </form>
                 </div>
@@ -1424,7 +1430,7 @@
                     </div>
                 @endforeach
                 <div class="p-3">{{ $pesan->links() }}</div>
-                <div class="flex justify-center items-center fade-scroll">
+                <div class="flex justify-center items-center fade-scroll p-2">
                     <div class="mt-4 bg-white rounded-xl shadow-2xl p-3 w-full md:w-6/12">
                         <div class="flex justify-center items-center text-center">
                             Mari bantu kami mempersiapkan acara menjadi lebih baik dengan mengisi formulir RSVP dibawah ini
@@ -1434,8 +1440,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center text-center fade-scroll">
-                    <div class="md:w-6/12 w-full p-3">
+                <div class="flex justify-center items-center text-center fade-scroll mt-4 mb-4 bg-white rounded-xl p-2 mr-2 ml-2">
+                    <div class="md:w-6/12 w-full">
                         <p>
                             Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
                         </p>
@@ -1467,13 +1473,13 @@
                     <img src="{{ asset('storage/'.$images->foto_cover) }}"
                             class="w-full h-full object-cover object-center">
 
-                    <div class="mt-8 max-w-md fade-scroll text-white">
+                    <div class="mt-8 max-w-md fade-scroll text-white mb-5">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
-                        <p class="mt-4">Kami yang berbahagia</p>
+                        <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 26px;">Wassalamualaikum Wr. Wb.</p>
+                        <p class="mt-2 mb-2">Kami yang berbahagia</p>
                         <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$nama_depan_wanita}} & {{$nama_depan_pria}}</p>
                     </div>
 
@@ -1481,12 +1487,12 @@
             </div>
         </div>
         <div class="flex justify-center items-center">
-            <footer class="bg-white text-center py-10 px-5 shadow-inner w-full md:w-8/12">
+            <footer class="bg-red-300 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
     
                 <!-- Made With Love -->
-                <div class="text-red-600 text-sm md:text-base flex justify-center items-center gap-2">
+                <div class="text-white text-sm md:text-base flex justify-center items-center gap-2 mb-3">
                     <span>Made With</span>
-                    <span class="text-red-500 text-lg animate-pulse">❤</span>
+                    <span class="text-white text-lg animate-pulse">❤</span>
                     <span>By</span>
                 </div>
 
@@ -1500,19 +1506,19 @@
                 </div>
 
                 <!-- Nama Brand -->
-                <h2 class="mt-2 text-lg md:text-xl font-semibold text-red-800">
+                <h2 class="mt-2 text-lg md:text-xl font-semibold text-white">
                     Invitin-Aja
                 </h2>
 
                 <!-- Tagline -->
-                <p class="text-red-500 text-sm md:text-base mt-2">
+                <p class="text-white text-sm md:text-base mt-2">
                     Percayakan undangan anda kepada kami
                 </p>
 
                 <!-- Button WhatsApp -->
                 <div class="mt-6">
                     <a href="https://wa.me/62895610143232" target="_blank"
-                    class="inline-block bg-green-500 hover:bg-green-600 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
+                    class="inline-block bg-red-300 hover:bg-red-400 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
                         Order via WhatsApp
                     </a>
                 </div>
