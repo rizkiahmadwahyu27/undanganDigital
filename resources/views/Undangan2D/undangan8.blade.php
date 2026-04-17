@@ -1518,7 +1518,7 @@
                 <!-- Button WhatsApp -->
                 <div class="mt-6">
                     <a href="https://wa.me/62895610143232" target="_blank"
-                    class="inline-block bg-red-300 hover:bg-red-400 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
+                    class="inline-block bg-red-600 hover:bg-red-700 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
                         Order via WhatsApp
                     </a>
                 </div>
