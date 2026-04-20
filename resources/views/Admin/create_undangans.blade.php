@@ -253,29 +253,11 @@
                         <input type="text" name="template" class="w-full border rounded p-2" required>
                     </div>
                     <div class="mb-2">
-                        <label class="font-semibold">Nama Bank</label>
-                        <input type="text" name="nama_bank" class="w-full border rounded p-2" required>
+                        <label class="font-semibold">Dompet Digital</label>
+                        <textarea name="dompet_digital" rows="6" class="w-full border rounded p-2"
+                        >[{"an_nama":"Rizki Wahyu","nama_bank":"BCA","no_rek":"1234567890"},{"an_nama":"Rizki Wahyu","nama_bank":"DANA","no_rek":"08123456789"}]</textarea>
                     </div>
-                    <div class="mb-2">
-                        <label class="font-semibold">Atas Nama Pemilik Bank</label>
-                        <input type="text" name="an_bank" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-2">
-                        <label class="font-semibold">No. Rek Bank</label>
-                        <input type="text" name="no_rek_bank" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-2">
-                        <label class="font-semibold">Nama E-wallet</label>
-                        <input type="text" name="nama_ewalet" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-2">
-                        <label class="font-semibold">Atas Nama Pemilik E-wallet</label>
-                        <input type="text" name="an_ewalet" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-2">
-                        <label class="font-semibold">Nomor E-Wallet</label>
-                        <input type="text" name="no_ewalet" class="w-full border rounded p-2" required>
-                    </div>
+                    
 
                     {{-- SECTIONS JSON --}}
                     {{-- <div class="mb-2">

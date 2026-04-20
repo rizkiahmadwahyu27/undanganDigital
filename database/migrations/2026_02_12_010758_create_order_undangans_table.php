@@ -35,12 +35,7 @@ return new class extends Migration
             $table->string('maps_akad');
             $table->string('maps_resepsi');
             $table->string('alamat_kirim_hadiah');
-            $table->string('nama_bank');
-            $table->string('an_bank');
-            $table->string('no_rek_bank');
-            $table->string('nama_ewalet');
-            $table->string('an_ewalet');
-            $table->string('no_ewalet');
+            $table->json('dompet_digital');
             $table->timestamps();
         });
     }

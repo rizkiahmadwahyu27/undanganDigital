@@ -29,11 +29,10 @@ class OrderUndangan extends Model
         'maps_akad',
         'maps_resepsi',
         'alamat_kirim_hadiah',
-        'nama_bank',
-        'an_bank',
-        'no_rek_bank',
-        'nama_ewalet',
-        'an_ewalet',
-        'no_ewalet',
+        'dompet_digital',
+    ];
+
+    protected $casts = [
+        'dompet_digital' => 'array',
     ];
 }

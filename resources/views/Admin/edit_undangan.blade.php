@@ -163,28 +163,9 @@
                 <input type="text" name="template" class="w-full border rounded p-2" required value="{{$undangan->template}}">
             </div>
             <div class="mb-2">
-                <label class="font-semibold">Nama Bank</label>
-                <input type="text" name="nama_bank" class="w-full border rounded p-2" required value="{{$undangan->nama_bank}}">
-            </div>
-            <div class="mb-2">
-                <label class="font-semibold">Atas Nama Pemilik Bank</label>
-                <input type="text" name="an_bank" class="w-full border rounded p-2" required value="{{$undangan->an_bank}}">
-            </div>
-            <div class="mb-2">
-                <label class="font-semibold">No. Rek Bank</label>
-                <input type="text" name="no_rek_bank" class="w-full border rounded p-2" required value="{{$undangan->no_rek_bank}}">
-            </div>
-            <div class="mb-2">
-                <label class="font-semibold">Nama E-wallet</label>
-                <input type="text" name="nama_ewalet" class="w-full border rounded p-2" required value="{{$undangan->nama_ewalet}}">
-            </div>
-            <div class="mb-2">
-                <label class="font-semibold">Atas Nama Pemilik E-wallet</label>
-                <input type="text" name="an_ewalet" class="w-full border rounded p-2" required value="{{$undangan->an_ewalet}}">
-            </div>
-            <div class="mb-2">
-                <label class="font-semibold">Nomor E-Wallet</label>
-                <input type="text" name="no_ewalet" class="w-full border rounded p-2" required value="{{$undangan->no_ewalet}}">
+                <label class="font-semibold">Dompet Digital</label>
+                <textarea name="dompet_digital" rows="6" class="w-full border rounded p-2"
+                >{{$undangan->dompet_digital}}</textarea>
             </div>
 
           

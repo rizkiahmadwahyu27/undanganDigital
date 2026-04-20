@@ -94,12 +94,7 @@ class Undangan2DController extends Controller
             'maps_akad'           => $request->maps_akad,
             'maps_resepsi'        => $request->maps_resepsi,
             'alamat_kirim_hadiah' => $request->alamat_kirim_hadiah,
-            'nama_bank'           => $request->nama_bank,
-            'an_bank'             => $request->an_bank,
-            'no_rek_bank'         => $request->no_rek_bank,
-            'nama_ewalet'         => $request->nama_ewalet,
-            'an_ewalet'           => $request->an_ewalet,
-            'no_ewalet'           => $request->no_ewalet,
+            'dompet_digital'           => $request->dompet_digital,
         ]);
 
         // 4. SIMPAN DATA IMAGE
