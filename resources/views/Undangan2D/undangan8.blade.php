@@ -1095,7 +1095,7 @@
                         <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-red-300 opacity-15">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
                             <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
-                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
+                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
                             <p class="text-lg md:text-xl text-red-900 mt-2 mb-2">BERTEMPAT DI</p>
                             <p class="text-[9px] md:text-lg">{{$undangan->alamat_akad}}</p>
                             

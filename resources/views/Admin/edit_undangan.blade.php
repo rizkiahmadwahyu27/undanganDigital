@@ -37,12 +37,12 @@
             {{-- TANGGAL ACARA --}}
             <div class="mb-2">
                 <label class="font-semibold">Tanggal Akad</label>
-                <input type="datetime-local" name="tanggal_akad" class="w-full border rounded p-2" required value="{{ \Carbon\Carbon::parse($undangan->tanggal_akad)->format('Y-m-d\TH:i') }}">
+                <input type="datetime-local" name="tgl_akad" class="w-full border rounded p-2" required value="{{ \Carbon\Carbon::parse($undangan->tgl_akad)->format('Y-m-d H:i:s') }}">
             </div>
 
             <div class="mb-2">
                 <label class="font-semibold">Tanggal Resepsi</label>
-                <input type="datetime-local" name="tanggal_resepsi" class="w-full border rounded p-2" required value="{{ \Carbon\Carbon::parse($undangan->tanggal_akad)->format('Y-m-d\TH:i') }}">
+                <input type="datetime-local" name="tgl_resepsi" class="w-full border rounded p-2" required value="{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->format('Y-m-d H:i:s') }}">
             </div>
 
             {{-- LOKASI --}}
