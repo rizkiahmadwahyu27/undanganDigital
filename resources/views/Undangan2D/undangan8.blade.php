@@ -1355,14 +1355,16 @@
                             <h1 class="text-white text-xl font-bold md:-mt-5">{{ $dompet['nama_bank'] }}</h1>
                         </div>
                         <div class="absolute bottom-7 left-0 ml-4 mb-2">
-                            <h1 id="norek_1" class="text-[18px] md:text-lg text-white font-semibold leading-tight">{{$dompet['no_rek']}}</h1>
+                            <h1 class="norek-text text-[18px] md:text-lg text-white font-semibold leading-tight">
+                                {{$dompet['no_rek']}}
+                            </h1>
                             <h1 class="md:text-lg text-[18px] text-white font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
-                            <p class="text-xs" id="message1"></p>
-                            
+                            <p class="text-xs status-message"></p>
                         </div>
                         <div class="absolute bottom-0 right-0 mr-4 mb-2">
-                            <button onclick="copy_no_rek1()" class="bg-white mt-2 flex opacity-50 p-[3px] rounded-lg text-red-900">
-                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy</button>
+                            <button onclick="copyNorek(this)" class="bg-white mt-2 flex opacity-50 p-[3px] rounded-lg text-red-900">
+                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy
+                            </button>
                         </div>
                     </div>
                 @endforeach
@@ -1489,13 +1491,13 @@
                 <div class="relative z-10 flex flex-col justify-center items-center 
                             w-full h-full text-center px-6">
 
-                    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
+                    <!-- <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
                                 ring-8 ring-white/40 shadow-2xl">
                         <img src="{{ asset('storage/'.$images->foto_cover) }}"
                             class="w-full h-full object-cover object-center">
-                    </div>
+                    </div> -->
 
-                    <div class="mt-8 max-w-md fade-scroll text-white mb-5">
+                    <div class="absolute bottom-10 max-w-md fade-scroll text-white mb-5">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
@@ -1699,23 +1701,21 @@
     </script>
 
     <script>
-        function copy_no_rek1(){
-            const norek1 = document.getElementById('norek_1').innerText;
+        function copyNorek(btn) {
+            // Cari container kartu terdekat dari tombol yang diklik
+            const card = btn.closest('.bg-kartu-atm');
+            
+            // Ambil nomor rekening dari elemen dengan class 'norek-text' di dalam kartu tersebut
+            const norek = card.querySelector('.norek-text').innerText;
+            const statusMsg = card.querySelector('.status-message');
 
-            navigator.clipboard.writeText(norek1).then(() => {
-                document.getElementById("message1").innerText = "No Rek Berhasil Disalin!";
+            navigator.clipboard.writeText(norek).then(() => {
+                statusMsg.innerText = "Berhasil disalin!";
+                
+                // Hilangkan pesan setelah 2 detik
+                setTimeout(() => { statusMsg.innerText = ""; }, 2000);
             }).catch(err => {
-                document.getElementById("message1").innerText = "No Rek Gagal Disalin!";
-            });
-        }
-
-        function copy_no_rek2(){
-            const norek2 = document.getElementById('norek_2').innerText;
-
-            navigator.clipboard.writeText(norek2).then(() => {
-                document.getElementById("message2").innerText = "No Rek Berhasil Disalin!";
-            }).catch(err => {
-                document.getElementById("message2").innerText = "No Rek Gagal Disalin!";
+                statusMsg.innerText = "Gagal disalin!";
             });
         }
         function copy_alamat() {
