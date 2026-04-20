@@ -117,7 +117,7 @@
         }
 
         .bg-kartu-atm {
-            background-image: url('/images/kartu_atm.png');
+            background-image: url('/images/dompet_digital.png');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -539,19 +539,22 @@
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.1s;">
-                            <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 52px;">
+                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 52px;">
                                 Wedding Of
                             </h1>
                         </div>
-                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.4s;">
-                            <!-- FOTO (DEPAN) -->
-                            <div class="z-10 w-64 h-64 md:w-96 md:h-96 overflow-hidden">
-                                <img src="{{ asset('storage/'.$images->foto_cover) }}"
-                                    class="w-full h-full object-cover object-center">
-                            </div>
+                        
+                        <div class="w-full flex justify-center items-center mb-2 muncul2" style="animation-delay: 7.4s;">
+                            <div class="w-full flex justify-center items-center">
+                                <div class="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden 
+                                    ring-8 ring-white/40 shadow-2xl">
+                                    <img src="{{ asset('storage/'.$images->foto_cover) }}"
+                                        class="w-full h-full object-cover object-center">
+                                </div>
+                            </div>    
                         </div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.7s;">
-                            <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
+                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
                                 {{$nama_depan_wanita}} & {{$nama_depan_pria}}
                             </h1>
                         </div>
@@ -651,12 +654,12 @@
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
                         <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 24px;">
+                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 24px;">
                                 The Wedding Of
                             </h1>
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-white" style="font-family: 'Great Vibes', cursive; font-size: 44px;">
+                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
                                  {{$nama_depan_wanita}} & {{$nama_depan_pria}}  
                             </h1>
                         </div>
@@ -935,7 +938,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center mb-2 mt-2 fade-scroll text-white">
+                        <div class="flex justify-center items-center mb-2 mt-5 fade-scroll text-white">
                             <div class="flex justify-center items-center text-[90px] md:text-[110px]">
                                 <h1 style="font-family: 'Sacramento', cursive;">&</h1>
                             </div>
@@ -944,7 +947,15 @@
                             <div>
                                 <div class="flex justify-center items-center">
                                     <div class="p-2">
-                                        <div class="flex justify-center items-center mt-5 mb-5 fade-scroll">
+                                        <div class="opacity-0 fade-scroll flex justify-center mt-1 text-white">
+                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                        </div>
+                                        <div class="opacity-0 mt-4 mb-9 fade-scroll text-white flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
+                                                <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
+                                            @endif
+                                        </div>
+                                        <div class="flex justify-center items-center mb-5 fade-scroll">
                                             <div class=" w-48 h-72 md:w-64 md:h-64 rounded-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                 <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                             </div>
@@ -1007,14 +1018,7 @@
                                                 @endif
                                             </div>
                                         </div> 
-                                        <div class="opacity-0 fade-scroll flex justify-center mt-4 text-white">
-                                            <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
-                                        </div>
-                                        <div class="opacity-0 mt-4 fade-scroll text-white flex justify-center items-center text-[12px] md:text-[18px] text-center">
-                                            @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
-                                                <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
-                                            @endif
-                                        </div>
+                                        
                                         
                                     </div>
                                 </div>
@@ -1094,14 +1098,13 @@
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
                         <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-red-300 opacity-15">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
-                            <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
-                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
-                            <p class="text-lg md:text-xl text-red-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-[9px] md:text-lg">{{$undangan->alamat_akad}}</p>
+                            <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
+                            <p class="text-md">Tempat : {{$undangan->alamat_akad}}</p>
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
-                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-white"></i>
+                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-900"></i>
                                     <span class="text-red-900">Buka Google Lokasi</span>
                                 </a>
                             </div>
@@ -1109,10 +1112,9 @@
                         </div>
                         <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll bg-red-300 opacity-15">
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Resepsi</h1>
-                            <p class="text-[9px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
-                            <p class="text-[9px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
-                            <p class="text-lg md:text-xl text-red-900 mt-2 mb-2">BERTEMPAT DI</p>
-                            <p class="text-[9px] md:text-lg">{{$undangan->alamat_resepsi}}</p>
+                            <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
+                            <p class="text-md">Tempat : {{$undangan->alamat_resepsi}}</p>
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
@@ -1202,7 +1204,7 @@
                                 <div class="flex justify-start mr-2">
                                     <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                     <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_1}}</p>
                                     </div>
                                     
@@ -1213,7 +1215,7 @@
                                 <div class="flex justify-start mr-2">
                                     <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                     <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_2}}</p>
                                     </div>
                                     
@@ -1224,7 +1226,7 @@
                                 <div class="flex justify-start mr-2">
                                     <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                     <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                        <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
                                         <p>{{$stories->story_3}}</p>
                                     </div>
                                     
@@ -1236,7 +1238,7 @@
                                     <div class="flex justify-start mr-2">
                                         <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                         <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                            <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
+                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
                                             <p>{{$stories->story_4}}</p>
                                         </div>
                                         
@@ -1248,7 +1250,7 @@
                                     <div class="flex justify-start mr-2">
                                         <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                         <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                            <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
+                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
                                             <p>{{$stories->story_5}}</p>
                                         </div>
                                         
@@ -1260,7 +1262,7 @@
                                     <div class="flex justify-start mr-2">
                                         <div class="w-12 h-12 rounded-full bg-red-300 flex text-white justify-center items-center mr-3"><i data-lucide="heart"></i></div>
                                         <div class="rounded-xl w-full p-2 shadow-2xl bg-red-300 text-white text-xs">
-                                            <p>{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
+                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
                                             <p>{{$stories->story_6}}</p>
                                         </div>
                                         
@@ -1349,33 +1351,36 @@
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-2 bg-red-300 p-4">
                 @foreach ($dompet_digital ?? [] as $dompet)
                     <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
-                        <div class="absolute top-8 md:top-[70px] right-0 mr-4">
+                        <div class="absolute top-7 md:top-[70px] right-0 mr-5">
                             <h1 class="text-white text-xl font-bold md:-mt-5">{{ $dompet['nama_bank'] }}</h1>
                         </div>
-                        <div class="absolute bottom-0 left-0 ml-4 mb-2">
-                            <h1 id="norek_1" class="text-xs md:text-lg text-white font-semibold leading-tight">{{$dompet['no_rek']}}</h1>
-                            <h1 class="md:text-lg text-xs text-white font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
+                        <div class="absolute bottom-7 left-0 ml-4 mb-2">
+                            <h1 id="norek_1" class="text-[18px] md:text-lg text-white font-semibold leading-tight">{{$dompet['no_rek']}}</h1>
+                            <h1 class="md:text-lg text-[18px] text-white font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
                             <p class="text-xs" id="message1"></p>
+                            
+                        </div>
+                        <div class="absolute bottom-0 right-0 mr-4 mb-2">
                             <button onclick="copy_no_rek1()" class="bg-white mt-2 flex opacity-50 p-[3px] rounded-lg text-red-900">
                                 <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy</button>
                         </div>
                     </div>
                 @endforeach
                 
-                <div class="w-full fade-scroll md:h-auto bg-white shadow-2xl p-4 rounded-lg">
+                <div class="w-full fade-scroll md:h-auto bg-red-900 shadow-2xl p-4 rounded-lg">
 
                     <!-- ICON -->
                     <div class="flex justify-center items-center text-center mt-2">
-                        <i data-lucide="gift" class="w-10 h-10 mb-2 mt-5"></i>
+                        <i data-lucide="gift" class="w-10 h-10 mb-2 mt-2 text-white"></i>
                     </div>
 
                     <!-- TITLE -->
-                    <div class="flex justify-center items-center text-center mt-2 mb-2">
+                    <div class="flex justify-center items-center text-center mt-1 mb-2 text-white">
                         <h1 class="text-xl font-bold">Kirim Hadiah</h1>
                     </div>
 
                     <!-- DATA -->
-                    <div id="data-alamat" class="space-y-2 text-xs md:text-sm">
+                    <div id="data-alamat" class="space-y-2 text-sm text-white">
 
                         <div class="flex leading-tight">
                             <span class="w-16">Nama</span>
@@ -1457,7 +1462,7 @@
                 <div class="flex justify-center items-center text-center fade-scroll mt-4 mb-4 bg-white rounded-xl p-2 mr-2 ml-2">
                     <div class="md:w-6/12 w-full">
                         <p>
-                            Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
+                            Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir
                         </p>
                         <p class="mt-6">
                             (Q.S Ar Rum : 21)
@@ -1484,8 +1489,11 @@
                 <div class="relative z-10 flex flex-col justify-center items-center 
                             w-full h-full text-center px-6">
 
-                    <img src="{{ asset('storage/'.$images->foto_cover) }}"
+                    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
+                                ring-8 ring-white/40 shadow-2xl">
+                        <img src="{{ asset('storage/'.$images->foto_cover) }}"
                             class="w-full h-full object-cover object-center">
+                    </div>
 
                     <div class="mt-8 max-w-md fade-scroll text-white mb-5">
                         <span class="block">
