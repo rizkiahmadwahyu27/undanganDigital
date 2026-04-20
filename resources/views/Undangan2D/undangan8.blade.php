@@ -1100,7 +1100,7 @@
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
                             <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
                             <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
-                            <p class="text-md">Tempat : {{$undangan->alamat_akad}}</p>
+                            <p class="text-[12px]">Tempat : {{$undangan->alamat_akad}}</p>
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
@@ -1114,7 +1114,7 @@
                             <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Resepsi</h1>
                             <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
                             <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
-                            <p class="text-md">Tempat : {{$undangan->alamat_resepsi}}</p>
+                            <p class="text-[12px]">Tempat : {{$undangan->alamat_resepsi}}</p>
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
@@ -1439,30 +1439,30 @@
                 </div>
                 @foreach ($pesan as $message)
                     <div class="flex justify-center items-center fade-scroll">
-                        <div class="mt-3 grid grid-cols-4 md:w-4/12 w-full ml-10 mr-10 md:ml-3 md:mr-3">
+                        <div class="mt-3 grid grid-cols-4 md:w-4/12 w-full ml-10 mr-10 md:ml-3 md:mr-3 bg-red-900 p-2 rounded-xl">
                             <div class="flex justify-center items-center p-1 bg-white rounded-full w-14 h-14">
                                 <i data-lucide="circle-user-round" class="w-13 h-13"></i>
                             </div>
                             <div class="col-span-3 text-xs md:text-sm">
-                                <p class="border-b-2 border-black text-xl font-bold">{{$message->nama}}</p>
-                                <p>{{$message->pesan}}</p>
+                                <p class="border-b-2 border-white text-xl font-bold text-white">{{$message->nama}}</p>
+                                <p class="text-white">{{$message->pesan}}</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 <div class="p-3">{{ $pesan->links() }}</div>
                 <div class="flex justify-center items-center fade-scroll p-2">
-                    <div class="mt-4 bg-white rounded-xl shadow-2xl p-3 w-full md:w-6/12">
-                        <div class="flex justify-center items-center text-center">
+                    <div class="mt-4 bg-red-900 rounded-xl shadow-2xl p-3 w-full md:w-6/12">
+                        <div class="flex justify-center items-center text-center text-white">
                             Mari bantu kami mempersiapkan acara menjadi lebih baik dengan mengisi formulir RSVP dibawah ini
                         </div>
                         <div class="flex justify-center items-center mt-2">
-                            <button onclick="openModal()" class="py-1.5 px-4 rounded-xl bg-red-300 hover:bg-red-500 text-red-200">Konfirmasi Kehadiran</button>
+                            <button onclick="openModal()" class="py-1.5 px-4 rounded-xl bg-white text-red-900">Konfirmasi Kehadiran</button>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center items-center text-center fade-scroll mt-4 mb-4 bg-white rounded-xl p-2 mr-2 ml-2">
-                    <div class="md:w-6/12 w-full">
+                <div class="flex justify-center items-center text-center fade-scroll mt-4 mb-4 bg-red-900 rounded-xl p-2 mr-2 ml-2">
+                    <div class="md:w-6/12 w-full text-white">
                         <p>
                             Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir
                         </p>
