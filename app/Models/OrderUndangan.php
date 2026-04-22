@@ -10,6 +10,7 @@ class OrderUndangan extends Model
         'kode_pesan',
         'slug',
         'template',
+        'jenis_undangan',
         'nama_undangan',
         'nama_mempelai_wanita',
         'fb_mempelai_wanita',

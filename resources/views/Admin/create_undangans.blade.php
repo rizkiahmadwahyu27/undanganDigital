@@ -103,6 +103,10 @@
                         <input type="text" name="nama_undangan" class="w-full border rounded p-2" required>
                     </div>
                     <div class="mb-2">
+                        <label class="font-semibold">Jenis Undangan</label>
+                        <input type="text" name="jenis_undangan" class="w-full border rounded p-2" required>
+                    </div>
+                    <div class="mb-2">
                         <label class="font-semibold">Nama Mempelai Pria</label>
                         <input type="text" name="nama_mempelai_pria" class="w-full border rounded p-2" required>
                     </div>

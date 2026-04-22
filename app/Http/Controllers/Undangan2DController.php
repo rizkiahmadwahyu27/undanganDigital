@@ -77,6 +77,7 @@ class Undangan2DController extends Controller
             'kode_pesan'          => $kode_pesan,
             'slug'                => $slug,
             'template'            => $request->template,
+            'jenis_undangan'            => $request->jenis_undangan,
             'nama_undangan'            => $request->nama_undangan,
             'nama_mempelai_wanita' => $request->nama_mempelai_wanita,
             'fb_mempelai_wanita' => $request->fb_mempelai_wanita,
