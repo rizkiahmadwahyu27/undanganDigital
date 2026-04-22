@@ -252,7 +252,7 @@
 
         #daun-wrapper {
             animation: hilangDaun 1s ease forwards;
-            animation-delay: 4s;
+            animation-delay: 0.5s;
             z-index: 999;
             position: absolute;
             inset: 0;
@@ -491,60 +491,60 @@
                     <div class="bunga absolute top-80 -right-40 md:-right-80 w-96 h-96 md:w-[900px] md:h-[900px] rotate-250 z-20"></div>
                 </div>
                 <div class="absolute -bottom-10 -right-10 w-46 h-46 md:w-64 md:h-64 muncul"
-                    style="animation-delay: 4.2s;">
+                    style="animation-delay: 1s;">
                     <div class="janur w-full h-full opacity-65 angin"></div>
                 </div>
 
                 <div class="absolute -bottom-10 -left-10 w-46 h-46 md:w-64 md:h-64 muncul"
-                    style="animation-delay: 4.5s;">
+                    style="animation-delay: 1.3s;">
                     <div class="janur w-full h-full opacity-65 scale-x-[-1] angin2"></div>
                 </div>
                 <div class="absolute bottom-50 -right-32 md:-right-48 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 4.8s;">
+                    style="animation-delay: 1.6s;">
                     <div class="pohon1 w-full h-full opacity-65 rotate-300 angin"></div>
                 </div>
 
                 <div class="absolute bottom-50 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 5.1s;">
+                    style="animation-delay: 1.9s;">
                     <div class="pohon1 w-full h-full opacity-65 scale-x-[-1] rotate-45 angin2"></div>
                 </div>
                 <div class="absolute bottom-70 -right-32 md:-right-48 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 5.4s;">
+                    style="animation-delay: 2.2s;">
                     <div class="pohon2 w-full h-full opacity-65 rotate-300 angin"></div>
                 </div>
 
                 <div class="absolute bottom-70 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 5.7s;">
+                    style="animation-delay: 2.5s;">
                     <div class="pohon2 w-full h-full opacity-65 scale-x-[-1] rotate-45 angin2"></div>
                 </div>
                 <div class="absolute -top-20 -right-44 md:-right-64 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 6s;">
+                    style="animation-delay: 2.8s;">
                     <div class="pohon4 w-full h-full opacity-65 rotate-230 angin"></div>
                 </div>
 
                 <div class="absolute -top-20 -left-44 md:-left-64 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 6.3s;">
+                    style="animation-delay: 3.1s;">
                     <div class="pohon4 w-full h-full opacity-65 scale-x-[-1] rotate-130 angin2"></div>
                 </div>
                 <div class="absolute -top-56 md:-top-96 -right-36 md:-right-64 w-52 h-52 md:w-96 md:h-96 muncul"
-                    style="animation-delay: 6.6s;">
+                    style="animation-delay: 3.4s;">
                     <div class="pohon3 w-full h-full rotate-230 angin"></div>
                 </div>
 
                 <div class="absolute -top-56 md:-top-96 -left-36 md:-left-64 w-52 h-52 md:w-96 md:h-96 muncul"
-                    style="animation-delay: 6.9s;">
+                    style="animation-delay: 3.7s;">
                     <div class="pohon3 w-full h-full scale-x-[-1] rotate-130 angin2"></div>
                 </div>
                
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
-                        <div class="w-full flex justify-center items-center muncul2 mb-2" style="animation-delay: 7.1s;">
+                        <div class="w-full flex justify-center items-center muncul2 mb-2" style="animation-delay: 4s;">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 52px;">
                                 Wedding Of
                             </h1>
                         </div>
                         
-                        <div class="w-full flex justify-center items-center mb-2 muncul2" style="animation-delay: 7.4s;">
+                        <div class="w-full flex justify-center items-center mb-2 muncul2" style="animation-delay: 4.3s;">
                             <div class="w-full flex justify-center items-center">
                                 <div class="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden 
                                     ring-8 ring-white/40 shadow-2xl">
@@ -553,20 +553,20 @@
                                 </div>
                             </div>    
                         </div>
-                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.7s;">
+                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 4.7s;">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
                                 {{$undangan->nama_undangan}}
                             </h1>
                         </div>
-                        <div class="w-full flex justify-center items-center muncul2 -mt-1" style="animation-delay: 8s;">
+                        <div class="w-full flex justify-center items-center -mt-1">
                             <div>
-                                <div class="flex justify-center items-center">
+                                <div class="flex justify-center items-center muncul2" style="animation-delay: 5s;">
                                     <p class="text-white text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                                 </div>
                                 <div class="flex justify-center items-center">
-                                    <p class="text-white text-xl font-bold">{{$tamu}}</p>
+                                    <p class="text-white text-xl font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
                                 </div>
-                                <div class="flex justify-center items-center text-center">
+                                <div class="flex justify-center items-center text-center muncul2" style="animation-delay: 5.6s;">
                                     <p class="text-white text-sm">
                                         *Mohon maaf apabila ada kesalahan pada
                                         penulisan nama dan gelar
@@ -574,7 +574,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold" style="animation-delay: 8.3s;">
+                        <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold" style="animation-delay: 5.9s;">
                             <a href="#isi_undangan" id="btnBuka" class="bg-red-300 hover:bg-red-400 p-3 rounded-lg flex justify-center items-center">
                                 <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                                 <span>Buka Undangan</span>
