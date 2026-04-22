@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('kode_pesan')->unique();
             $table->string('slug')->unique();
             $table->string('foto_cover');
+            $table->string('foto_footer');
             $table->string('foto_mempelai_wanita');
             $table->string('foto_mempelai_pria');
             $table->json('gallery');

@@ -103,6 +103,10 @@ class OrderUndanganController extends Controller
         if ($request->hasFile('foto_cover')) {
             $fotoCoverPath = $request->file('foto_cover')->store('covers', 'public');
         }
+        $fotoFooterPath = $image->foto_footer;
+        if ($request->hasFile('foto_footer')) {
+            $fotoFooterPath = $request->file('foto_footer')->store('footers', 'public');
+        }
 
         $fotoMempelaiPria = $image->foto_mempelai_pria;
         if ($request->hasFile('foto_mempelai_pria')) {
@@ -134,6 +138,7 @@ class OrderUndanganController extends Controller
         // 🔹 5. UPDATE ORDER
         $order->update([
             'template'             => $request->template,
+            'nama_undangan'             => $request->nama_undangan,
             'nama_mempelai_wanita' => $request->nama_mempelai_wanita,
             'fb_mempelai_wanita'   => $request->fb_mempelai_wanita,
             'ig_mempelai_wanita'   => $request->ig_mempelai_wanita,
@@ -159,6 +164,7 @@ class OrderUndanganController extends Controller
         // 🔹 6. UPDATE IMAGE
         $image->update([
             'foto_cover'           => $fotoCoverPath,
+            'foto_footer'           => $fotoFooterPath,
             'gallery'              => $galleryPaths,
             'foto_mempelai_wanita' => $fotoMempelaiWanita,
             'foto_mempelai_pria'   => $fotoMempelaiPria,

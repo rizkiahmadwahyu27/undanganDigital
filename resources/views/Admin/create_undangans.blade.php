@@ -99,6 +99,10 @@
                   
                     {{-- NAMA PRIA --}}
                     <div class="mb-2">
+                        <label class="font-semibold">Nama Undangan</label>
+                        <input type="text" name="nama_undangan" class="w-full border rounded p-2" required>
+                    </div>
+                    <div class="mb-2">
                         <label class="font-semibold">Nama Mempelai Pria</label>
                         <input type="text" name="nama_mempelai_pria" class="w-full border rounded p-2" required>
                     </div>
@@ -164,6 +168,10 @@
                     <div class="mb-2">
                         <label class="font-semibold">Foto Cover (JPG/PNG)</label>
                         <input type="file" name="foto_cover" class="w-full border rounded p-2">
+                    </div>
+                    <div class="mb-2">
+                        <label class="font-semibold">Foto Footer (JPG/PNG)</label>
+                        <input type="file" name="foto_footer" class="w-full border rounded p-2">
                     </div>
                     <div class="mb-2">
                         <label class="font-semibold">Foto Pria (JPG/PNG)</label>

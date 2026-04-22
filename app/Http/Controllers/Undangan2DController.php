@@ -39,6 +39,8 @@ class Undangan2DController extends Controller
         // 1. UPLOAD FOTO
         $fotoCoverPath = $request->hasFile('foto_cover') 
             ? $request->file('foto_cover')->store('covers', 'public') : null;
+        $fotoFooterPath = $request->hasFile('foto_footer') 
+            ? $request->file('foto_footer')->store('footers', 'public') : null;
 
         $fotoMempelaiPria = $request->hasFile('foto_mempelai_pria') 
             ? $request->file('foto_mempelai_pria')->store('mempelai_pria', 'public') : null;
@@ -75,6 +77,7 @@ class Undangan2DController extends Controller
             'kode_pesan'          => $kode_pesan,
             'slug'                => $slug,
             'template'            => $request->template,
+            'nama_undangan'            => $request->nama_undangan,
             'nama_mempelai_wanita' => $request->nama_mempelai_wanita,
             'fb_mempelai_wanita' => $request->fb_mempelai_wanita,
             'ig_mempelai_wanita' => $request->ig_mempelai_wanita,
@@ -102,6 +105,7 @@ class Undangan2DController extends Controller
             'kode_pesan'           => $kode_pesan,
             'slug'                 => $slug,
             'foto_cover'           => $fotoCoverPath,
+            'foto_footer'           => $fotoFooterPath,
             // Gunakan json_encode agar array gallery bisa masuk ke database string/text
             'gallery'              => $galleryPaths, 
             'foto_mempelai_wanita' => $fotoMempelaiWanita, // Perbaikan nama variabel

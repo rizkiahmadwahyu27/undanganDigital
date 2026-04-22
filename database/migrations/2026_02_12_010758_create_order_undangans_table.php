@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('kode_pesan')->unique();
             $table->string('slug')->unique();
             $table->string('template');
+            $table->string('nama_undangan');
             $table->string('nama_mempelai_wanita');
             $table->string('fb_mempelai_wanita');
             $table->string('ig_mempelai_wanita');

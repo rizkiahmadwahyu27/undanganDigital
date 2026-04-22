@@ -538,7 +538,7 @@
                
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
-                        <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.1s;">
+                        <div class="w-full flex justify-center items-center muncul2 mb-2" style="animation-delay: 7.1s;">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 52px;">
                                 Wedding Of
                             </h1>
@@ -555,7 +555,7 @@
                         </div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 7.7s;">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
-                                {{$nama_depan_wanita}} & {{$nama_depan_pria}}
+                                {{$undangan->nama_undangan}}
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center muncul2 -mt-1" style="animation-delay: 8s;">
@@ -660,7 +660,7 @@
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
-                                 {{$nama_depan_wanita}} & {{$nama_depan_pria}}  
+                                 {{$undangan->nama_undangan}}  
                             </h1>
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
@@ -1477,34 +1477,34 @@
             <div class="relative w-full md:w-6/12 h-screen flex items-center justify-center overflow-hidden">
 
                 <!-- Background Normal -->
-                <img src="{{ asset('storage/'.$images->foto_cover) }}"
+                <img src="{{ asset('storage/'.$images->foto_footer) }}"
                     class="absolute inset-0 w-full h-full object-cover fade-scroll">
 
                 <!-- Background Blur 50% Bawah -->
-                <img src="{{ asset('storage/'.$images->foto_cover) }}"
+                <img src="{{ asset('storage/'.$images->foto_footer) }}"
                     class="absolute bottom-0 w-full h-3/12 object-cover blur-2xl scale-150">
 
                 <!-- Overlay warna lembut -->
-                <div class="absolute inset-0 bg-red-900/40"></div>
+                <div class="absolute inset-0 bg-red-400/40"></div>
 
                 <!-- Foto utama -->
                 <div class="relative z-10 flex flex-col justify-center items-center 
                             w-full h-full text-center px-6">
 
-                    <!-- <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
-                                ring-8 ring-white/40 shadow-2xl">
+                    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
+                                ring-8 ring-white/40 shadow-2xl fade-scroll">
                         <img src="{{ asset('storage/'.$images->foto_cover) }}"
                             class="w-full h-full object-cover object-center">
-                    </div> -->
+                    </div>
 
-                    <div class="absolute bottom-10 max-w-md fade-scroll text-white mb-5">
+                    <div class="mt-8 max-w-md fade-scroll text-white">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 26px;">Wassalamualaikum Wr. Wb.</p>
-                        <p class="mt-2 mb-2">Kami yang berbahagia</p>
-                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$nama_depan_wanita}} & {{$nama_depan_pria}}</p>
+                        <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
+                        <p class="mt-4">Kami yang berbahagia</p>
+                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$undangan->nama_undangan}}</p>
                     </div>
 
                 </div>
@@ -1560,9 +1560,9 @@
         <img id="modalImage" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg">
     </div>
     <!-- Control Music -->
-    <div class="fixed bottom-2 opacity-40 left-1/2 -translate-x-1/2 z-50">
+    <div class="fixed bottom-50 right-1 z-50">
         <button id="musicBtn"
-            class="flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg hover:scale-105 transition">
+            class="flex items-center rounded-full bg-white/80 p-1 shadow-lg hover:scale-105 transition">
 
             <!-- Icon -->
             <svg id="musicIcon" xmlns="http://www.w3.org/2000/svg"
@@ -1571,7 +1571,6 @@
                 <path d="M8 5v14l11-7z"/>
             </svg>
 
-            <span class="text-sm font-medium">Play Backsound</span>
         </button>
     </div>
 
@@ -1731,27 +1730,30 @@
 
 
     <script>
-        const targetDate = new Date("{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}").getTime();
+        const targetDate = new Date("{{ \Carbon\Carbon::parse($undangan->tgl_akad)->toIso8601String() }}").getTime();
 
         const countdown = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
 
+            // Hitung waktu
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Cek apakah waktu sudah habis
             if (distance < 0) {
                 clearInterval(countdown);
-                document.getElementById("countdown").innerHTML =
-                    "Acara telah dimulai 🎉";
+                document.getElementById("countdown").innerHTML = "Acara telah dimulai 🎉";
                 return;
             }
 
-            document.getElementById("days").innerText =
-                Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText =
-                Math.floor((distance / (1000 * 60 * 60)) % 24);
-            document.getElementById("minutes").innerText =
-                Math.floor((distance / (1000 * 60)) % 60);
-            document.getElementById("seconds").innerText =
-                Math.floor((distance / 1000) % 60);
+            // Update elemen DOM (pastikan ID ini ada di HTML Anda)
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
         }, 1000);
     </script>
 

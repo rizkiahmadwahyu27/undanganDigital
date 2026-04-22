@@ -10,6 +10,7 @@ class Image extends Model
         'kode_pesan',
         'slug',
         'foto_cover',
+        'foto_footer',
         'gallery',
         'foto_mempelai_wanita',
         'foto_mempelai_pria',
