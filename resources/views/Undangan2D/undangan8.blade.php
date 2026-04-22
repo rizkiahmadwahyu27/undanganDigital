@@ -5,6 +5,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Undangan">
+    <meta property="og:title" content="Undangan {{$undangan->nama_undangan}}">
+    <meta property="og:description" content="Kepada Yth. Bapak/Ibu/Saudara/i {{$tamu}}">
+    <meta property="og:image" content="{{ asset('storage/'.$images->foto_footer) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Undangan {{$undangan->nama_undangan}}">
+    <meta name="twitter:description" content="Kepada Yth. Bapak/Ibu/Saudara/i {{$tamu}}">
+    <meta name="twitter:image" content="{{ asset('storage/'.$images->foto_footer) }}">
 
     <title>{{ config('app.name', 'Undangan Nikah') }}</title>
     <link rel="manifest" href="/manifest/{{ $undangan->slug }}">
