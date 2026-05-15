@@ -565,7 +565,7 @@
                         </div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 4.7s;">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
-                                {{$undangan->nama_undangan}}
+                                {{$undangan->judul_undangan}}
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center -mt-1">
@@ -670,10 +670,17 @@
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
                             <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
-                                 {{$undangan->nama_undangan}}  
+                                 {{$undangan->subjudul1_undangan}}  
                             </h1>
                         </div>
-                        <div class="fade-scroll w-full flex justify-center items-center">
+                        @if($undangan->hastag != '-')
+                            <div class="fade-scroll w-full flex justify-center items-center mb-5">
+                                <p class="text-white italic" style="font-family: 'Arial', cursive; font-size: 14px;">
+                                     {{$undangan->hastag}}  
+                                </p>
+                            </div>
+                        @endif
+                        <div class="fade-scroll w-full flex justify-center items-center mt-5">
                             <h1 class="text-white text-xl">
                                 {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
                             </h1>
@@ -1746,7 +1753,7 @@
                         </span>
                         <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$undangan->nama_undangan}}</p>
+                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$undangan->judul_undangan}}</p>
                     </div>
 
                 </div>

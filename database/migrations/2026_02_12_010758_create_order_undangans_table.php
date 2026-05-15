@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('template');
             $table->enum('jenis_undangan', ['L', 'P'])->default('P');
-            $table->string('nama_undangan');
+            $table->string('judul_undangan');
+            $table->string('subjudul1_undangan');
+            $table->string('subjudul2_undangan');
+            $table->string('hastag');
             $table->string('nama_mempelai_wanita');
             $table->string('fb_mempelai_wanita');
             $table->string('ig_mempelai_wanita');

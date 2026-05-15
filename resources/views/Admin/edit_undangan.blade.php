@@ -7,9 +7,21 @@
             
             {{-- NAMA PRIA --}}
             <div class="mb-2">
-                <label class="font-semibold">Nama Undangan</label>
-                <input type="text" name="nama_undangan" class="w-full border rounded p-2" required value="{{$undangan->nama_undangan}}">
+                <label class="font-semibold">Judul Undangan</label>
+                <input type="text" name="judul_undangan" class="w-full border rounded p-2" required value="{{$undangan->judul_undangan}}">
                 <input type="hidden" name="id" class="w-full border rounded p-2" required value="{{$undangan->id}}">
+            </div>
+             <div class="mb-2">
+                <label class="font-semibold">Sub Judul 1 Undangan</label>
+                <input type="text" name="subjudul1_undangan" value="{{$undangan->subjudul1_undangan}}" class="w-full border rounded p-2" required>
+            </div>
+             <div class="mb-2">
+                <label class="font-semibold">Sub Judul 2 Undangan</label>
+                <input type="text" name="subjudul2_undangan" value="{{$undangan->subjudul2_undangan}}" class="w-full border rounded p-2" required>
+            </div>
+             <div class="mb-2">
+                <label class="font-semibold">Hastag</label>
+                <input type="text" name="hastag" value="{{$undangan->hastag}}" class="w-full border rounded p-2" required>
             </div>
             <div class="mb-2">
                 <label class="font-semibold">Jenis Undangan</label>
