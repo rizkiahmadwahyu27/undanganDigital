@@ -141,22 +141,49 @@ class Undangan2DController extends Controller
 
 
     //kirim pesan
-    public function kirim_pesan(Request $request)
+public function kirim_pesan(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'pesan' => 'required'
+        // 1. Validasi semua data yang masuk dengan ketat
+        $validated = $request->validate([
+            'slug' => 'required|string',
+            'kode_pesan' => 'required|string',
+            'nama' => 'required|string|max:255',
+            'pesan' => 'required|string',
+            'konfirmasi_kehadiran' => 'required', // sesuaikan rule-nya (misal: in:hadir,tidak_hadir)
         ]);
 
-        Pesan::create([
-            'slug' => $request->slug,
-            'kode_pesan' => $request->kode_pesan,
-            'nama' => $request->nama,
-            'pesan' => $request->pesan
-        ]);
+        // 2. Gunakan DB Transaction untuk keamanan data ganda/setengah tersimpan
+        DB::beginTransaction();
 
-       return back()->with('success', 'Pesan berhasil dikirim');
-    }
+        try {
+            // Simpan ke tabel Pesan
+            Pesan::create([
+                'slug' => $validated['slug'],
+                'kode_pesan' => $validated['kode_pesan'],
+                'nama' => $validated['nama'],
+                'pesan' => $validated['pesan']
+            ]);
+
+            // Simpan ke tabel Kehadiran
+            Kehadiran::create([
+                'slug' => $validated['slug'],
+                'kode_pesan' => $validated['kode_pesan'],
+                'nama' => $validated['nama'],
+                'konfirmasi_kehadiran' => $request->konfirmasi_kehadiran,
+            ]);
+
+            // Jika semua aman, commit ke database
+            DB::commit();
+
+            return back()->with('success', 'Pesan dan konfirmasi kehadiran berhasil dikirim!');
+
+        } catch (\Exception $e) {
+            // Jika ada satu saja yang error, batalkan semua perubahan di database
+            DB::rollBack();
+
+            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+}
     public function konfirmasi_kehadiran(Request $request)
     {
         $request->validate([

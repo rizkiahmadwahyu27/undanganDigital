@@ -23,6 +23,7 @@ class OrderUndanganController extends Controller
         $undangan = OrderUndangan::where('slug', $slug)->firstOrFail();
         $images = Image::where('slug', $slug)->first();
         $stories = Story::where('slug', $slug)->first();
+        $kehadiran = Kehadiran::where('slug', $slug)->get();
         $pesan = Pesan::where('slug', $slug)
               ->latest()
               ->paginate(7);
@@ -76,6 +77,7 @@ class OrderUndanganController extends Controller
             'timezone',
             'stories',
             'pesan',
+            'kehadiran',
             'gallery'
         ));
     }
