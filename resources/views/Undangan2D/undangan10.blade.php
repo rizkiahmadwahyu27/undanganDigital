@@ -464,10 +464,10 @@
                 <!-- SECTION 1: FORM KIRIM PESAN / UCAPAN -->
                  <!-- Loop Dompet Digital / Kartu ATM -->
                     @foreach ($dompet_digital ?? [] as $dompet)
-                        <div class="w-full h-44 md:h-64 relative rounded-xl bg-kartu-atm p-4 flex flex-col justify-between shadow-md overflow-hidden text-white group">
+                        <div class="w-full h-52 md:h-64 relative rounded-xl bg-kartu-atm p-4 flex flex-col justify-between shadow-md overflow-hidden text-white group">
                             <!-- Bagian Atas Kartu: Nama Bank -->
                             <div class="flex justify-between items-start">
-                                <div class="w-10 h-7 bg-white/20 rounded-md backdrop-blur-sm"></div> <!-- Ilustrasi Chip ATM -->
+                                <div class="w-10 h-7 bg-transparent "></div> <!-- Ilustrasi Chip ATM -->
                                 <h2 class="text-lg font-bold tracking-wider uppercase drop-shadow-sm">{{ $dompet['nama_bank'] }}</h2>
                             </div>
                             
