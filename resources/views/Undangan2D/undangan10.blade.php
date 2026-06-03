@@ -153,6 +153,28 @@
         $nama_depan_pria = explode(' ', $undangan->nama_mempelai_pria)[0];
         $nama_depan_wanita = explode(' ', $undangan->nama_mempelai_wanita)[0];
     @endphp
+
+    <div id="loading-screen" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FCE79C] transition-opacity duration-700 ease-in-out">
+    
+        <div class="text-center space-y-6 w-4/5 max-w-sm">
+            
+            <h2 style="font-family: 'Sacramento', cursive; font-size: 40px;" class="text-gray-800 animate-pulse">
+                The Wedding of...
+            </h2>
+            <p style="font-family: 'Sacramento', cursive; font-size: 24px;" class="text-gray-800 animate-pulse">
+                {{$undangan->judul_undangan}}
+            </p>
+            <div class="w-full bg-stone-200/60 h-3 rounded-full overflow-hidden p-[2px] border border-stone-300 shadow-inner">
+                <div id="progress-bar" class="bg-amber-400 h-full rounded-full w-0 transition-all duration-100 ease-out shadow-[0_0_10px_rgba(251,191,36,0.7)]"></div>
+            </div>
+            
+            <div class="flex justify-between items-center text-xs font-semibold text-stone-600 tracking-wider uppercase">
+                <span id="loading-status">Loading Assets...</span>
+                <span id="loading-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
     <section id="cover_undangan">
         <div class="flex justify-center items-center">
             <div class="relative w-full md:w-6/12 h-screen flex items-center justify-center overflow-hidden">
@@ -1449,6 +1471,89 @@
         }
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // ---- AMBIL ELEMEN LOADING ----
+            const loadingScreen = document.getElementById('loading-screen');
+            const progressBar = document.getElementById('progress-bar');
+            const loadingPercentage = document.getElementById('loading-percentage');
+            const loadingStatus = document.getElementById('loading-status');
+            const isiUndangan = document.getElementById('isi_undangan');
+
+            // ---- LOGIKA LOADING BAR (ALA GAME) ----
+            let width = 0;
+            
+            // Mengubah status teks berkala agar terasa seperti game memuat data asli
+            const statusTexts = ["Loading Assets...", "Setting Up Room...", "Polishing Decor...", "Ready!"];
+
+            const loadingInterval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(loadingInterval);
+                    
+                    // 1. Sembunyikan Loading Screen dengan efek fade-out halus
+                    loadingScreen.classList.add('opacity-0');
+                    
+                    // 2. Tampilkan isi undangan utama Anda
+                    if (isiUndangan) {
+                        isiUndangan.classList.remove('hidden');
+                    }
+
+                    // 3. Hapus elemen loading dari DOM setelah animasi fade-out selesai (0.7 detik)
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 700);
+
+                } else {
+                    // Naikkan persentase secara acak agar terasa natural (tidak monoton)
+                    width += Math.floor(Math.random() * 8) + 2; 
+                    if (width > 100) width = 100;
+
+                    // Update tampilan visual progress bar & angka persen
+                    progressBar.style.width = width + '%';
+                    loadingPercentage.innerText = width + '%';
+
+                    // Variasi teks status berdasarkan persentase
+                    if (width > 30 && width < 65) loadingStatus.innerText = statusTexts[1];
+                    if (width >= 65 && width < 90) loadingStatus.innerText = statusTexts[2];
+                    if (width >= 90) loadingStatus.innerText = statusTexts[3];
+                }
+            }, 120); // Anda bisa menaikkan/menurunkan angka ini untuk mengatur kecepatan loading
+
+
+            // ---- LOGIKA TOMBOL & MODAL UNDANGAN ANDA SEBELUMNYA ----
+            function openModal(name) {
+                const modal = document.getElementById('modal-' + name);
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                setTimeout(() => { modal.classList.add('show'); }, 10);
+            }
+
+            function closeModal() {
+                document.querySelectorAll('.modal').forEach(m => {
+                    m.classList.add('hidden');
+                    m.classList.remove('show');
+                });
+            }
+
+            document.querySelectorAll('.icon').forEach(el => {
+                el.addEventListener('click', function () {
+                    const name = this.dataset.name;
+                    const label = this.querySelector('div');
+                    if (label) {
+                        label.classList.remove('opacity-0');
+                        setTimeout(() => {
+                            label.classList.add('opacity-0');
+                            openModal(name);
+                        }, 200);
+                    } else {
+                        openModal(name);
+                    }
+                });
+            });
+
+            window.closeModal = closeModal;
+        });
+    </script>
 
     <script>
         const targetDate = new Date("{{ \Carbon\Carbon::parse($undangan->tgl_akad)->toIso8601String() }}").getTime();
