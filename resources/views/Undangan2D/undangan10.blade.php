@@ -47,8 +47,16 @@
         .bg-cover1 {
             background-image: url('/images/bg-undangan10.png');
             background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            
+            /* KUNCI UTAMA: Gambar akan selalu mengecil/membesar secara utuh mengikuti layar tanpa terpotong */
+            background-size: contain; 
+            
+            /* Menaruh gambar persis di tengah layar */
+            background-position: center; 
+            
+            /* WAJIB: Isi warna ini dengan kode HEX warna dinding kuning pada gambar Anda (misal: #FDE047 atau #FCE79C) */
+            /* Ini agar jika layar HP terlalu panjang, area kosong di atas/bawahnya tersambung mulus dengan warna yang sama */
+            background-color: #FCE79C;
         }
         .bg-undangan {
             background-image: url('/images/bg-undangan.jpg');
@@ -92,7 +100,7 @@
         @media (min-width: 768px) {
             .bg-cover1 {
                 background-size: contain;
-                background-position: top;
+                background-position: center;
             }
             .bg-undangan {
                 background-size: contain;
@@ -191,10 +199,11 @@
             </div>
         </div>
     </section>
+    
     <section id="isi_undangan" class="hidden">
-        <div class="w-full h-screen overflow-hidden flex justify-center">
-            
-            <div class="relative w-full md:w-6/12 h-screen bg-cover1 flex justify-center overflow-hidden">
+        <div class="w-full h-screen overflow-hidden flex justify-center bg-zinc-900">
+        
+            <div class="relative w-full md:w-6/12 h-full bg-cover1 flex justify-center overflow-hidden shadow-2xl">
                 <button data-name="gallery" class="icon absolute top-[30%] left-[36%] w-[16%] h-[7%] md:left-[42%] md:w-[10%] rounded-xl cursor-pointer transition-all duration-500 ease-out border border-white/0 hover:border-yellow-300/40 hover:bg-white/10 hover:backdrop-blur-[1px] animate-glow-profesional hover:scale-105 active:scale-95 focus:outline-none"></button>
 
                 <button data-name="story" class="icon absolute top-[41%] left-[30%] w-[38%] h-[12%] md:left-[38%] md:w-[26%] rounded-2xl cursor-pointer transition-all duration-500 ease-out border border-white/0 hover:border-yellow-300/40 hover:bg-white/10 hover:backdrop-blur-[1px] animate-glow-profesional hover:scale-105 active:scale-95 focus:outline-none"></button>
@@ -207,9 +216,10 @@
 
                 <button data-name="tanggal" class="icon absolute top-[46%] left-[12%] w-[14%] h-[8%] md:left-[26%] md:w-[10%] rounded-xl cursor-pointer transition-all duration-500 ease-out border border-white/0 hover:border-yellow-300/40 hover:bg-white/10 hover:backdrop-blur-[1px] animate-glow-profesional hover:scale-105 active:scale-95 focus:outline-none"></button>
 
-                <button data-name="hadiah" class="icon absolute top-[55%] left-[8%] w-[19%] h-[2%] md:left-[25%] md:w-[13%] rounded-md cursor-pointer transition-all duration-500 ease-out border border-white/0 hover:border-yellow-300/40 hover:bg-white/10 hover:backdrop-blur-[1px] animate-glow-profesional hover:scale-105 active:scale-95 focus:outline-none"></button>    
+                <button data-name="hadiah" class="icon absolute top-[55%] left-[8%] w-[19%] h-[2%] md:left-[25%] md:w-[13%] rounded-md cursor-pointer transition-all duration-500 ease-out border border-white/0 hover:border-yellow-300/40 hover:bg-white/10 hover:backdrop-blur-[1px] animate-glow-profesional hover:scale-105 active:scale-95 focus:outline-none"></button>        
             </div>
         </div>
+        
     </section>
 
 
