@@ -186,7 +186,7 @@
             width: calc(20px + var(--i) * 1px);
             height: calc(20px + var(--i) * 1px);
 
-            background: url('/images/daun-jatuh.png') no-repeat center;
+            background: url('/images/asset_undangan11/daun_kering.png') no-repeat center;
             background-size: contain;
 
             opacity: 0.8;
@@ -308,7 +308,7 @@
         /* kupu-kupu */
         .kupu {
             position: absolute;
-            width: 40px;
+            width: 100px;
             height: auto;
             opacity: 0.9;
             animation-delay: 4s;
@@ -458,9 +458,9 @@
                 </div>
                 <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
                     
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu1">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu2">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu3">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
                 </div>
                 <!-- 2. Daun Pintu Kiri -->
@@ -473,49 +473,49 @@
                     <img src="{{ url('images/asset_undangan11/2.png') }}" alt="Pintu Kanan" class="w-full h-full object-fill shadow-2xl">
                 </div>
                 
-                <div class="absolute -top-10 -right-36 md:-right-52 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full rotate-300 angin"></div>
+                    <div class="bunga1 w-full h-full"></div>
                 </div>
 
-                <div class="absolute -top-10 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-45 angin2"></div>
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
                 <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 md:left-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full angin" style="transform: rotate(230deg);"></div>
+                    <div class="bunga2 w-full h-full"></div>
                 </div>
 
                 <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 md:right-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] angin2" style="transform: rotate(130deg);"></div>
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
                         <div class="w-full flex justify-center items-center muncul2 mb-2" style="animation-delay: 4s;">
-                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 52px;">
+                            <h1 class="text-amber-100 font-script text-5xl mb-10" >
                                 Wedding Of
                             </h1>
                         </div>
                         
                         <div class="w-full flex justify-center items-center mb-2 muncul2" style="animation-delay: 4.3s;">
                             <div class="w-full flex justify-center items-center">
-                                <div class="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden 
+                                <div class="w-56 h-[280px] md:w-80 md:h-[500px] rounded-t-full overflow-hidden 
                                     ring-8 ring-white/40 shadow-2xl">
                                     <img src="{{ asset('storage/'.$images->foto_cover) }}"
                                         class="w-full h-full object-cover object-center">
@@ -523,27 +523,27 @@
                             </div>    
                         </div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 4.7s;">
-                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
+                            <h1 class="text-amber-100 font-script text-4xl mb-2 mt-2">
                                 {{$undangan->judul_undangan}}
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center -mt-1">
                             <div>
                                 <div class="flex justify-center items-center muncul2" style="animation-delay: 5s;">
-                                    <p class="text-white text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                                    <p class="text-amber-100 text-lg">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                                 </div>
-                                <div class="flex justify-center items-center">
-                                    <p class="text-white text-xl font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
+                                <div class="flex justify-center items-center mt-3 mb-3">
+                                    <p class="text-amber-100 text-xl font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
                                 </div>
                                 <div class="flex justify-center items-center text-center muncul2" style="animation-delay: 5.6s;">
-                                    <p class="text-white text-sm">
+                                    <p class="text-amber-100 text-sm mr-10 ml-10 mt-3 mb-3">
                                         *Mohon maaf apabila ada kesalahan pada
                                         penulisan nama dan gelar
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-2 w-full flex justify-center items-center muncul2 text-gray-500 font-bold" style="animation-delay: 5.9s;">
+                        <div class="mt-2 w-full flex justify-center items-center muncul2 text-amber-600 font-bold" style="animation-delay: 5.9s;">
                             <a href="#isi_undangan" id="btnBuka" class="bg-gray-300 hover:bg-gray-400 p-3 rounded-lg flex justify-center items-center">
                                 <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                                 <span>Buka Undangan</span>
@@ -569,77 +569,76 @@
                 </div>
                 <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
                     
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu1">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu2">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu3">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
                 </div>
                 
-                
-                <div class="absolute -top-10 -right-36 md:-right-52 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 1s;">
-                    <div class="bunga1 w-full h-full rotate-300 angin"></div>
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full"></div>
                 </div>
 
-                <div class="absolute -top-10 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
-                    style="animation-delay: 1s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-45 angin2"></div>
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
-                    style="animation-delay: 1.2s;">
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
-                    style="animation-delay: 1.2s;">
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
                 <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 md:left-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
-                    style="animation-delay: 2.1s;">
-                    <div class="bunga2 w-full h-full angin" style="transform: rotate(230deg);"></div>
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full"></div>
                 </div>
 
                 <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 md:right-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
-                    style="animation-delay: 2.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] angin2" style="transform: rotate(130deg);"></div>
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
                         <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 24px;">
+                            <h1 class="text-amber-100 font-script text-2xl">
                                 The Wedding Of
                             </h1>
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-white" style="font-family: 'Sacramento', cursive; font-size: 44px;">
+                            <h1 class="text-amber-100 font-script text-5xl">
                                  {{$undangan->subjudul1_undangan}}  
                             </h1>
                         </div>
                         @if($undangan->hastag != '-')
                             <div class="fade-scroll w-full flex justify-center items-center mb-5">
-                                <p class="text-white italic" style="font-family: 'Arial', cursive; font-size: 14px;">
+                                <p class="text-amber-100 italic font-script text-xl">
                                      {{$undangan->hastag}}  
                                 </p>
                             </div>
                         @endif
                         <div class="fade-scroll w-full flex justify-center items-center mt-5">
-                            <h1 class="text-white text-xl">
+                            <h1 class="text-amber-100 text-xl">
                                 {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
                             </h1>
                         </div>
                         <div class="fade-scroll w-full flex justify-center items-center">
                              <!-- countdown container -->
                             <div>
-                                <div id="countdown" class="mt-4 mb-4 flex justify-center items-center text-xl md:text-3xl font-bold text-white">
+                                <div id="countdown" class="mt-4 mb-4 flex justify-center items-center text-xl md:text-3xl font-bold text-amber-100">
                                     
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-gray-500 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="days">0</p>
@@ -647,7 +646,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-gray-500 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="hours">0</p>
@@ -655,7 +654,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-gray-500 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="minutes">0</p>
@@ -663,7 +662,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-gray-500 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
                                         <div class="flex justify-center items-center">
                                             <div>
                                                 <p id="seconds">0</p>
@@ -675,7 +674,7 @@
                             </div>
                         </div> 
                         <div class="fade-scroll w-full flex justify-center items-center mt-10">
-                            <div class="bg-gray-300 rounded-xl p-3 text-gray-500 font-bold">
+                            <div class="bg-gray-300 rounded-xl p-3 text-amber-600 font-bold">
                                 <a class="flex justify-center items-center"
                                 href="https://www.google.com/calendar/render?action=TEMPLATE
                                 &text={{ $title }}
@@ -709,49 +708,49 @@
                 </div>
                 <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
                     
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu1">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu2">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu3">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
                 </div>
                 
                 
-                <div class="absolute -top-10 -right-36 md:-right-52 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full rotate-300 angin"></div>
+                    <div class="bunga1 w-full h-full"></div>
                 </div>
 
-                <div class="absolute -top-10 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-45 angin2"></div>
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
                 <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 md:left-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full angin" style="transform: rotate(230deg);"></div>
+                    <div class="bunga2 w-full h-full"></div>
                 </div>
 
                 <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 md:right-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] angin2" style="transform: rotate(130deg);"></div>
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
                 @if ($undangan->jenis_undangan == 'P')
                     <div class="flex justify-center w-full h-[1400px] items-center p-2">
                         <div>
-                            <div class="flex justify-center fade-scroll text-white mb-2">
+                            <div class="flex justify-center fade-scroll text-amber-100 mb-2">
                                 <svg class="w-48 md:72 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="40mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                                     viewBox="0 0 10000 4000"
                                     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -805,10 +804,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="opacity-0 flex justify-center mt-4 mb-4 text-white fade-scroll">
-                                <h1 style="font-family: 'Sacramento', cursive; font-size: 25px;">Assalamualaikum Wr. Wb</h1>
+                            <div class="opacity-0 flex justify-center mt-4 mb-4 text-amber-100 fade-scroll">
+                                <h1 class="font-script text-2xl">Assalamualaikum Wr. Wb</h1>
                             </div>
-                            <div class="opacity-0  flex justify-center items-center text-center mb-5 fade-scroll text-white">
+                            <div class="opacity-0  flex justify-center items-center text-center mb-5 fade-scroll text-amber-100">
                                 <p class="w-10/12 text-[12px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
                             </div>
                             <div class="flex justify-center mt-4">
@@ -816,10 +815,10 @@
                                     
                                     <div class="flex justify-center items-center">
                                         <div class="mt-3">
-                                            <div class="opacity-0 fade-scroll text-white flex justify-center mt-5">
-                                                <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_wanita}}</h1>
+                                            <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-5">
+                                                <h1 class="text-4xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                             </div>
-                                            <div class="opacity-0 fade-scroll text-white mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 fade-scroll text-amber-100 mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                                 @endif
@@ -832,7 +831,7 @@
                                             <div class="mt-2">
                                                 <div class="flex justify-center items-center fade-scroll">
                                                     @if ($undangan->fb_mempelai_wanita != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-amber-100">
                                                             <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -857,7 +856,7 @@
                                                         </div>
                                                     @endif
                                                     @if ($undangan->ig_mempelai_wanita != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-amber-100">
                                                             <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -891,19 +890,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex justify-center items-center mb-2 mt-5 fade-scroll text-white">
+                            <div class="flex justify-center items-center mb-2 mt-5 fade-scroll text-amber-100">
                                 <div class="flex justify-center items-center text-[90px] md:text-[110px]">
-                                    <h1 style="font-family: 'Sacramento', cursive;">&</h1>
+                                    <h1 class="font-script">&</h1>
                                 </div>
                             </div>
                             <div class="flex justify-center">
                                 <div>
                                     <div class="flex justify-center items-center">
                                         <div class="p-2">
-                                            <div class="opacity-0 fade-scroll flex justify-center mt-1 text-white">
-                                                <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                            <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
+                                                <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                             </div>
-                                            <div class="opacity-0 mt-4 mb-9 fade-scroll text-white flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 mt-4 mb-9 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
                                                 @endif
@@ -916,7 +915,7 @@
                                             <div class="mb-3 mt-2">
                                                 <div class="flex justify-center items-center fade-scroll">
                                                     @if ($undangan->fb_mempelai_pria != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-amber-100">
                                                             <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -941,7 +940,7 @@
                                                         </div>
                                                     @endif
                                                     @if ($undangan->ig_mempelai_pria != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-white shadow-2xl ml-2">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-amber-100 shadow-2xl ml-2">
                                                             <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -983,7 +982,7 @@
                 @else
                     <div class="flex justify-center w-full h-[1400px] items-center p-2">
                         <div>
-                            <div class="flex justify-center fade-scroll text-white mb-2">
+                            <div class="flex justify-center fade-scroll text-amber-100 mb-2">
                                 <svg class="w-48 md:72 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="40mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                                     viewBox="0 0 10000 4000"
                                     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1037,20 +1036,20 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="opacity-0 flex justify-center mt-4 mb-4 text-white fade-scroll">
-                                <h1 style="font-family: 'Sacramento', cursive; font-size: 25px;">Assalamualaikum Wr. Wb</h1>
+                            <div class="opacity-0 flex justify-center mt-4 mb-4 text-amber-100 fade-scroll">
+                                <h1 class="font-script text-2xl">Assalamualaikum Wr. Wb</h1>
                             </div>
-                            <div class="opacity-0  flex justify-center items-center text-center mb-5 fade-scroll text-white">
+                            <div class="opacity-0  flex justify-center items-center text-center mb-5 fade-scroll text-amber-100">
                                 <p class="w-10/12 text-[12px] md:text-sm">Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami</p>
                             </div>
                             <div class="flex justify-center mt-4">
                                 <div>
                                     <div class="flex justify-center items-center">
                                         <div class="mt-3">
-                                            <div class="opacity-0 fade-scroll flex justify-center mt-1 text-white">
-                                                <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                            <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
+                                                <h1 class="text-4xl font-script md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                             </div>
-                                            <div class="opacity-0 mt-4 mb-9 fade-scroll text-white flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 mt-4 mb-9 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
                                                 @endif
@@ -1063,7 +1062,7 @@
                                             <div class="mb-3 mt-2">
                                                 <div class="flex justify-center items-center fade-scroll">
                                                     @if ($undangan->fb_mempelai_pria != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-amber-100">
                                                             <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1088,7 +1087,7 @@
                                                         </div>
                                                     @endif
                                                     @if ($undangan->ig_mempelai_pria != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-white shadow-2xl ml-2">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 text-amber-100 shadow-2xl ml-2">
                                                             <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_pria }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1122,19 +1121,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex justify-center items-center mb-2 mt-5 fade-scroll text-white">
+                            <div class="flex justify-center items-center mb-2 mt-5 fade-scroll text-amber-100">
                                 <div class="flex justify-center items-center text-[90px] md:text-[110px]">
-                                    <h1 style="font-family: 'Sacramento', cursive;">&</h1>
+                                    <h1 class="font-script">&</h1>
                                 </div>
                             </div>
                             <div class="flex justify-center">
                                 <div>
                                     <div class="flex justify-center items-center">
                                         <div class="p-2">
-                                            <div class="opacity-0 fade-scroll text-white flex justify-center mt-5">
-                                                <h1 style="font-family: 'Sacramento', cursive;" class="text-4xl md:text-8xl">{{$undangan->nama_mempelai_wanita}}</h1>
+                                            <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-5">
+                                                <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_wanita}}</h1>
                                             </div>
-                                            <div class="opacity-0 fade-scroll text-white mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 fade-scroll text-amber-100 mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                                 @endif
@@ -1147,7 +1146,7 @@
                                             <div class="mt-2">
                                                 <div class="flex justify-center items-center fade-scroll">
                                                     @if ($undangan->fb_mempelai_wanita != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl text-amber-100">
                                                             <a href="https://www.facebook.com/{{ $undangan->fb_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1172,7 +1171,7 @@
                                                         </div>
                                                     @endif
                                                     @if ($undangan->ig_mempelai_wanita != '-')
-                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-white">
+                                                        <div class=" w-5 h-5 md:w-10 md:h-10 rounded-full overflow-hidden ring-2 ring-white/40 shadow-2xl ml-2 text-amber-100">
                                                             <a href="https://www.instagram.com/{{ $undangan->ig_mempelai_wanita }}" target="_blank" rel="noopener noreferrer" class="w-5 h-5">
                                                                 <?xml version="1.0" encoding="UTF-8"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1226,50 +1225,65 @@
                 </div>
                 <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
                     
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu1">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu2">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu3">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
                 </div>
                 
                 
-                <div class="absolute -top-10 -right-36 md:-right-52 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full rotate-300 angin"></div>
+                    <div class="bunga1 w-full h-full"></div>
                 </div>
 
-                <div class="absolute -top-10 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-45 angin2"></div>
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
                 <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 md:left-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full angin" style="transform: rotate(230deg);"></div>
+                    <div class="bunga2 w-full h-full"></div>
                 </div>
 
                 <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 md:right-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] angin2" style="transform: rotate(130deg);"></div>
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
                 <div class="flex justify-center items-center w-full h-screen text-center text-red-900">
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
                         <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-gray-300 opacity-15">
-                            <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Akad Nikah</h1>
-                            <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <h1 class="font-script text-3xl">Akad Nikah</h1>
+                            <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
+                                <div class="flex justify-center items-center">
+                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l') }}</p>
+                                </div>
+                                <div class="border-l-2 border-r-2 border-red-950">
+                                    <div class="flex justify-center items-center">
+                                        <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('d') }}</p>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('Y') }}</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('F') }}</p>
+                                </div>
+                            </div>
                             <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
                             <p class="text-[12px]">Tempat : {{$undangan->alamat_akad}}</p>
                             
@@ -1282,8 +1296,23 @@
 
                         </div>
                         <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll bg-gray-300 opacity-15">
-                            <h1 style="font-family: 'Sacramento', cursive; font-size: 30px;">Resepsi</h1>
-                            <p class="text-[12px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l, d F Y') }}</p>
+                            <h1 class="font-script text-3xl">Resepsi</h1>
+                            <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
+                                <div class="flex justify-center items-center">
+                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l') }}</p>
+                                </div>
+                                <div class="border-l-2 border-r-2 border-red-950">
+                                    <div class="flex justify-center items-center">
+                                        <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('d') }}</p>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('Y') }}</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('F') }}</p>
+                                </div>
+                            </div>
                             <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
                             <p class="text-[12px]">Tempat : {{$undangan->alamat_resepsi}}</p>
                             
@@ -1313,48 +1342,48 @@
                 </div>
                 <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
                     
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu1">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu2">
-                    <img src="/images/kupu-kupu.gif" class="kupu kupu3">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
                 </div>
                 
                 
-                <div class="absolute -top-10 -right-36 md:-right-52 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full rotate-300 angin"></div>
+                    <div class="bunga1 w-full h-full"></div>
                 </div>
 
-                <div class="absolute -top-10 -left-32 md:-left-48 w-52 h-52 md:w-80 md:h-80 muncul"
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-45 angin2"></div>
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-20"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
                 <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 md:left-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full angin" style="transform: rotate(230deg);"></div>
+                    <div class="bunga2 w-full h-full"></div>
                 </div>
 
                 <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 md:right-10 w-52 h-52 md:w-80 md:h-80 muncul pointer-events-none z-20"
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
                     style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] angin2" style="transform: rotate(130deg);"></div>
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
                 <div class="flex justify-center items-center w-full h-screen pt-10 pb-10">
                     <div class="overflow-y-auto max-h-screen px-4 min-h-0">
-                        <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;" class="text-center text-white fade-scroll">Our Story</h1>
+                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll">Our Story</h1>
 
                         <div class="relative border-l-4 border-gray-300 pl-6 space-y-4 ml-2 fade-scroll">
 
@@ -1467,8 +1496,8 @@
             <div class="relative w-full md:w-6/12 min-h-screen z-10 rounded-bl-full rounded-br-full rounded-tl-full rounded-tr-full" style="background-color: rgb(70, 8, 8)">
 
                 <!-- TITLE -->
-                <div class="flex justify-center items-center mt-24 mb-5 text-white fade-scroll">
-                    <h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">
+                <div class="flex justify-center items-center mt-24 mb-5 text-amber-100 fade-scroll">
+                    <h1 class="font-script text-3xl">
                         Our Gallery
                     </h1>
                 </div>
@@ -1496,10 +1525,10 @@
 
             </div>
         </div>
-        <div class="flex justify-center fade-scroll items-center text-red-900">
+        <div class="flex justify-center fade-scroll items-center text-red-950">
             <div class="bg-gray-300 w-full md:w-6/12">
                 <div class="flex justify-center items-center"><i data-lucide="gift" class="w-10 h-10 mb-2 mt-10"></i></div>
-                <div class="flex justify-center items-center"><h1 style="font-family: 'Sacramento', cursive; font-size: 34px;">Wedding Gift</h1></div>
+                <div class="flex justify-center items-center"><h1 class="font-script text-3xl">Wedding Gift</h1></div>
             </div>
         </div>
         @php
@@ -1511,13 +1540,13 @@
                 @foreach ($dompet_digital ?? [] as $dompet)
                     <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
                         <div class="absolute top-7 md:top-[70px] right-0 mr-5">
-                            <h1 class="text-white text-xl font-bold md:-mt-5">{{ $dompet['nama_bank'] }}</h1>
+                            <h1 class="text-amber-100 text-xl font-bold md:-mt-5">{{ $dompet['nama_bank'] }}</h1>
                         </div>
                         <div class="absolute bottom-7 left-0 ml-4 mb-2">
-                            <h1 class="norek-text text-[18px] md:text-lg text-white font-semibold leading-tight">
+                            <h1 class="norek-text text-[18px] md:text-lg text-amber-100 font-semibold leading-tight">
                                 {{$dompet['no_rek']}}
                             </h1>
-                            <h1 class="md:text-lg text-[18px] text-white font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
+                            <h1 class="md:text-lg text-[18px] text-amber-100 font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
                             <p class="text-xs status-message"></p>
                         </div>
                         <div class="absolute bottom-0 right-0 mr-4 mb-2">
@@ -1532,16 +1561,16 @@
 
                     <!-- ICON -->
                     <div class="flex justify-center items-center text-center mt-2">
-                        <i data-lucide="gift" class="w-10 h-10 mb-2 mt-2 text-white"></i>
+                        <i data-lucide="gift" class="w-10 h-10 mb-2 mt-2 text-amber-100"></i>
                     </div>
 
                     <!-- TITLE -->
-                    <div class="flex justify-center items-center text-center mt-1 mb-2 text-white">
+                    <div class="flex justify-center items-center text-center mt-1 mb-2 text-amber-100">
                         <h1 class="text-xl font-bold">Kirim Hadiah</h1>
                     </div>
 
                     <!-- DATA -->
-                    <div id="data-alamat" class="space-y-2 text-sm text-white">
+                    <div id="data-alamat" class="space-y-2 text-sm text-amber-100">
 
                         <div class="flex leading-tight">
                             <span class="w-16">Nama</span>
@@ -1581,7 +1610,7 @@
                     <!-- SECTION 1: FORM KIRIM PESAN / UCAPAN -->
                     <div class="bg-gray-50/60 border border-gray-100 p-5 rounded-xl space-y-4">
                         <div class="text-center">
-                            <h2 style="font-family: 'Sacramento', cursive; font-size: 32px;" class="text-red-900 leading-tight">Kirim Ucapan</h2>
+                            <h2 class="text-red-900 font-script text-3xl leading-tight">Kirim Ucapan</h2>
                             <p class="text-xs text-gray-500">Berikan doa restu terbaik Anda untuk kedua mempelai</p>
                         </div>
 
@@ -1610,7 +1639,7 @@
                             </div>
 
                             <div class="flex justify-end">
-                                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-lg bg-gray-500 hover:bg-gray-600 text-white font-medium text-sm transition-all shadow-sm active:scale-95 cursor-pointer">
+                                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-lg bg-gray-500 hover:bg-gray-600 text-amber-100 font-medium text-sm transition-all shadow-sm active:scale-95 cursor-pointer">
                                     Kirim Pesan
                                 </button>
                             </div>
@@ -1628,7 +1657,7 @@
                                     $hadir = $kehadiran->firstWhere('nama', $message->nama);
                                 @endphp
 
-                                <div class="relative flex items-start gap-3 p-4 bg-gray-900 text-white rounded-xl shadow-sm">
+                                <div class="relative flex items-start gap-3 p-4 bg-gray-900 text-amber-100 rounded-xl shadow-sm">
                                     
                                     <div class="flex-shrink-0 flex justify-center items-center p-1 bg-white/10 rounded-full w-10 h-10">
                                         <i data-lucide="circle-user-round" class="w-7 h-7 text-red-200"></i>
@@ -1638,7 +1667,7 @@
                                         <p class="text-sm font-bold tracking-wide border-b border-white/10 pb-1 uppercase text-red-200">
                                             {{ $message->nama }}
                                         </p>
-                                        <p class="text-xs md:text-sm text-white/90 leading-relaxed break-words">
+                                        <p class="text-xs md:text-sm text-amber-100/90 leading-relaxed break-words">
                                             {{ $message->pesan }}
                                         </p>
                                     </div>
@@ -1668,7 +1697,7 @@
                         <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-200/20 mt-4 px-1">
                             <div class="flex items-center justify-between p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
                                 <div class="flex items-center gap-2">
-                                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white shadow-sm">
+                                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-amber-100 shadow-sm">
                                         <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
                                     </span>
                                     <span class="text-xs md:text-sm font-medium text-gray-300">Hadir</span>
@@ -1680,7 +1709,7 @@
 
                             <div class="flex items-center justify-between p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl">
                                 <div class="flex items-center gap-2">
-                                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white shadow-sm">
+                                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-amber-100 shadow-sm">
                                         <i data-lucide="x" class="w-4 h-4 stroke-[3]"></i>
                                     </span>
                                     <span class="text-xs md:text-sm font-medium text-gray-300">Absen</span>
@@ -1730,14 +1759,14 @@
                             class="w-full h-full object-cover object-center">
                     </div>
 
-                    <div class="mt-8 max-w-md fade-scroll text-white">
+                    <div class="mt-8 max-w-md fade-scroll text-amber-100">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2" style="font-family: 'Sacramento', cursive; font-size: 24px;">Wassalamualaikum Wr. Wb.</p>
+                        <p class="mt-2 font-script text-2xl">Wassalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold" style="font-family: 'Sacramento', cursive; font-size: 34px;"> {{$undangan->judul_undangan}}</p>
+                        <p class="font-semibold font-script text-3xl"> {{$undangan->judul_undangan}}</p>
                     </div>
 
                 </div>
@@ -1747,9 +1776,9 @@
             <footer class="bg-gray-300 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
     
                 <!-- Made With Love -->
-                <div class="text-white text-sm md:text-base flex justify-center items-center gap-2 mb-3">
+                <div class="text-amber-100 text-sm md:text-base flex justify-center items-center gap-2 mb-3">
                     <span>Made With</span>
-                    <span class="text-white text-lg animate-pulse">❤</span>
+                    <span class="text-amber-100 text-lg animate-pulse">❤</span>
                     <span>By</span>
                 </div>
 
@@ -1763,19 +1792,19 @@
                 </div>
 
                 <!-- Nama Brand -->
-                <h2 class="mt-2 text-lg md:text-xl font-semibold text-white">
+                <h2 class="mt-2 text-lg md:text-xl font-semibold text-amber-100">
                     Invitin-Aja
                 </h2>
 
                 <!-- Tagline -->
-                <p class="text-white text-sm md:text-base mt-2">
+                <p class="text-amber-100 text-sm md:text-base mt-2">
                     Percayakan undangan anda kepada kami
                 </p>
 
                 <!-- Button WhatsApp -->
                 <div class="mt-6">
                     <a href="https://wa.me/62895610143232" target="_blank"
-                    class="inline-block bg-gray-600 hover:bg-gray-700 text-white text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
+                    class="inline-block bg-gray-600 hover:bg-gray-700 text-amber-100 text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
                         Order via WhatsApp
                     </a>
                 </div>
@@ -1788,7 +1817,7 @@
         <source src="{{ asset('storage/soundtrack/'.$images->soundtrack) }}" type="audio/mpeg">
     </audio>
     <div id="imageModal" class="fixed inset-0 bg-black/90 hidden justify-center items-center z-50">
-        <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" onclick="tutupModal()">&times;</span>
+        <span class="absolute top-5 right-5 text-amber-100 text-3xl cursor-pointer" onclick="tutupModal()">&times;</span>
         
         <img id="modalImage" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg">
     </div>
