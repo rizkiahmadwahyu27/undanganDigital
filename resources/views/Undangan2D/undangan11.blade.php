@@ -816,7 +816,7 @@
                                             <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
                                                 <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                             </div>
-                                            <div class="opacity-0 fade-scroll text-amber-100 mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                                 @endif
@@ -892,7 +892,7 @@
                                             <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
                                                 <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                             </div>
-                                            <div class="opacity-0 mt-1 mb-2 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                            <div class="opacity-0 mt-1 mb-5 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
                                                     <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
                                                 @endif
@@ -1031,7 +1031,7 @@
                                     <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
                                         <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                     </div>
-                                    <div class="opacity-0 fade-scroll text-amber-100 mt-3 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                    <div class="opacity-0 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                         @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
                                             <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                         @endif
@@ -1107,7 +1107,7 @@
                                     <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
                                         <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                     </div>
-                                    <div class="opacity-0 mt-1 mb-1 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
+                                    <div class="opacity-0 mt-1 mb-5 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                         @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
                                             <p>Putra {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_pria}} dan Ibu {{$undangan->nama_ibu_pria}}</p>
                                         @endif
@@ -1352,9 +1352,9 @@
                     <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
-                <div class="flex justify-center items-center w-full h-screen pt-10 pb-10">
+                <div class="flex justify-center items-center w-full h-screen pt-10 pb-10 z-50">
                     <div class="overflow-y-auto max-h-screen px-4 min-h-0">
-                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll mt-10">Our Story</h1>
+                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll mt-16">Our Story</h1>
 
                         <div class="relative border-l-4 border-gray-300 pl-6 space-y-4 ml-2 fade-scroll">
 
