@@ -210,13 +210,7 @@ public function kirim_pesan(Request $request)
     // UPDATE DATA
     public function update(Request $request, Undangan $undangan)
     {
-        $validated = $request->validate([
-            'slug'          => 'required|unique:undangans,slug,' . $undangan->id,
-            'nama_pria'     => 'required',
-            'nama_wanita'   => 'required',
-            'tanggal_acara' => 'required|date',
-            'lokasi'        => 'required',
-        ]);
+        dd($request->all);
 
         if ($request->hasFile('foto_cover')) {
             $fotoCoverPath = $request->file('foto_cover')->store('covers', 'public');
@@ -225,7 +219,11 @@ public function kirim_pesan(Request $request)
         }
 
         $undangan->update([
-            'slug'  => $request->slug,
+            'jenis_undangan'      => $request->jenis_undangan,
+            'judul_undangan'      => $request->judul_undangan,
+            'subjudul1_undangan'  => $request->subjudul1_undangan,
+            'subjudul2_undangan'  => $request->subjudul2_undangan,
+            'hastag'              => $request->hastag,
 
             'nama_pria' => $request->nama_pria,
             'nama_ayah_mempelai_pria' => $request->nama_ayah_mempelai_pria,

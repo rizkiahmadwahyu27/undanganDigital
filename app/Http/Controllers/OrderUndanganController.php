@@ -139,6 +139,11 @@ class OrderUndanganController extends Controller
 
         // 🔹 5. UPDATE ORDER
         $order->update([
+            'jenis_undangan'      => $request->jenis_undangan,
+            'judul_undangan'      => $request->judul_undangan,
+            'subjudul1_undangan'  => $request->subjudul1_undangan,
+            'subjudul2_undangan'  => $request->subjudul2_undangan,
+            'hastag'              => $request->hastag,
             'template'             => $request->template,
             'jenis_undangan'             => $request->jenis_undangan,
             'nama_undangan'             => $request->nama_undangan,

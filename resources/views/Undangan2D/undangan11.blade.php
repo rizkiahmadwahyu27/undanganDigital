@@ -483,13 +483,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full muncul pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -585,13 +585,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -609,85 +609,27 @@
                 
                 <div class="w-full h-screen flex justify-center items-center">
                     <div>
-                        <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-amber-100 font-script text-2xl">
-                                The Wedding Of
-                            </h1>
+                        <div class="w-full flex justify-center items-center mb-2 muncul2" style="animation-delay: 4.3s;">
+                            <div class="w-full flex justify-center items-center">
+                                <div class="w-56 h-[280px] md:w-80 md:h-[500px] rounded-t-full overflow-hidden 
+                                    ring-8 ring-white/40 shadow-2xl">
+                                    <img src="{{ asset('storage/'.$images->foto_footer) }}"
+                                        class="w-full h-full object-cover object-center">
+                                </div>
+                            </div>    
                         </div>
-                        <div class="fade-scroll w-full flex justify-center items-center">
-                            <h1 class="text-amber-100 font-script text-5xl">
-                                 {{$undangan->subjudul1_undangan}}  
-                            </h1>
-                        </div>
-                        @if($undangan->hastag != '-')
-                            <div class="fade-scroll w-full flex justify-center items-center mb-5">
-                                <p class="text-amber-100 italic font-script text-xl">
-                                     {{$undangan->hastag}}  
-                                </p>
-                            </div>
-                        @endif
-                        <div class="fade-scroll w-full flex justify-center items-center mt-5">
-                            <h1 class="text-amber-100 text-xl">
-                                {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
-                            </h1>
-                        </div>
-                        <div class="fade-scroll w-full flex justify-center items-center">
-                             <!-- countdown container -->
+                        <div class="w-full flex justify-center items-center">
                             <div>
-                                <div id="countdown" class="mt-4 mb-4 flex justify-center items-center text-xl md:text-3xl font-bold text-amber-100">
-                                    
-                                </div>
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="days">0</p>
-                                                <p>Days</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="hours">0</p>
-                                                <p>Jam</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="minutes">0</p>
-                                                <p>Menit</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="bg-gray-300 scale-anim w-18 h-18 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
-                                        <div class="flex justify-center items-center">
-                                            <div>
-                                                <p id="seconds">0</p>
-                                                <p>Detik</p>
-                                            </div>
-                                        </div>
+                                <div class="flex justify-center items-center muncul2 p-10" style="animation-delay: 5s;">
+                                    <div class="text-center">
+                                        <p class="text-sm italic leading-relaxed text-amber-100">
+                                            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                                        </p>
+                                        <p class="text-sm font-bold uppercase tracking-widest text-amber-100">
+                                            (Q.S Ar Rum : 21)
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                        </div> 
-                        <div class="fade-scroll w-full flex justify-center items-center mt-10">
-                            <div class="bg-gray-300 rounded-xl p-3 text-amber-600 font-bold">
-                                <a class="flex justify-center items-center"
-                                href="https://www.google.com/calendar/render?action=TEMPLATE
-                                &text={{ $title }}
-                                &details={{ $details }}
-                                &dates={{ $start }}/{{ $end }}
-                                &location={{ urlencode($undangan->alamat_akad) }}
-                                &ctz=Asia/Jakarta"
-                                target="_blank"
-                                rel="noopener noreferrer">
-
-                                    <i data-lucide="calendar-fold" class="mr-2"></i>
-                                    Save to Calendar
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -725,13 +667,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -822,7 +764,7 @@
                                                 @endif
                                             </div>
                                             <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
-                                                <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-2xl overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                     <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                                 </div>
                                             </div>
@@ -898,7 +840,7 @@
                                                 @endif
                                             </div>
                                             <div class="flex justify-center items-center mb-5 fade-scroll">
-                                                <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                                <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-2xl overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                                     <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                                 </div>
                                             </div>
@@ -1001,13 +943,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -1037,7 +979,7 @@
                                         @endif
                                     </div>
                                     <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
-                                        <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                        <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-2xl overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                             <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                         </div>
                                     </div>
@@ -1113,7 +1055,7 @@
                                         @endif
                                     </div>
                                     <div class="flex justify-center items-center mb-5 fade-scroll">
-                                        <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-full overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
+                                        <div class=" w-36 h-56 md:w-42 md:h-64 rounded-t-2xl overflow-hidden ring-[14px] ring-white/40 shadow-2xl">
                                             <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                         </div>
                                     </div>
@@ -1181,7 +1123,7 @@
                     </div>
                 </div>               
             </div>
-        </div> 
+        </div>
         <div class="w-full flex justify-center items-center">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -1213,13 +1155,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -1235,15 +1177,15 @@
                     <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
-                <div class="flex justify-center items-center w-full h-screen text-center text-red-900">
+                <div class="flex justify-center items-center w-full h-screen text-center text-amber-100">
                     <div class="grid grid-cols-1 gap-1.5 w-10/12">
-                        <div class="rounded-xl p-2 shadow-2xl fade-scroll bg-gray-300 z-50">
+                        <div class="rounded-xl p-2 shadow-2xl fade-scroll z-50">
                             <h1 class="font-script text-3xl">Akad Nikah</h1>
                             <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
                                 <div class="flex justify-center items-center">
                                     <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l') }}</p>
                                 </div>
-                                <div class="border-l-2 border-r-2 border-red-950">
+                                <div class="border-l-2 border-r-2 border-amber-100">
                                     <div class="flex justify-center items-center">
                                         <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('d') }}</p>
                                     </div>
@@ -1260,19 +1202,77 @@
                             
                             <div class="flex justify-center items-center">
                                 <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
-                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-900"></i>
-                                    <span class="text-red-900">Buka Google Lokasi</span>
+                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-400"></i>
+                                    <span class="text-red-400">Buka Google Lokasi</span>
                                 </a>
                             </div>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
+               <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                    @for ($i = 0; $i < 25; $i++)
+                        <span class="daun-jatuh" style="
+                            --i: {{ rand(5,35) }};
+                            --delay: {{ rand(0,10) }}s;
+                            --durasi: {{ rand(8,15) }}s;
+                            --posisi: {{ rand(0,100) }}%;
+                        "></span>
+                    @endfor
+                </div>
+                <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
+                    
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
-                        </div>
-                        <div class="rounded-xl p-2 shadow-2xl mt-5 mb-5 fade-scroll bg-gray-300 z-50">
+                </div>
+                
+                
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full"></div>
+                </div>
+
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
+                </div>
+               <!-- Tiang Kanan -->
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                    style="animation-delay: 4.2s;">
+                    <div class="tiang w-full h-full"></div>
+                </div>
+
+                <!-- Tiang Kiri -->
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                    style="animation-delay: 4.2s;">
+                    <div class="tiang w-full h-full"></div>
+                </div>
+                <!-- Bunga Kanan -->
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full"></div>
+                </div>
+
+                <!-- Bunga Kiri -->
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
+                </div>
+                
+                <div class="flex justify-center items-center w-full h-screen text-center text-amber-100">
+                    <div class="grid grid-cols-1 gap-1.5 w-10/12">
+                        <div class="rounded-xl p-2 shadow-2xl fade-scroll z-50">
                             <h1 class="font-script text-3xl">Resepsi</h1>
                             <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
                                 <div class="flex justify-center items-center">
                                     <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('l') }}</p>
                                 </div>
-                                <div class="border-l-2 border-r-2 border-red-950">
+                                <div class="border-l-2 border-r-2 border-amber-100">
                                     <div class="flex justify-center items-center">
                                         <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('d') }}</p>
                                     </div>
@@ -1284,16 +1284,153 @@
                                     <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('F') }}</p>
                                 </div>
                             </div>
-                            <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Selesai</p>
+                            <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
                             <p class="text-[12px]">Tempat : {{$undangan->alamat_resepsi}}</p>
                             
                             <div class="flex justify-center items-center">
-                                <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
-                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-900"></i>
-                                    <span class="text-red-900">Buka Google Lokasi</span>
+                                <a href="{{$undangan->maps_resepsi}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-amber-100 flex justify-center items-center">
+                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-400"></i>
+                                    <span class="text-red-400">Buka Google Lokasi</span>
                                 </a>
                             </div>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-center items-center">
+            <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden">
+                <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                    @for ($i = 0; $i < 25; $i++)
+                        <span class="daun-jatuh" style="
+                            --i: {{ rand(5,35) }};
+                            --delay: {{ rand(0,10) }}s;
+                            --durasi: {{ rand(8,15) }}s;
+                            --posisi: {{ rand(0,100) }}%;
+                        "></span>
+                    @endfor
+                </div>
+                <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
+                    
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
 
+                </div>
+                
+                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full"></div>
+                </div>
+
+                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 4s;">
+                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
+                </div>
+               <!-- Tiang Kanan -->
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                    style="animation-delay: 4.2s;">
+                    <div class="tiang w-full h-full"></div>
+                </div>
+
+                <!-- Tiang Kiri -->
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                    style="animation-delay: 4.2s;">
+                    <div class="tiang w-full h-full"></div>
+                </div>
+                <!-- Bunga Kanan -->
+                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full"></div>
+                </div>
+
+                <!-- Bunga Kiri -->
+                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                    style="animation-delay: 5.1s;">
+                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
+                </div>
+                
+                <div class="w-full h-screen flex justify-center items-center">
+                    <div>
+                        <div class="fade-scroll w-full flex justify-center items-center">
+                            <div class="w-28 h-36 border-[2px] border-amber-100 rounded-2xl p-1.5">
+                                <div class="flex justify-center items-center w-28 h-36 text-amber-100 border-[2px] border-amber-100 rounded-2xl">
+                                    <h1 class="text-center font-script text-5xl">
+                                        {{$undangan->subjudul1_undangan}}  
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        @if($undangan->hastag != '-')
+                            <div class="fade-scroll w-full flex justify-center items-center mb-5 mt-1">
+                                <p class="text-amber-100 italic font-script text-xl">
+                                     {{$undangan->hastag}}  
+                                </p>
+                            </div>
+                        @endif
+                        <div class="fade-scroll w-full flex justify-center items-center mt-5">
+                            <h1 class="text-amber-100 text-xl">
+                                {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
+                            </h1>
+                        </div>
+                        <div class="fade-scroll w-full flex justify-center items-center">
+                             <!-- countdown container -->
+                            <div>
+                                <div id="countdown" class="mt-4 mb-4 flex justify-center items-center text-xl md:text-3xl font-bold text-amber-100">
+                                    
+                                </div>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <div class="bg-gray-300 scale-anim w-16 h-16 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                        <div class="flex justify-center items-center">
+                                            <div class="text-center">
+                                                <p id="days">0</p>
+                                                <p>Hari</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-300 scale-anim w-16 h-16 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                        <div class="flex justify-center items-center">
+                                            <div class="text-center">
+                                                <p id="hours">0</p>
+                                                <p>Jam</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-300 scale-anim w-16 h-16 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                        <div class="flex justify-center items-center">
+                                            <div class="text-center">
+                                                <p id="minutes">0</p>
+                                                <p>Menit</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-300 scale-anim w-16 h-16 p-1 font-bold text-amber-600 rounded-tl-xl rounded-br-xl flex justify-center items-center">
+                                        <div class="flex justify-center items-center">
+                                            <div class="text-center">
+                                                <p id="seconds">0</p>
+                                                <p>Detik</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="fade-scroll w-full flex justify-center items-center mt-10">
+                            <div class="bg-gray-300 rounded-xl p-3 text-amber-600 font-bold">
+                                <a class="flex justify-center items-center"
+                                href="https://www.google.com/calendar/render?action=TEMPLATE
+                                &text={{ $title }}
+                                &details={{ $details }}
+                                &dates={{ $start }}/{{ $end }}
+                                &location={{ urlencode($undangan->alamat_akad) }}
+                                &ctz=Asia/Jakarta"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                    <i data-lucide="calendar-fold" class="mr-2"></i>
+                                    Save to Calendar
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1330,13 +1467,13 @@
                     <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
 
                 <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-50"
+                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
                     style="animation-delay: 4.2s;">
                     <div class="tiang w-full h-full"></div>
                 </div>
@@ -1352,85 +1489,47 @@
                     <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
                 </div>
                 
-                <div class="flex justify-center items-center w-full h-screen pt-10 pb-10 z-50">
-                    <div class="overflow-y-auto max-h-screen px-4 min-h-0">
-                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll mt-16">Our Story</h1>
+                <div class="flex justify-center items-center w-full p-8 h-screen z-50">
+                    <div class="overflow-y-auto max-h-screen min-h-0 w-full max-w-sm">
+                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll mb-4">Our Story</h1>
 
-                        <div class="relative border-l-4 border-gray-300 pl-6 space-y-4 ml-2 fade-scroll">
+                        {{-- Membatasi foto maksimal 6 saja menggunakan ->take(6) --}}
+                        @foreach (collect($images->gallery)->take(6) as $index => $foto)
+                            @php
+                                $num = $index + 1; // Produces 1, 2, 3, 4, 5, 6
+                                $tglKey = 'tgl_stori_' . $num;
+                                $storyKey = 'story_' . $num;
 
-                            <!-- Item -->
-                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_1)->locale('id')->translatedFormat('Y') }}</p>
-                                        <p>{{$stories->story_1}}</p>
-                                    </div>
-                                    
+                                $tgl = $stories->$tglKey ?? null;
+                                $storyText = $stories->$storyKey ?? null;
+                            @endphp
+
+                            <div class="w-full bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 mb-4">
+                                <!-- Container Gambar Landscape (16:9) -->
+                                <div class="relative w-full aspect-video bg-slate-200 overflow-hidden">
+                                    <img 
+                                        src="{{ asset('storage/'.$foto) }}" 
+                                        alt="Story {{ $num }}" 
+                                        class="absolute inset-0 w-full h-full object-cover object-top"
+                                    >
+                                </div>
+
+                                <!-- Konten Card -->
+                                <div class="p-5">
+                                    @if ($tgl)
+                                        <h3 class="mt-1 text-lg font-bold text-amber-950">
+                                            {{ \Carbon\Carbon::parse($tgl)->locale('id')->translatedFormat('Y') }}
+                                        </h3>
+                                    @endif
+
+                                    @if ($storyText)
+                                        <p class="mt-2 text-sm text-amber-950 leading-relaxed">
+                                            {{ $storyText }}
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
-
-                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_2)->locale('id')->translatedFormat('Y') }}</p>
-                                        <p>{{$stories->story_2}}</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                <div class="flex justify-start mr-2">
-                                    <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                    <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                        <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_3)->locale('id')->translatedFormat('Y') }}</p>
-                                        <p>{{$stories->story_3}}</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                            @if ($stories->story_4 != '-')
-                                <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                    <div class="flex justify-start mr-2">
-                                        <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                        <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
-                                            <p>{{$stories->story_4}}</p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            @endif
-                             @if ($stories->story_5 != '-')
-                                <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                    <div class="flex justify-start mr-2">
-                                        <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                        <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
-                                            <p>{{$stories->story_5}}</p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            @endif
-                             @if ($stories->story_6 != '-')
-                                <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700">
-                                    <div class="flex justify-start mr-2">
-                                        <div class="w-12 h-12 rounded-full bg-gray-300 flex text-gray-500 justify-center items-center mr-3"><i data-lucide="heart"></i></div>
-                                        <div class="rounded-xl w-full p-2 shadow-2xl bg-gray-300 text-gray-500 text-xs">
-                                            <p class="underline">{{ \Carbon\Carbon::parse($stories->tgl_stori_4)->locale('id')->translatedFormat('Y') }}</p>
-                                            <p>{{$stories->story_6}}</p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            @endif
-                            
-
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1693,16 +1792,6 @@
                         
                     </div>
 
-                    <!-- SECTION 4: AYAT SUCI / FOOTER -->
-                    <div class="text-center p-5 bg-stone-50 border border-stone-200/60 rounded-xl text-gray-600 space-y-4">
-                        <p class="text-xs md:text-sm italic leading-relaxed text-gray-500">
-                            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
-                        </p>
-                        <p class="text-xs font-bold uppercase tracking-widest text-red-800">
-                            (Q.S Ar Rum : 21)
-                        </p>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -1724,13 +1813,9 @@
                 <div class="relative z-10 flex flex-col justify-center items-center 
                             w-full h-full text-center px-6">
 
-                    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden 
-                                ring-8 ring-white/40 shadow-2xl fade-scroll">
-                        <img src="{{ asset('storage/'.$images->foto_cover) }}"
-                            class="w-full h-full object-cover object-center">
-                    </div>
+                    
 
-                    <div class="mt-8 max-w-md fade-scroll text-amber-100">
+                    <div class="bottom-0 max-w-md fade-scroll text-amber-100">
                         <span class="block">
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
