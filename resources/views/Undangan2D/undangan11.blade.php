@@ -1797,39 +1797,36 @@
         </div>
         <div class="flex justify-center items-center">
             <div class="relative w-full md:w-6/12 h-screen flex items-center justify-center overflow-hidden">
-
+        
                 <!-- Background Normal -->
                 <img src="{{ asset('storage/'.$images->foto_footer) }}"
                     class="absolute inset-0 w-full h-full object-cover fade-scroll">
-
+        
                 <!-- Background Blur 50% Bawah -->
                 <img src="{{ asset('storage/'.$images->foto_footer) }}"
                     class="absolute bottom-0 w-full h-3/12 object-cover blur-2xl scale-150">
-
-                <!-- Overlay warna lembut -->
-                <div class="absolute inset-0 bg-gray-400/40"></div>
-
-                <!-- Foto utama -->
-                <div class="relative z-10 flex flex-col justify-center items-center 
-                            w-full h-full text-center px-6">
-
+        
+                <!-- Foto utama / Konten -->
+                <!-- UBAH DI SINI: ganti justify-center menjadi justify-end dan tambahkan pb-16 -->
+                <div class="relative z-10 flex flex-col justify-end items-center 
+                            w-full h-full text-center px-6 pb-16">
                     
-
-                    <div class="bottom-0 max-w-md fade-scroll text-amber-100">
-                        <span class="block">
+                    <!-- Hapus -bottom-40 karena sudah diatur oleh justify-end -->
+                    <div class="max-w-md fade-scroll text-amber-100">
+                        <span>
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2 font-script text-xl">Wassalamualaikum Wr. Wb.</p>
+                        <p class="mt-2 font-alex-brush text-xl">Assalamualaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold font-script text-3xl"> {{$undangan->judul_undangan}}</p>
+                        <p class="font-semibold font-alex-brush text-3xl"> {{$undangan->judul_undangan}}</p>
                     </div>
-
+        
                 </div>
             </div>
         </div>
         <div class="flex justify-center items-center">
-            <footer class="bg-gray-300 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
+            <footer class="bg-gray-950 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
     
                 <!-- Made With Love -->
                 <div class="text-amber-100 text-sm md:text-base flex justify-center items-center gap-2 mb-3">
@@ -1860,7 +1857,7 @@
                 <!-- Button WhatsApp -->
                 <div class="mt-6">
                     <a href="https://wa.me/62895610143232" target="_blank"
-                    class="inline-block bg-gray-600 hover:bg-gray-700 text-amber-100 text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
+                    class="inline-block bg-amber-100 hover:bg-amber-200 text-red-900 text-sm md:text-base px-6 py-3 rounded-full shadow-md transition duration-300">
                         Order via WhatsApp
                     </a>
                 </div>
