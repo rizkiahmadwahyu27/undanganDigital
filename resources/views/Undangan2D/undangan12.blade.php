@@ -689,7 +689,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute bottom-16 left-7 w-40 h-20 z-10">
+                        <div class="absolute bottom-16 left-9 w-40 h-20 z-10">
                             <div class="flex justify-center items-center">
                                 <div>
                                     <div class="flex justify-center muncul fade-scroll items-center text-balance text-amber-100">
