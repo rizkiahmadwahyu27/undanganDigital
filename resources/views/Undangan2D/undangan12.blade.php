@@ -463,13 +463,13 @@
                 <div class="relative w-full h-screen flex justify-center items center">
                     <div class="absolute bottom-10 flex items-center justify-center">
                         <div class="text-center">
-                            <h1 class="text-amber-100 font-alex-brush text-4xl">
+                            <h1 class="text-amber-100 font-alex-brush text-4xl fade-scroll">
                                 {{$undangan->judul_undangan}}
                             </h1>
-                            <p class="text-lg text-amber-100">
+                            <p class="text-lg text-amber-100 fade-scroll">
                                 {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l, d F Y') }}
                             </p>
-                            <p class="text-sm text-amber-100">
+                            <p class="text-sm text-amber-100 fade-scroll">
                                 It was always you, It was you in every lifetime
                             </p>
                         </div>
@@ -489,7 +489,7 @@
                         
                         <!-- Berikan tinggi (h-64 / h-80) dan lebar (w-64 / w-80) yang jelas -->
                         <!-- Tambahkan overflow-y-auto dan p-6 -->
-                        <div class="bingkai1 fade-scroll muncul flex-shrink-0" style="width: 350px !important; height: 500px !important;"></div>
+                        <div class="bingkai1 fade-scroll flex-shrink-0" style="width: 350px !important; height: 500px !important;"></div>
                         <div class="absolute -ml-4 w-44 h-72 z-10 fade-scroll muncul">
                             <div class="flex justify-center items-center w-44 h-72 mt-5">
                                 <div>
@@ -507,7 +507,7 @@
                             </div>
                         </div>
                         <!-- Prangko -->
-                        <div class="bunga3 absolute -bottom-16 -left-14 w-40 h-40 z-10 fade-scroll muncul"></div>
+                        <div class="bunga3 absolute -bottom-16 -left-14 w-40 h-40 z-10 fade-scroll"></div>
                         
                     </div>
                 </div>
@@ -775,7 +775,7 @@
                     <div class="bg-red-900 w-[300px] h-[550px] rounded-[400px/600px] text-center p-5">
                         <div class="flex justify-center items-center text-center">
                             <div>
-                                <h1 class="font-alex-brush text-xl text-amber-100">
+                                <h1 class="font-alex-brush text-xl text-amber-100 mt-5">
                                     Save The Date
                                 </h1>
                                 <div class="text-amber-100 text-3xl">
