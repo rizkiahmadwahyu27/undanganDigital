@@ -25,25 +25,11 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Elegan Blend'; 
-    src: url('../fonts/EleganBlend.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 /* 2. Daftarkan ke tema Tailwind v4 */
 @theme {
-    /* Mengganti font sans default menjadi Plus Jakarta Sans */
-    --font-sans: 'Elegan Blend', cursive, serif;
     
     /* Mendefinisikan kustom font */
     --font-script: 'JavaneseCalligraphy', cursive, serif;
     --font-alex-brush: 'Alex Brush', cursive, serif;
 }
 
-/* 3. Terapkan Plus Jakarta Sans sebagai font default seluruh body */
-body {
-    font-family: var(--font-sans);
-}
