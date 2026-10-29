@@ -383,7 +383,7 @@
                 <!-- Background Blur 50% Bawah -->
                 <img src="{{ asset('storage/'.$images->foto_cover) }}"
                     class="absolute bottom-0 w-full h-3/12 object-cover blur-2xl scale-150">
-                <div class="absolute bottom-10 inset-x-0 flex flex-col items-center justify-center z-50 px-4">
+                <div class="absolute bottom-20 inset-x-0 flex flex-col items-center justify-center z-50 px-4">
                     
                     <div class="w-full flex justify-center items-center muncul2 text-center" style="animation-delay: 4.7s;">
                         <h1 class="text-amber-100 font-alex-brush text-5xl">
@@ -461,7 +461,7 @@
                     
                 </div>
                 <div class="relative w-full h-screen flex justify-center items center">
-                    <div class="absolute bottom-5 flex items-center justify-center">
+                    <div class="absolute bottom-10 flex items-center justify-center">
                         <div class="text-center">
                             <h1 class="text-amber-100 font-alex-brush text-4xl">
                                 {{$undangan->judul_undangan}}
@@ -490,17 +490,19 @@
                         <!-- Berikan tinggi (h-64 / h-80) dan lebar (w-64 / w-80) yang jelas -->
                         <!-- Tambahkan overflow-y-auto dan p-6 -->
                         <div class="bingkai1 fade-scroll muncul flex-shrink-0" style="width: 350px !important; height: 500px !important;"></div>
-                        <div class="absolute w-44 h-72 z-10 fade-scroll muncul">
+                        <div class="absolute -ml-4 w-44 h-72 z-10 fade-scroll muncul">
                             <div class="flex justify-center items-center w-44 h-72 mt-5">
-                                <div class="flex justify-center items-center text-center">
-                                    <p class="text-[10px] leading-relaxed text-red-900 mb-4">
-                                    "Dan diantara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
-                                    </p>
-                                </div>
-                                <div class="flex justify-center items-center text-center">
-                                    <p class="text-[10px] font-bold uppercase tracking-widest text-red-900">
-                                        (Q.S Ar Rum : 21)
-                                    </p>
+                                <div>
+                                    <div class="flex justify-center items-center text-center">
+                                        <p class="text-[10px] leading-relaxed text-red-900 mb-4">
+                                        "Dan diantara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                                        </p>
+                                    </div>
+                                    <div class="flex justify-center items-center text-center">
+                                        <p class="text-[10px] font-bold uppercase tracking-widest text-red-900">
+                                            (Q.S Ar Rum : 21)
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -687,7 +689,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute bottom-16 left-8 w-40 h-20 z-10">
+                        <div class="absolute bottom-16 left-7 w-40 h-20 z-10">
                             <div class="flex justify-center items-center">
                                 <div>
                                     <div class="flex justify-center muncul fade-scroll items-center text-balance text-amber-100">
@@ -930,32 +932,32 @@
                         <div class="fade-scroll">
                             <img src="{{url('/images/asset_undangan12/Foto love story.jpeg')}}" alt="foto story">
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_1 != "-")
                                 <p>{{$stories->story_1}}</p>
                             @endif
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_2 != "-")
                                 <p>{{$stories->story_2}}</p>
                             @endif
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_3 != "-")
                                 <p>{{$stories->story_3}}</p>
                             @endif
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_4 != "-")
                                 <p>{{$stories->story_4}}</p>
                             @endif
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_5 != "-")
                                 <p>{{$stories->story_5}}</p>
                             @endif
                         </div>
-                        <div class="flex justify-center fade-scroll items-center text-center mb-2 text-amber-100 border-b-2 border-amber-100">
+                        <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_6 != "-")
                                 <p>{{$stories->story_6}}</p>
                             @endif
