@@ -509,7 +509,7 @@
                 <div class="w-full h-screen flex justify-center items-center z-50">
                     <div>
                         <div class="w-full flex justify-center items-center muncul2 mb-2" style="animation-delay: 4s;">
-                            <h1 class="text-amber-100 font-script text-3xl mt-8 mb-4" >
+                            <h1 class="text-amber-100 font-script text-5xl mb-4" >
                                 Wedding Of
                             </h1>
                         </div>
@@ -524,20 +524,20 @@
                             </div>    
                         </div>
                         <div class="w-full flex justify-center items-center muncul2" style="animation-delay: 4.7s;">
-                            <h1 class="text-amber-100 font-script text-xl mb-1 mt-1">
+                            <h1 class="text-amber-100 font-script text-4xl mb-1 mt-1">
                                 {{$undangan->judul_undangan}}
                             </h1>
                         </div>
                         <div class="w-full flex justify-center items-center">
                             <div>
                                 <div class="flex justify-center items-center muncul2" style="animation-delay: 5s;">
-                                    <p class="text-amber-100 text-md">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                                    <p class="text-amber-100 text-sm">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                                 </div>
                                 <div class="flex justify-center items-center mt-1 mb-1">
-                                    <p class="text-amber-100 text-lg font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
+                                    <p class="text-amber-100 text-md font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
                                 </div>
                                 <div class="flex justify-center items-center text-center muncul2" style="animation-delay: 5.6s;">
-                                    <p class="text-amber-100 text-sm mr-10 ml-10 mt-1 mb-1">
+                                    <p class="text-amber-100 text-xs mr-10 ml-10 mt-1 mb-1">
                                         *Mohon maaf apabila ada kesalahan pada
                                         penulisan nama dan gelar
                                     </p>
@@ -757,7 +757,7 @@
                                     <div class="flex justify-center items-center p-4">
                                         <div>
                                             <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
-                                                <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
+                                                <h1 class="text-4xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                             </div>
                                             <div class="p-4 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
@@ -833,7 +833,7 @@
                                     <div class="flex justify-center items-center p-4">
                                         <div class="p-2">
                                             <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
-                                                <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                                <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                             </div>
                                             <div class="p-4 mt-1 mb-5 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
@@ -972,7 +972,7 @@
                             <div class="flex justify-center items-center p-4">
                                 <div>
                                     <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
-                                        <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
+                                        <h1 class="text-4xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                     </div>
                                     <div class="p-4 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                         @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
@@ -1048,7 +1048,7 @@
                             <div class="flex justify-center items-center p-4">
                                 <div class="p-2">
                                     <div class="p-4 fade-scroll flex justify-center mt-1 text-amber-100">
-                                        <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                        <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                     </div>
                                     <div class="opacity-0 mt-1 mb-5 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                         @if ($undangan->nama_ayah_pria != '-' && $undangan->nama_ibu_pria != '-' && $undangan->anak_ke <= 0)
@@ -1492,7 +1492,7 @@
                 
                 <div class="flex justify-center items-center w-full p-8 h-screen z-50">
                     <div class="overflow-y-auto max-h-screen min-h-0 w-full max-w-sm">
-                        <h1 class="text-center text-amber-100 font-script text-3xl fade-scroll mb-4">Our Story</h1>
+                        <h1 class="text-center text-amber-100 font-script text-5xl fade-scroll mb-4">Our Story</h1>
 
                         {{-- Membatasi foto maksimal 6 saja menggunakan ->take(6) --}}
                         @foreach (collect($images->gallery)->take(6) as $index => $foto)
@@ -1837,9 +1837,9 @@
                             Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian,
                             kami mengucapkan Terima Kasih.
                         </span>
-                        <p class="mt-2 font-alex-brush text-xl">Assalamualaikum Wr. Wb.</p>
+                        <p class="mt-2 font-alex-brush text-xl">Wassalamu'alaikum Wr. Wb.</p>
                         <p class="mt-4">Kami yang berbahagia</p>
-                        <p class="font-semibold font-alex-brush text-3xl"> {{$undangan->judul_undangan}}</p>
+                        <p class="font-semibold font-alex-brush text-4xl"> {{$undangan->judul_undangan}}</p>
                     </div>
         
                 </div>
