@@ -437,6 +437,7 @@
         ];
 
         $anak_ke = $urutan[$undangan->pria_anak_ke] ?? '-';
+        $anak_ke_p = $urutan[$undangan->wanita_anak_ke] ?? '-';
 
     @endphp
     @php
@@ -760,7 +761,7 @@
                                             </div>
                                             <div class="opacity-0 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
-                                                    <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
+                                                    <p>Putri {{$anak_ke_p}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                                 @endif
                                             </div>
                                             <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
@@ -975,7 +976,7 @@
                                     </div>
                                     <div class="opacity-0 fade-scroll text-amber-100 mt-1 mb-5 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                         @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
-                                            <p>Putri {{$anak_ke}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
+                                            <p>Putri {{$anak_ke_p}} dari Bapak {{$undangan->nama_ayah_wanita}} dan Ibu {{$undangan->nama_ibu_wanita}}</p>
                                         @endif
                                     </div>
                                     <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
