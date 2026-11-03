@@ -1496,39 +1496,44 @@
                         {{-- Membatasi foto maksimal 6 saja menggunakan ->take(6) --}}
                         @foreach (collect($images->gallery)->take(6) as $index => $foto)
                             @php
-                                $num = $index + 1; // Produces 1, 2, 3, 4, 5, 6
+                               $num = $index + 1; // Produces 1, 2, 3, 4, 5, 6
                                 $tglKey = 'tgl_stori_' . $num;
                                 $storyKey = 'story_' . $num;
 
                                 $tgl = $stories->$tglKey ?? null;
-                                $storyText = $stories->$storyKey ?? null;
+
+                                // Ambil nilai story, jika "-" atau kosong, jadikan null
+                                $rawStory = $stories->$storyKey ?? null;
+                                $storyText = ($rawStory === '-' || empty($rawStory)) ? null : $rawStory;
                             @endphp
 
-                            <div class="w-full bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 mb-4">
-                                <!-- Container Gambar Landscape (16:9) -->
-                                <div class="relative w-full aspect-video bg-slate-200 overflow-hidden">
-                                    <img 
-                                        src="{{ asset('storage/'.$foto) }}" 
-                                        alt="Story {{ $num }}" 
-                                        class="absolute inset-0 w-full h-full object-cover object-top"
-                                    >
-                                </div>
+                            @if (!empty($storyText))
+                                <div class="w-full bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 mb-4">
+                                    <!-- Container Gambar Landscape (16:9) -->
+                                    <div class="relative w-full h-64 bg-slate-200 overflow-hidden">
+                                        <img 
+                                            src="{{ asset('storage/'.$foto) }}" 
+                                            alt="Story {{ $num }}" 
+                                            class="absolute inset-0 w-full h-full object-contain object-top"
+                                        >
+                                    </div>
 
-                                <!-- Konten Card -->
-                                <div class="p-5">
-                                    @if ($tgl)
-                                        <h3 class="mt-1 text-lg font-bold text-amber-950">
-                                            {{ \Carbon\Carbon::parse($tgl)->locale('id')->translatedFormat('Y') }}
-                                        </h3>
-                                    @endif
+                                    <!-- Konten Card -->
+                                    <div class="p-5">
+                                        @if ($tgl)
+                                            <h3 class="mt-1 text-lg font-bold text-amber-950">
+                                                {{ \Carbon\Carbon::parse($tgl)->locale('id')->translatedFormat('Y') }}
+                                            </h3>
+                                        @endif
 
-                                    @if ($storyText)
-                                        <p class="mt-2 text-sm text-amber-950 leading-relaxed">
-                                            {{ $storyText }}
-                                        </p>
-                                    @endif
+                                        @if ($storyText)
+                                            <p class="mt-2 text-sm text-amber-950 leading-relaxed">
+                                                {{ $storyText }}
+                                            </p>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         @endforeach
                     </div>
                 </div>
