@@ -754,7 +754,7 @@
                         <div class="flex justify-center mt-1">
                             <div>
                                 @if ($undangan->jenis_undangan == 'P')
-                                    <div class="flex justify-center items-center">
+                                    <div class="flex justify-center items-center p-4">
                                         <div>
                                             <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
                                                 <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
@@ -830,7 +830,7 @@
                                         </div>
                                     </div>
                                 @else
-                                    <div class="flex justify-center items-center">
+                                    <div class="flex justify-center items-center p-4">
                                         <div class="p-2">
                                             <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
                                                 <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
@@ -969,7 +969,7 @@
                 <div class="flex justify-center w-full h-screen items-center p-2">
                     <div>
                         @if ($undangan->jenis_undangan == 'L')
-                            <div class="flex justify-center items-center">
+                            <div class="flex justify-center items-center p-4">
                                 <div>
                                     <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
                                         <h1 class="text-2xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
@@ -1045,7 +1045,7 @@
                                 </div>
                             </div>
                         @else
-                            <div class="flex justify-center items-center">
+                            <div class="flex justify-center items-center p-4">
                                 <div class="p-2">
                                     <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
                                         <h1 class="font-script text-2xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
