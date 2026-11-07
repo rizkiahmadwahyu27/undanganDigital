@@ -1125,93 +1125,95 @@
                 </div>               
             </div>
         </div>
-        <div class="w-full flex justify-center items-center">
-            <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
-               <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    @for ($i = 0; $i < 25; $i++)
-                        <span class="daun-jatuh" style="
-                            --i: {{ rand(5,35) }};
-                            --delay: {{ rand(0,10) }}s;
-                            --durasi: {{ rand(8,15) }}s;
-                            --posisi: {{ rand(0,100) }}%;
-                        "></span>
-                    @endfor
-                </div>
-                <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
+        @if ({{$undangan->alamat_akad}} != "-")
+            <div class="w-full flex justify-center items-center">
+                <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
+                <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                        @for ($i = 0; $i < 25; $i++)
+                            <span class="daun-jatuh" style="
+                                --i: {{ rand(5,35) }};
+                                --delay: {{ rand(0,10) }}s;
+                                --durasi: {{ rand(8,15) }}s;
+                                --posisi: {{ rand(0,100) }}%;
+                            "></span>
+                        @endfor
+                    </div>
+                    <div class="kupu-wrapper absolute inset-0 pointer-events-none z-10">
+                        
+                        <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
+                        <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
+                        <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
+
+                    </div>
                     
-                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu1">
-                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu2">
-                    <img src="{{url('images/asset_undangan11/burung.gif')}}" class="kupu kupu3">
+                    
+                    <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                        style="animation-delay: 4s;">
+                        <div class="bunga1 w-full h-full"></div>
+                    </div>
 
-                </div>
-                
-                
-                <div class="absolute top-0 -left-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
-                    style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full"></div>
-                </div>
+                    <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                        style="animation-delay: 4s;">
+                        <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
+                    </div>
+                <!-- Tiang Kanan -->
+                    <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                        style="animation-delay: 4.2s;">
+                        <div class="tiang w-full h-full"></div>
+                    </div>
 
-                <div class="absolute top-0 -right-10 muncul w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
-                    style="animation-delay: 4s;">
-                    <div class="bunga1 w-full h-full scale-x-[-1] rotate-360"></div>
-                </div>
-               <!-- Tiang Kanan -->
-                <div class="absolute top-32 -right-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
-                    style="animation-delay: 4.2s;">
-                    <div class="tiang w-full h-full"></div>
-                </div>
+                    <!-- Tiang Kiri -->
+                    <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
+                        style="animation-delay: 4.2s;">
+                        <div class="tiang w-full h-full"></div>
+                    </div>
+                    <!-- Bunga Kanan -->
+                    <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                        style="animation-delay: 5.1s;">
+                        <div class="bunga2 w-full h-full"></div>
+                    </div>
 
-                <!-- Tiang Kiri -->
-                <div class="absolute top-32 -left-16 w-32 h-full md:w-48 md:h-full fade-scroll pointer-events-none z-10"
-                    style="animation-delay: 4.2s;">
-                    <div class="tiang w-full h-full"></div>
-                </div>
-                <!-- Bunga Kanan -->
-                <div class="absolute bottom-0 left-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
-                    style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full"></div>
-                </div>
-
-                <!-- Bunga Kiri -->
-                <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
-                    style="animation-delay: 5.1s;">
-                    <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
-                </div>
-                
-                <div class="flex justify-center items-center w-full h-screen text-center text-amber-100">
-                    <div class="grid grid-cols-1 gap-1.5 w-10/12">
-                        <div class="rounded-xl p-2 shadow-2xl fade-scroll z-50">
-                            <h1 class="font-script text-3xl">Akad Nikah</h1>
-                            <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
-                                <div class="flex justify-center items-center">
-                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l') }}</p>
-                                </div>
-                                <div class="border-l-2 border-r-2 border-amber-100">
+                    <!-- Bunga Kiri -->
+                    <div class="absolute bottom-0 right-0 w-52 h-52 md:w-80 md:h-80 fade-scroll pointer-events-none z-50"
+                        style="animation-delay: 5.1s;">
+                        <div class="bunga2 w-full h-full scale-x-[-1] rotate-360"></div>
+                    </div>
+                    
+                    <div class="flex justify-center items-center w-full h-screen text-center text-amber-100">
+                        <div class="grid grid-cols-1 gap-1.5 w-10/12">
+                            <div class="rounded-xl p-2 shadow-2xl fade-scroll z-50">
+                                <h1 class="font-script text-3xl">Akad Nikah</h1>
+                                <div class="grid grid-cols-3 gap-0 mt-4 mb-4">
                                     <div class="flex justify-center items-center">
-                                        <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('d') }}</p>
+                                        <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('l') }}</p>
+                                    </div>
+                                    <div class="border-l-2 border-r-2 border-amber-100">
+                                        <div class="flex justify-center items-center">
+                                            <p class="text-[36px] font-extrabold md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('d') }}</p>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('Y') }}</p>
+                                        </div>
                                     </div>
                                     <div class="flex justify-center items-center">
-                                        <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('Y') }}</p>
+                                        <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('F') }}</p>
                                     </div>
                                 </div>
+                                <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
+                                <p class="text-[12px]">Tempat : {{$undangan->alamat_akad}}</p>
+                                
                                 <div class="flex justify-center items-center">
-                                    <p class="text-[20px] md:text-lg">{{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('F') }}</p>
+                                    <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
+                                        <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-400"></i>
+                                        <span class="text-red-400">Buka Google Lokasi</span>
+                                    </a>
                                 </div>
-                            </div>
-                            <p class="text-[12px] md:text-lg">Pukul {{ \Carbon\Carbon::parse($undangan->tgl_akad)->locale('id')->translatedFormat('H:i') }} {{$timezone}} - Pukul {{ \Carbon\Carbon::parse($undangan->tgl_resepsi)->locale('id')->translatedFormat('H:i') }} {{$timezone}}</p>
-                            <p class="text-[12px]">Tempat : {{$undangan->alamat_akad}}</p>
-                            
-                            <div class="flex justify-center items-center">
-                                <a href="{{$undangan->maps_akad}}" class="mt-1 px-0.5 py-1.5 w-8/12 rounded-xl bg-white flex justify-center items-center">
-                                    <i data-lucide="map-minus" class="w-5 h-5 mr-2 text-red-400"></i>
-                                    <span class="text-red-400">Buka Google Lokasi</span>
-                                </a>
-                            </div>
-                        </div>         
+                            </div>         
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="w-full flex justify-center items-center">
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
