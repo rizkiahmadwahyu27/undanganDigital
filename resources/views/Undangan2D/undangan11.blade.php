@@ -1125,7 +1125,7 @@
                 </div>               
             </div>
         </div>
-        @if ({{$undangan->alamat_akad}} != "-")
+        @if ($undangan->alamat_akad != "-")
             <div class="w-full flex justify-center items-center">
                 <div class="relative bg-cover1 w-full md:w-6/12 h-screen overflow-hidden z-10">
                 <div class="daun-jatuh-wrapper absolute inset-0 z-0 pointer-events-none overflow-hidden">
