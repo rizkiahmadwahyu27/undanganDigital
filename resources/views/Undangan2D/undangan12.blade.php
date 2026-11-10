@@ -1068,8 +1068,10 @@
                                     $isiStory1 = trim(implode("\n", array_slice($lines1, 1)));
                                 @endphp
                                     
-                                <p class="mb-1 font-extrabold">{{$judulStory1}}</p>
-                                <p>{{$isiStory1}}</p>
+                                <div>
+                                    <p class="mb-1 font-extrabold">{{$judulStory1}}</p>
+                                    <p>{{$isiStory1}}</p>
+                                </div>
                             @endif
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
@@ -1083,8 +1085,10 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory2 = trim(implode("\n", array_slice($lines2, 1)));
                                 @endphp
-                                <p class="mb-1 font-extrabold">{{$judulStory2}}</p>
-                                <p>{{$isiStory2}}</p>
+                                <div>
+                                    <p class="mb-1 font-extrabold">{{$judulStory2}}</p>
+                                    <p>{{$isiStory2}}</p>
+                                </div>
                             @endif
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
@@ -1098,8 +1102,10 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory3 = trim(implode("\n", array_slice($lines3, 1)));
                                 @endphp
-                                 <p class="mb-1 font-extrabold">{{$judulStory3}}</p>   
-                                <p>{{$isiStory3}}</p>
+                                 <div>
+                                    <p class="mb-1 font-extrabold">{{$judulStory3}}</p>   
+                                    <p>{{$isiStory3}}</p>
+                                 </div>
                             @endif
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
@@ -1113,8 +1119,10 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory4 = trim(implode("\n", array_slice($lines4, 1)));
                                 @endphp
+                                <div>
                                     <p class="mb-1 font-extrabold">{{$judulStory4}}</p>
-                                <p>{{$isiStory4}}</p>
+                                    <p>{{$isiStory4}}</p>
+                                </div>
                             @endif
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
@@ -1128,8 +1136,10 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory5 = trim(implode("\n", array_slice($lines5, 1)));
                                 @endphp
+                                <div>
                                     <p class="mb-1 font-extrabold">{{$judulStory5}}</p>
-                                <p>{{$isiStory5}}</p>
+                                    <p>{{$isiStory5}}</p>
+                                </div>
                             @endif
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
@@ -1143,8 +1153,10 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory6 = trim(implode("\n", array_slice($lines6, 1)));
                                 @endphp
+                                <div>
                                     <p class="mb-1 font-extrabold">{{$judulStory6}}</p>
-                                <p>{{$isiStory6}}</p>
+                                    <p>{{$isiStory6}}</p>
+                                </div>
                             @endif
                         </div>
                     </div>
