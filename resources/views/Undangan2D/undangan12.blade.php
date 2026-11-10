@@ -55,7 +55,7 @@
         height: 100vh;
         }
         .bg-cover1 {
-            background-image: url('/images/asset_undangan12/bg_hordeng.png');
+            background-image: url('/images/asset_undangan12/bg_hordeng1.png');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -116,8 +116,8 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: infinite;
         }
-        .bingkai1 {
-            background-image: url('/images/asset_undangan12/bingkai1.png');
+        .bingkai {
+            background-image: url('/images/asset_undangan12/bingkai.png');
             background-repeat: no-repeat;
             background-size: contain;
             animation-duration: 6s;
@@ -489,7 +489,7 @@
                         
                         <!-- Berikan tinggi (h-64 / h-80) dan lebar (w-64 / w-80) yang jelas -->
                         <!-- Tambahkan overflow-y-auto dan p-6 -->
-                        <div class="bingkai1 fade-scroll w-full h-screen"></div>
+                        <div class="bingkai fade-scroll w-full h-screen"></div>
                         <!-- Prangko -->
                         <div class="bunga3 absolute bottom-50 -left-10 w-40 h-40 z-10 fade-scroll"></div>
                         
@@ -568,7 +568,7 @@
                                     <div class="flex justify-center items-center p-4">
                                         <div>
                                             <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
-                                                <div class=" w-36 h-56 md:w-42 md:h-64">
+                                                <div class=" w-46 h-56 md:w-42 md:h-64">
                                                     <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                                 </div>
                                             </div>
@@ -645,7 +645,7 @@
                                     <div class="flex justify-center items-center p-4">
                                         <div class="p-2">
                                             <div class="flex justify-center items-center mb-5 fade-scroll">
-                                                <div class=" w-36 h-56 md:w-42 md:h-64">
+                                                <div class=" w-46 h-56 md:w-42 md:h-64">
                                                     <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                                 </div>
                                             </div>
@@ -736,7 +736,7 @@
                             <div class="flex justify-center items-center p-4">
                                 <div>
                                     <div class="flex justify-center items-center mt-1 mb-5 fade-scroll">
-                                        <div class=" w-36 h-56 md:w-42 md:h-64">
+                                        <div class=" w-46 h-56 md:w-42 md:h-64">
                                             <img src="{{ asset('storage/'.$images->foto_mempelai_wanita) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                         </div>
                                     </div>
@@ -814,7 +814,7 @@
                             <div class="flex justify-center items-center p-4">
                                 <div class="p-2">
                                     <div class="flex justify-center items-center mb-5 fade-scroll">
-                                        <div class=" w-36 h-56 md:w-42 md:h-64">
+                                        <div class=" w-46 h-56 md:w-42 md:h-64">
                                             <img src="{{ asset('storage/'.$images->foto_mempelai_pria) }}" class="w-full h-full object-cover object-center" alt="mempelai perempuan">
                                         </div>
                                     </div>
@@ -1068,6 +1068,7 @@
                                     $isiStory1 = trim(implode("\n", array_slice($lines1, 1)));
                                 @endphp
                                     
+                                <p class="mb-1 font-extrabold">{{$judulStory1}}</p>
                                 <p>{{$isiStory1}}</p>
                             @endif
                         </div>
@@ -1082,7 +1083,7 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory2 = trim(implode("\n", array_slice($lines2, 1)));
                                 @endphp
-                                    
+                                <p class="mb-1 font-extrabold">{{$judulStory2}}</p>
                                 <p>{{$isiStory2}}</p>
                             @endif
                         </div>
@@ -1097,7 +1098,7 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory3 = trim(implode("\n", array_slice($lines3, 1)));
                                 @endphp
-                                    
+                                 <p class="mb-1 font-extrabold">{{$judulStory3}}</p>   
                                 <p>{{$isiStory3}}</p>
                             @endif
                         </div>
@@ -1112,7 +1113,7 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory4 = trim(implode("\n", array_slice($lines4, 1)));
                                 @endphp
-                                    
+                                    <p class="mb-1 font-extrabold">{{$judulStory4}}</p>
                                 <p>{{$isiStory4}}</p>
                             @endif
                         </div>
@@ -1127,7 +1128,7 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory5 = trim(implode("\n", array_slice($lines5, 1)));
                                 @endphp
-                                    
+                                    <p class="mb-1 font-extrabold">{{$judulStory5}}</p>
                                 <p>{{$isiStory5}}</p>
                             @endif
                         </div>
@@ -1142,7 +1143,7 @@
                                     // Sisa baris setelah baris pertama digabung kembali untuk isi cerita
                                     $isiStory6 = trim(implode("\n", array_slice($lines6, 1)));
                                 @endphp
-                                    
+                                    <p class="mb-1 font-extrabold">{{$judulStory6}}</p>
                                 <p>{{$isiStory6}}</p>
                             @endif
                         </div>
