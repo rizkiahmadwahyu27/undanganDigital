@@ -573,7 +573,7 @@
                                                 </div>
                                             </div>
                                             <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
-                                                <h1 class="text-4xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
+                                                <h1 class="text-3xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                             </div>
                                             <div class="p-4 fade-scroll text-amber-100 mt-1 mb-1 flex justify-center items-center text-[12px] md:text-[18px] text-center">
                                                 @if ($undangan->nama_ayah_wanita != '-' && $undangan->nama_ibu_wanita != '-' && $undangan->anak_ke <= 0)
@@ -650,7 +650,7 @@
                                                 </div>
                                             </div>
                                             <div class="opacity-0 fade-scroll flex justify-center mt-1 text-amber-100">
-                                                <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                                <h1 class="font-script text-3xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                             </div>
 
                                             <div class="p-4 mt-1 mb-1 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
@@ -741,7 +741,7 @@
                                         </div>
                                     </div>
                                     <div class="opacity-0 fade-scroll text-amber-100 flex justify-center mt-1">
-                                        <h1 class="text-4xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
+                                        <h1 class="text-3xl md:text-8xl font-script">{{$undangan->nama_mempelai_wanita}}</h1>
                                     </div>
                                     
                                     <div class="p-4 fade-scroll text-amber-100 mt-1 mb-1 flex justify-center items-center text-[12px] md:text-[18px] text-center">
@@ -819,7 +819,7 @@
                                         </div>
                                     </div>
                                     <div class="p-4 fade-scroll flex justify-center mt-1 text-amber-100">
-                                        <h1 class="font-script text-4xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
+                                        <h1 class="font-script text-3xl md:text-8xl">{{$undangan->nama_mempelai_pria}}</h1>
                                     </div>
                                     
                                     <div class="opacity-0 mt-1 mb-1 fade-scroll text-amber-100 flex justify-center items-center text-[12px] md:text-[18px] text-center">
