@@ -119,7 +119,11 @@
         .bingkai {
             background-image: url('/images/asset_undangan12/bingkai.png');
             background-repeat: no-repeat;
+            background-position: center; /* Menyelaraskan gambar di tengah */
             background-size: contain;
+            
+            /* Lengkapi properti animasi di sini */
+            animation-name: floatFrame; /* Contoh nama animasi */
             animation-duration: 6s;
             animation-timing-function: ease-in-out;
             animation-iteration-count: infinite;
@@ -396,7 +400,7 @@
                     </div>
             
                     <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold z-50" style="animation-delay: 5.9s;">
-                        <a href="#isi_undangan" id="btnBuka" class="bg-red-900 px-4 py-3 rounded-lg flex items-center justify-center">
+                        <a href="#isi_undangan" id="btnBuka" class="bg-red-950 px-4 py-3 rounded-lg flex items-center justify-center">
                             <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                             <span>Open Invitation</span>
                         </a>
@@ -477,21 +481,22 @@
                 </div>
             </div>
         </div>
-         <div class="w-full flex justify-center items-center">
+        <div class="w-full flex justify-center items-center">
+            <!-- Parent Utama -->
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden"> 
-                <!-- Wrapper utama diubah menjadi relative agar anak elemen bisa diposisikan absolute terhadapnya -->
-                <div class="absolute top-52 muncul w-80 h-80 fade-scroll pointer-events-none inset-x-0 mx-auto flex items-center justify-center z-50 px-4"
-                 style="animation-delay: 4s;">
+                
+                <!-- Wrapper Posisi Absolut (Diperbaiki menggunakan left-1/2 -translate-x-1/2 agar presisi di tengah) -->
+                <div class="absolute top-44 left-1/2 -translate-x-1/2 w-[500px] h-[550px] z-50 px-4 pointer-events-none flex items-center justify-center"
+                    style="animation-delay: 4s;">
                     
-
-                    <!-- Bungkus amplop dan bunga dalam satu container -->
-                    <div class="relative w-full h-screen flex items-center justify-center">
+                    <!-- Container Dalam -->
+                    <div class="relative w-full h-full flex items-center justify-center">
                         
-                        <!-- Berikan tinggi (h-64 / h-80) dan lebar (w-64 / w-80) yang jelas -->
-                        <!-- Tambahkan overflow-y-auto dan p-6 -->
-                        <div class="bingkai fade-scroll w-full h-screen"></div>
-                        <!-- Prangko -->
-                        <div class="bunga3 absolute bottom-50 -left-10 w-40 h-40 z-10 fade-scroll"></div>
+                        <!-- Bingkai -->
+                        <div class="bingkai fade-scroll w-full h-full flex justify-center items-center"></div>
+                        
+                        <!-- Bunga -->
+                        <div class="bunga3 absolute bottom-0 left-11 w-48 h-48 z-10 fade-scroll"></div>
                         
                     </div>
                 </div>
@@ -897,7 +902,7 @@
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden"> 
                 <!-- Wrapper utama diubah menjadi relative agar anak elemen bisa diposisikan absolute terhadapnya -->
                 <div class="flex justify-center items-center w-full h-screen">
-                    <div class="bg-red-900 w-[300px] h-[550px] rounded-[400px/600px] text-center p-5">
+                    <div class="bg-red-950 w-[300px] h-[550px] rounded-[400px/600px] text-center p-5">
                         <div class="flex justify-center items-center text-center">
                             <div>
                                 <h1 class="font-alex-brush text-xl text-amber-100 mt-5">
@@ -982,7 +987,7 @@
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden"> 
                 <!-- Wrapper utama diubah menjadi relative agar anak elemen bisa diposisikan absolute terhadapnya -->
                 <div class="flex justify-center items-center w-full h-screen">
-                    <div class="bg-red-900 w-[300px] h-[550px] rounded-[400px/600px] text-center p-5">
+                    <div class="bg-red-950 w-[300px] h-[550px] rounded-[400px/600px] text-center p-5">
                         <div class="flex justify-center items-center text-center">
                             <div>
                                 <div class="fade-scroll text-amber-100 mt-10">
@@ -1054,7 +1059,7 @@
                     <div class="overflow-y-auto max-h-screen min-h-0 w-full max-w-sm">
                         <h1 class="text-center text-amber-100 font-alex-brush text-3xl fade-scroll mb-4">Our Story</h1>
                         <div class="fade-scroll w-full flex justify-center items-center">
-                            <img src="{{url('/images/asset_undangan12/Foto love story.jpeg')}}" alt="foto story" class="w-24 h-32">
+                            <img src="{{url('/images/asset_undangan12/loveStory.png')}}" alt="foto story" class="w-40 h-40">
                         </div>
                         <div class="flex justify-center fade-scroll items-center text-center mb-6 text-amber-100 ">
                             @if ($stories->story_1 != "-")
@@ -1207,84 +1212,45 @@
             </div>
         </div>
         <div class="flex justify-center fade-scroll items-center text-amber-100">
-            <div class="bg-red-900 w-full md:w-6/12">
+            <div class="bg-red-950 w-full md:w-6/12">
                 <div class="flex justify-center items-center"><i data-lucide="gift" class="w-10 h-10 mb-2 mt-10"></i></div>
                 <div class="flex justify-center items-center"><h1 class="font-alex-brush text-3xl">Wedding Gift</h1></div>
+                <div class="flex justify-center items-center p-2"><h2 class="text-md text-center">
+                    Your presence and prayers are the greatest wedding gift we could ever ask for. No other gift are needed nor expected. However, if giving is a sign of love, we are happy to receive it, and, of course, it will enhance our happiness even more.
+                </h2></div>
             </div>
         </div>
         @php
             $dompet_digital = json_decode($undangan->dompet_digital, true);
             // dd('dompet_digital');
         @endphp
-        <div class="w-full flex justify-center items-center">  
-            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-6/12 gap-2 bg-red-900 p-4">
+        <div class="w-full flex justify-center items-center p-2">  
+            <div>
                 @foreach ($dompet_digital ?? [] as $dompet)
-                    <div class="w-full h-56 fade-scroll md:h-80 relative max-h-56 md:max-h-80 rounded-lg bg-kartu-atm">
-                        <div class="absolute top-7 md:top-[70px] right-0 mr-5">
-                            <h1 class="text-amber-100 text-xl font-bold md:-mt-5">{{ $dompet['nama_bank'] }}</h1>
-                        </div>
-                        <div class="absolute bottom-7 left-0 ml-4 mb-2">
-                            <h1 class="norek-text text-[18px] md:text-lg text-amber-100 font-semibold leading-tight">
-                                {{$dompet['no_rek']}}
-                            </h1>
-                            <h1 class="md:text-lg text-[18px] text-amber-100 font-semibold leading-tight">{{$dompet['an_nama']}}</h1>
-                            <p class="text-xs status-message"></p>
-                        </div>
-                        <div class="absolute bottom-0 right-0 mr-4 mb-2">
-                            <button onclick="copyNorek(this)" class="bg-amber-100 mt-2 flex opacity-50 p-[3px] rounded-lg text-amber-900">
-                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-red-900"></i>Copy
+                    <div class="relative w-96 h-36 border-2 border-white p-2 mb-2">
+                        <p class="text-white">{{$dompet['nama_bank']}}</p>
+                        <p class="text-white norek-text">{{$dompet['no_rek']}}</p>
+                        <p class="text-white">{{$dompet['an_nama']}}</p>
+                        <p class="text-xs text-white status-message"></p>
+                        <div class="absolute bottom-2 right-2 border-2 border-white p-1">
+                            <button onclick="copyNorek(this)" class="text-white flex justify-between items-center">
+                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-white"></i>Copy
                             </button>
                         </div>
                     </div>
                 @endforeach
-                
-                <div class="w-full fade-scroll md:h-auto bg-amber-100 shadow-2xl p-4 rounded-lg">
-
-                    <!-- ICON -->
-                    <div class="flex justify-center items-center text-center mt-2">
-                        <i data-lucide="gift" class="w-10 h-10 mb-2 mt-2 text-red-900"></i>
-                    </div>
-
-                    <!-- TITLE -->
-                    <div class="flex justify-center items-center text-center mt-1 mb-2 text-red-900">
-                        <h1 class="text-xl font-bold">Kirim Hadiah</h1>
-                    </div>
-
-                    <!-- DATA -->
-                    <div id="data-alamat" class="space-y-2 text-sm text-red-900">
-
-                        <div class="flex leading-tight">
-                            <span class="w-16">Nama</span>
-                            <span class="w-5">:</span>
-                            <span class="flex-1 break-words">
-                                {{$undangan->nama_mempelai_wanita}}
-                            </span>
-                        </div>
-
-                        <div class="flex leading-tight">
-                            <span class="w-16">Alamat</span>
-                            <span class="w-5">:</span>
-                            <span class="flex-1 break-words">
-                                {{$undangan->alamat_kirim_hadiah}}
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <!-- BUTTON -->
-                    <div class="mt-4">
-                        <button onclick="copy_alamat()"
-                            class="bg-red-900 flex items-center p-2 rounded-lg text-amber-100">
-                            <i data-lucide="copy" class="w-5 h-5 mr-2"></i>
-                            Copy
+                <div class="relative w-96 h-36 border-2 border-white p-2 mb-2">
+                    <p id="data-alamat" class="text-white">Alamat Rumah : {{$undangan->alamat_kirim_hadiah}}</p>
+                    <div class="absolute bottom-2 right-2 border-2 border-white p-1">
+                        <button onclick="copy_alamat()" class="text-white flex justify-between items-center">
+                            <i data-lucide="copy" class="w-5 h-5 mr-2 text-white"></i>Copy
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
         <div class="flex justify-center items-center">
-            <div class="w-full md:w-6/12 bg-red-900">
+            <div class="w-full md:w-6/12 bg-red-950">
                 <!-- Body Content Area: Scrollable secara mandiri -->
                 <div class="overflow-y-auto p-5 space-y-6 min-h-0">
                     
@@ -1320,7 +1286,7 @@
                             </div>
 
                             <div class="flex justify-end">
-                                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-lg bg-red-900 hover:bg-red-950 text-amber-100 font-medium text-sm transition-all shadow-sm active:scale-95 cursor-pointer">
+                                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-lg bg-red-950 hover:bg-red-950 text-amber-100 font-medium text-sm transition-all shadow-sm active:scale-95 cursor-pointer">
                                     Kirim Pesan
                                 </button>
                             </div>
@@ -1338,7 +1304,7 @@
                                     $hadir = $kehadiran->firstWhere('nama', $message->nama);
                                 @endphp
 
-                                <div class="relative flex items-start gap-3 p-4 bg-red-900 text-amber-100 rounded-xl shadow-sm">
+                                <div class="relative flex items-start gap-3 p-4 bg-red-950 text-amber-100 rounded-xl shadow-sm">
                                     
                                     <div class="flex-shrink-0 flex justify-center items-center p-1 bg-white/10 rounded-full w-10 h-10">
                                         <i data-lucide="circle-user-round" class="w-7 h-7 text-amber-100"></i>
@@ -1437,7 +1403,7 @@
             </div>
         </div>
         <div class="flex justify-center items-center">
-            <footer class="bg-red-900 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
+            <footer class="bg-red-950 text-center py-10 px-5 shadow-inner w-full md:w-8/12">
     
                 <!-- Made With Love -->
                 <div class="text-amber-100 text-sm md:text-base flex justify-center items-center gap-2 mb-3">
@@ -1660,10 +1626,11 @@
 
     <script>
         function copyNorek(btn) {
-            // Cari container kartu terdekat dari tombol yang diklik
-            const card = btn.closest('.bg-kartu-atm');
+            // Mencari card utama (elemen wrapper luar dari tombol)
+            // Berdasarkan struktur HTML Anda, tombol berada 3 level di dalam kartu utama
+            const card = btn.closest('.w-96'); 
             
-            // Ambil nomor rekening dari elemen dengan class 'norek-text' di dalam kartu tersebut
+            // Ambil nomor rekening dari elemen dengan class 'norek-text'
             const norek = card.querySelector('.norek-text').innerText;
             const statusMsg = card.querySelector('.status-message');
 
