@@ -389,17 +389,17 @@
                     class="absolute bottom-0 w-full h-3/12 object-cover blur-2xl scale-150">
                 <div class="absolute bottom-20 inset-x-0 flex flex-col items-center justify-center z-50 px-4">
                     
-                    <div class="w-full flex justify-center items-center muncul2 text-center" style="animation-delay: 4.7s;">
+                    <div class="w-full flex justify-center items-center muncul2 text-center" style="animation-delay: 1.7s;">
                         <h1 class="text-amber-100 font-alex-brush text-5xl">
                             {{$undangan->judul_undangan}}
                         </h1>
                     </div>
             
                     <div class="w-full flex justify-center items-center mt-10 mb-10 text-center">
-                        <p class="text-amber-100 text-2xl font-bold muncul2" style="animation-delay: 5.3s;">{{$tamu}}</p>
+                        <p class="text-amber-100 text-2xl font-bold muncul2" style="animation-delay: 2.3s;">{{$tamu}}</p>
                     </div>
             
-                    <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold z-50" style="animation-delay: 5.9s;">
+                    <div class="mt-2 w-full flex justify-center items-center muncul2 text-white font-bold z-50" style="animation-delay: 2.9s;">
                         <a href="#isi_undangan" id="btnBuka" class="bg-red-950 px-4 py-3 rounded-lg flex items-center justify-center">
                             <i data-lucide="mail-open" class="w-5 h-5 mr-2"></i>
                             <span>Open Invitation</span>
@@ -486,7 +486,7 @@
             <div class="relative bg-cover1 w-full md:w-6/12 h-screen z-0 overflow-hidden"> 
                 
                 <!-- Wrapper Posisi Absolut (Diperbaiki menggunakan left-1/2 -translate-x-1/2 agar presisi di tengah) -->
-                <div class="absolute top-44 left-1/2 -translate-x-1/2 w-[500px] h-[550px] z-50 px-4 pointer-events-none flex items-center justify-center"
+                <div class="absolute top-44 left-1/2 -translate-x-1/2 w-[480px] h-[550px] z-50 px-4 pointer-events-none flex items-center justify-center"
                     style="animation-delay: 4s;">
                     
                     <!-- Container Dalam -->
@@ -1225,25 +1225,27 @@
             // dd('dompet_digital');
         @endphp
         <div class="w-full flex justify-center items-center p-2">  
-            <div>
+            <div class="w-full max-w-sm sm:max-w-md flex flex-col items-center">
                 @foreach ($dompet_digital ?? [] as $dompet)
-                    <div class="relative w-96 h-36 border-2 border-white p-2 mb-2">
-                        <p class="text-white">{{$dompet['nama_bank']}}</p>
-                        <p class="text-white norek-text">{{$dompet['no_rek']}}</p>
-                        <p class="text-white">{{$dompet['an_nama']}}</p>
-                        <p class="text-xs text-white status-message"></p>
-                        <div class="absolute bottom-2 right-2 border-2 border-white p-1">
-                            <button onclick="copyNorek(this)" class="text-white flex justify-between items-center">
-                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-white"></i>Copy
+                    <!-- Menggunakan w-full dan max-w agar responsif di HP dan Desktop -->
+                    <div class="relative w-full h-36 border-2 border-amber-100 p-2 mb-2">
+                        <p class="text-amber-100">{{$dompet['nama_bank']}}</p>
+                        <p class="text-amber-100 norek-text">{{$dompet['no_rek']}}</p>
+                        <p class="text-amber-100">{{$dompet['an_nama']}}</p>
+                        <p class="text-xs text-amber-100 status-message"></p>
+                        <div class="absolute bottom-2 right-2 border-2 border-amber-100 p-1">
+                            <button onclick="copyNorek(this)" class="text-amber-100 flex justify-between items-center">
+                                <i data-lucide="copy" class="w-5 h-5 mr-2 text-amber-100"></i>Copy
                             </button>
                         </div>
                     </div>
                 @endforeach
-                <div class="relative w-96 h-36 border-2 border-white p-2 mb-2">
-                    <p id="data-alamat" class="text-white">Alamat Rumah : {{$undangan->alamat_kirim_hadiah}}</p>
-                    <div class="absolute bottom-2 right-2 border-2 border-white p-1">
-                        <button onclick="copy_alamat()" class="text-white flex justify-between items-center">
-                            <i data-lucide="copy" class="w-5 h-5 mr-2 text-white"></i>Copy
+                
+                <div class="relative w-full h-36 border-2 border-amber-100 p-2 mb-2">
+                    <p id="data-alamat" class="text-amber-100">Alamat Rumah : {{$undangan->alamat_kirim_hadiah}}</p>
+                    <div class="absolute bottom-2 right-2 border-2 border-amber-100 p-1">
+                        <button onclick="copy_alamat()" class="text-amber-100 flex justify-between items-center">
+                            <i data-lucide="copy" class="w-5 h-5 mr-2 text-amber-100"></i>Copy
                         </button>
                     </div>
                 </div>
