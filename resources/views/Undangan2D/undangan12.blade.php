@@ -1628,9 +1628,8 @@
 
     <script>
         function copyNorek(btn) {
-            // Mencari card utama (elemen wrapper luar dari tombol)
-            // Berdasarkan struktur HTML Anda, tombol berada 3 level di dalam kartu utama
-            const card = btn.closest('.w-96'); 
+            // Mencari card utama berdasarkan class 'border-amber-100' atau card pembungkus terdekat
+            const card = btn.closest('.relative.border-amber-100'); 
             
             // Ambil nomor rekening dari elemen dengan class 'norek-text'
             const norek = card.querySelector('.norek-text').innerText;
